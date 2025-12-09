@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Universe | Tüm Bağlantılar Tek Yerde</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Discount Opportunity Campaign Universe | All Amazon Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -11,36 +11,66 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         :root {
-            --primary: #ff9900;
+            /* Dark Theme (Default) */
+            --primary: #FF9900;
+            --primary-dark: #e68a00;
             --secondary: #146eb4;
+            --secondary-dark: #115c96;
             --dark: #131921;
+            --darker: #0F141B;
             --light: #fafafa;
             --gray: #f2f2f2;
             --accent: #ff6b6b;
             --success: #2ecc71;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --gradient: linear-gradient(135deg, #FF9900 0%, #FF6B6B 100%);
+            --gradient2: linear-gradient(135deg, #146eb4 0%, #2ecc71 100%);
+            --gradient3: linear-gradient(135deg, #8a2be2 0%, #4facfe 100%);
+            
+            /* Theme Variables */
+            --bg-primary: #0A0E14;
+            --bg-secondary: #131921;
+            --bg-tertiary: #1a1f2a;
+            --text-primary: #ffffff;
+            --text-secondary: #dddddd;
+            --text-muted: #aaaaaa;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.15);
+            --header-gradient: linear-gradient(90deg, rgba(255,153,0,0.25), rgba(20,110,180,0.25));
+            --search-bg: rgba(255, 255, 255, 0.12);
+            --search-border: rgba(255, 255, 255, 0.2);
+            --overlay: rgba(10, 14, 20, 0.95);
+        }
+
+        .light-theme {
+            /* Light Theme Variables */
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e8edf2;
+            --text-primary: #222222;
+            --text-secondary: #444444;
+            --text-muted: #666666;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --header-gradient: linear-gradient(90deg, rgba(255,153,0,0.15), rgba(20,110,180,0.15));
+            --search-bg: rgba(0, 0, 0, 0.05);
+            --search-border: rgba(0, 0, 0, 0.15);
+            --overlay: rgba(255, 255, 255, 0.95);
             --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         body {
-            background: linear-gradient(-45deg, #f5f7fa, #e4e8f0, #f0f2f5, #e8ecf1);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: var(--bg-primary);
             min-height: 100vh;
-            color: #333;
+            color: var(--text-primary);
             overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            padding-bottom: 20px;
+            transition: background 0.5s ease;
         }
 
         /* Floating Background Elements */
@@ -57,35 +87,49 @@
         .floating-element {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 153, 0, 0.05);
-            animation: float 15s infinite linear;
+            background: rgba(255, 153, 0, 0.15);
+            animation: float 20s infinite linear;
+            filter: blur(1px);
+        }
+
+        .light-theme .floating-element {
+            background: rgba(255, 153, 0, 0.08);
         }
 
         .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             top: 10%;
             left: 10%;
-            background: rgba(20, 110, 180, 0.08);
-            animation-duration: 20s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 5%;
-            background: rgba(255, 107, 107, 0.06);
+            background: rgba(20, 110, 180, 0.2);
             animation-duration: 25s;
         }
 
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 5%;
+            background: rgba(255, 107, 107, 0.18);
+            animation-duration: 30s;
+        }
+
         .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             bottom: 20%;
             left: 15%;
-            background: rgba(46, 204, 113, 0.07);
-            animation-duration: 18s;
+            background: rgba(46, 204, 113, 0.2);
+            animation-duration: 22s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 15%;
+            background: rgba(138, 43, 226, 0.15);
+            animation-duration: 28s;
         }
 
         @keyframes float {
@@ -93,10 +137,10 @@
                 transform: translate(0, 0) rotate(0deg);
             }
             33% {
-                transform: translate(30px, -50px) rotate(120deg);
+                transform: translate(40px, -60px) rotate(120deg);
             }
             66% {
-                transform: translate(-20px, 20px) rotate(240deg);
+                transform: translate(-30px, 30px) rotate(240deg);
             }
             100% {
                 transform: translate(0, 0) rotate(360deg);
@@ -110,10 +154,59 @@
             position: relative;
         }
 
+        /* Theme Toggle Button - Fixed in left corner, becomes invisible on scroll but stays in place */
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+        .theme-toggle-container.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .theme-toggle-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            transition: var(--transition);
+            font-size: 14px;
+            min-width: 150px;
+        }
+
+        .light-theme .theme-toggle-btn {
+            background: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        .theme-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .light-theme .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.12);
+        }
+
         /* Header Styles */
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 15px 30px;
             margin-bottom: 30px;
             animation: fadeInDown 1s ease;
         }
@@ -122,77 +215,146 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-direction: column;
         }
 
-        .logo-icon {
-            font-size: 3.2rem;
-            color: var(--primary);
-            filter: drop-shadow(0 5px 15px rgba(255, 153, 0, 0.4));
-            animation: pulse 2.5s infinite alternate;
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120%;
-            height: 120%;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,153,0,0.2) 0%, rgba(255,153,0,0) 70%);
-            z-index: -1;
-        }
-
-        .logo h1 {
+        .logo-gif {
+            width: 140px;
+            height: 140px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(255, 153, 0, 0.4);
+            border: 4px solid var(--primary);
+            background: linear-gradient(45deg, #FF9900, #FF6B6B);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 3rem;
-            color: var(--dark);
-            font-weight: 800;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 25px 70px rgba(255, 153, 0, 0.4);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 25px 90px rgba(255, 153, 0, 0.7);
+                transform: scale(1.05);
+            }
+        }
+
+        .logo-gif img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            text-align: center;
+        }
+
+        .logo-text h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.5);
+            background: linear-gradient(to right, #FF9900, #FF6B6B, #8a2be2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
         }
 
-        .logo span {
+        .logo-text span {
             display: block;
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: normal;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-weight: 500;
             margin-top: 5px;
+            text-align: center;
+            opacity: 0.9;
         }
 
         .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 850px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-border);
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 100%;
+            margin: 0 auto 50px;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 20px 30px;
+            padding-right: 70px;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            background: var(--search-bg);
+            transition: var(--transition);
+            border: 2px solid var(--search-border);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .search-box::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border: 2px solid var(--primary);
+            background: var(--search-bg);
+            box-shadow: 0 25px 60px rgba(255, 153, 0, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
             font-size: 1.3rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.7;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         /* Category Styles */
         .categories-container {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
             margin-bottom: 50px;
         }
 
         .category {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 20px;
+            background: var(--card-bg);
+            border-radius: 25px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
@@ -200,19 +362,20 @@
         }
 
         .category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 153, 0, 0.4);
         }
 
         .category-header {
-            padding: 22px 25px;
+            padding: 25px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
             transition: var(--transition);
-            background: linear-gradient(90deg, var(--dark), #232f3e);
-            color: white;
+            background: var(--header-gradient);
+            color: var(--text-primary);
             position: relative;
             overflow: hidden;
         }
@@ -224,7 +387,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             transition: var(--transition);
         }
 
@@ -232,46 +395,78 @@
             left: 100%;
         }
 
+        .light-theme .category-header::before {
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+        }
+
         .category-title {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
+            flex: 1;
+            min-width: 0;
         }
 
         .category-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            flex-shrink: 0;
+        }
+
+        .light-theme .category-icon {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .category-name {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
         }
 
         .category-name h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.3;
+            opacity: 0.95;
         }
 
         .category-name p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 3px;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.5;
+            opacity: 0.85;
         }
 
         .toggle-icon {
             font-size: 1.5rem;
             transition: var(--transition);
+            flex-shrink: 0;
+            margin-left: 15px;
+            color: var(--primary);
+            opacity: 0.9;
         }
 
         .category.active .toggle-icon {
             transform: rotate(180deg);
         }
 
-        /* Links Container */
+        /* Links Container - Scrollable */
         .links-container {
             padding: 0;
             max-height: 0;
@@ -280,30 +475,59 @@
         }
 
         .category.active .links-container {
-            max-height: 2000px;
+            max-height: 500px;
             transition: max-height 1s ease-in-out;
+            overflow-y: auto;
         }
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            padding: 25px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 30px;
+            max-height: 450px;
+        }
+
+        /* Custom scrollbar for links container */
+        .category.active .links-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        .light-theme .category.active .links-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .link-item {
             display: flex;
             align-items: center;
-            padding: 18px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 18px;
             transition: var(--transition);
             cursor: pointer;
             text-decoration: none;
-            color: #333;
-            border-left: 5px solid transparent;
+            color: var(--text-primary);
+            border-left: 6px solid transparent;
             position: relative;
             overflow: hidden;
+            min-width: 0;
+            border: 1px solid var(--card-border);
+            opacity: 0.95;
         }
 
         .link-item::before {
@@ -313,8 +537,12 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             transition: var(--transition);
+        }
+
+        .light-theme .link-item::before {
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
         }
 
         .link-item:hover::before {
@@ -322,10 +550,12 @@
         }
 
         .link-item:hover {
-            background: linear-gradient(90deg, rgba(255,153,0,0.1), rgba(20,110,180,0.1));
-            transform: translateX(10px);
-            border-left: 5px solid var(--primary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: rgba(255, 153, 0, 0.15);
+            transform: translateX(12px);
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255, 153, 0, 0.4);
+            opacity: 1;
         }
 
         .link-item:hover .link-icon {
@@ -335,245 +565,101 @@
         }
 
         .link-icon {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 18px;
-            color: var(--dark);
-            font-size: 1.3rem;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             flex-shrink: 0;
+        }
+
+        .light-theme .link-icon {
+            background: rgba(0, 0, 0, 0.08);
         }
 
         .link-text {
             flex: 1;
-            font-weight: 600;
-            font-size: 1.05rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.4;
+            min-width: 0;
+            opacity: 0.95;
         }
 
         .link-arrow {
-            color: #aaa;
+            color: var(--text-muted);
             transition: var(--transition);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-left: 15px;
+            opacity: 0.8;
         }
 
         .link-item:hover .link-arrow {
             color: var(--primary);
-            transform: translateX(5px);
+            transform: translateX(8px);
+            opacity: 1;
         }
 
-        /* Featured Products */
-        .featured-section {
-            margin: 60px 0;
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            left: 25px;
+            background: var(--overlay);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            transform: translateX(100px);
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 0.3s;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            font-weight: 800;
-            display: inline-block;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
             transition: var(--transition);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--accent);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .product-image {
-            height: 180px;
-            background: linear-gradient(45deg, #f1f1f1, #e1e1e1);
+            z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            color: var(--dark);
-            position: relative;
-            overflow: hidden;
+            gap: 18px;
+            max-width: 100%;
+            border: 1px solid rgba(255, 153, 0, 0.4);
         }
 
-        .product-image::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite linear;
+        .light-theme .notification {
+            color: #333;
+            border: 1px solid rgba(255, 153, 0, 0.6);
         }
 
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
         }
 
-        .product-info {
-            padding: 20px;
+        .notification-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
         }
 
-        .product-title {
-            font-weight: 700;
+        .notification-text {
+            font-weight: 600;
             font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .product-rating {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .product-price {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .product-button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background: var(--dark);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .product-button:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            margin-top: 50px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin: 25px 0;
-        }
-
-        .footer-links a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            padding: 8px 15px;
-            border-radius: 10px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .social-icons a {
-            width: 45px;
-            height: 45px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-size: 1.2rem;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
-            background: var(--primary);
-            color: white;
         }
 
         /* Animations */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
             to {
                 opacity: 1;
@@ -584,7 +670,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -592,126 +678,323 @@
             }
         }
 
-        @keyframes pulse {
-            from {
-                filter: drop-shadow(0 5px 15px rgba(255, 153, 0, 0.4));
-            }
-            to {
-                filter: drop-shadow(0 5px 25px rgba(255, 153, 0, 0.7));
-            }
-        }
-
         /* Responsive Design */
-        @media (max-width: 992px) {
-            .links-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 2.2rem;
+        @media (min-width: 576px) {
+            .container {
+                padding: 25px;
             }
             
-            .logo-icon {
+            .logo-text h1 {
+                font-size: 3.5rem;
+            }
+            
+            .logo-text span {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+                padding: 35px;
+            }
+            
+            .search-box {
+                padding: 22px 35px;
+                padding-right: 75px;
+                font-size: 1.25rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 25px;
+            }
+            
+            .notification {
+                left: auto;
+                right: 30px;
+                max-width: 450px;
+            }
+            
+            .category-name h2 {
+                font-size: 2rem;
+            }
+            
+            .category-name p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                flex-direction: row;
+                gap: 35px;
+            }
+            
+            .logo-text {
+                text-align: left;
+            }
+            
+            .logo-text h1 {
+                font-size: 3.8rem;
+            }
+            
+            .logo-gif {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .subtitle {
+                font-size: 1.35rem;
+                padding: 40px;
+            }
+            
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .category.active .links-container {
+                max-height: 600px;
+            }
+            
+            .links-grid {
+                max-height: 550px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+                gap: 25px;
+            }
+            
+            .search-container {
+                max-width: 800px;
+            }
+            
+            .logo-text h1 {
+                font-size: 4rem;
+            }
+            
+            .category.active .links-container {
+                max-height: 700px;
+            }
+            
+            .links-grid {
+                max-height: 650px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .theme-toggle-container {
+                top: 15px;
+                left: 15px;
+            }
+            
+            .theme-toggle-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+                min-width: 130px;
+            }
+            
+            .category-header {
+                padding: 20px 25px;
+            }
+            
+            .category-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .category-name h2 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+            
+            .category-name p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+            
+            .link-item {
+                padding: 18px 20px;
+                flex-wrap: nowrap;
+            }
+            
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-right: 18px;
+            }
+            
+            .link-text {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            
+            .logo-text h1 {
                 font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .logo-gif {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .logo-text span {
+                font-size: 1.2rem;
             }
             
             .subtitle {
                 font-size: 1.1rem;
+                padding: 25px;
+                line-height: 1.6;
+            }
+            
+            .search-box {
+                padding: 18px 25px;
+                padding-right: 65px;
+                font-size: 1.1rem;
+            }
+            
+            .search-icon {
+                right: 30px;
+            }
+            
+            .category.active .links-container {
+                max-height: 400px;
+            }
+            
+            .links-grid {
+                max-height: 380px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .theme-toggle-container {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .theme-toggle-btn {
+                padding: 8px 14px;
+                min-width: 120px;
+                font-size: 12px;
+            }
+            
+            .logo-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo-gif {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .category-header {
+                padding: 18px 20px;
+            }
+            
+            .category-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
             
             .category-name h2 {
                 font-size: 1.3rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .link-item {
+                padding: 16px 18px;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .link-icon {
+                width: 45px;
+                height: 45px;
+                margin-right: 15px;
             }
-        }
-
-        @media (max-width: 576px) {
+            
             .links-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-links {
-                flex-direction: column;
                 gap: 15px;
+                padding: 18px;
             }
         }
 
-        /* Notification */
-        .notification {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--dark);
-            color: white;
-            padding: 18px 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transform: translateX(100px);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            max-width: 350px;
+        @media (max-width: 350px) {
+            .theme-toggle-btn {
+                min-width: auto;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                padding: 0;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .theme-toggle-btn .theme-text {
+                display: none;
+            }
+            
+            .theme-toggle-btn i {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+            
+            .category-header {
+                padding: 15px 18px;
+            }
+            
+            .category-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .category-name h2 {
+                font-size: 1.2rem;
+            }
+            
+            .link-item {
+                padding: 15px;
+            }
+            
+            .link-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .link-text {
+                font-size: 0.95rem;
+            }
         }
 
-        .notification.show {
-            transform: translateX(0);
-            opacity: 1;
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
         }
 
-        .notification-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
         }
 
-        /* Search Bar */
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
         }
 
-        .search-box {
-            width: 100%;
-            padding: 18px 25px;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: rgba(255, 255, 255, 0.9);
-            transition: var(--transition);
-            border: 2px solid transparent;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
         }
-
-        .search-box:focus {
-            outline: none;
-            border: 2px solid var(--primary);
-            background: white;
-            box-shadow: 0 15px 40px rgba(255, 153, 0, 0.2);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #aaa;
-            font-size: 1.2rem;
+        
+        .light-theme ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.08);
         }
     </style>
 </head>
@@ -721,447 +1004,486 @@
         <div class="floating-element"></div>
         <div class="floating-element"></div>
         <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Theme Toggle Button - Fixed in left corner, becomes invisible on scroll but stays in place -->
+    <div class="theme-toggle-container" id="themeToggleContainer">
+        <div class="theme-toggle-btn" id="themeToggleBtn">
+            <i class="fas fa-moon"></i>
+            <span class="theme-text">Dark Theme</span>
+        </div>
     </div>
 
     <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-icon"><i class="fas fa-check-circle"></i></div>
-        <div class="notification-text">Link kopyalandı!</div>
+        <div class="notification-text">Link copied!</div>
     </div>
 
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fab fa-amazon logo-icon"></i>
-                <div>
-                    <h1>Amazon Universe</h1>
-                    <span>Tüm Kategoriler ve En Çok Satanlar</span>
+                <div class="logo-gif">
+                    <img src="https://i.hizliresim.com/8fn897l.gif" alt="Discount Campaign">
+                </div>
+                <div class="logo-text">
+                    <h1 id="mainTitle">Discount Opportunity Campaign Universe</h1>
+                    <span id="mainSubtitle">All Amazon Links in One Platform</span>
                 </div>
             </div>
-            <p class="subtitle">Amazon'un tüm kategorileri, en çok satan ürünleri ve özel bağlantıları tek bir platformda. Aşağıdaki kategorileri genişleterek ilgili linklere ulaşabilirsiniz.</p>
+            <p class="subtitle" id="mainDescription">All best-selling products, services and special links from all Amazon categories in a single platform. Expand the categories below to access related links.</p>
             
             <div class="search-container">
-                <input type="text" class="search-box" id="searchBox" placeholder="Kategorilerde veya linklerde arama yapın...">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search in categories or links...">
                 <div class="search-icon"><i class="fas fa-search"></i></div>
             </div>
         </header>
 
         <main>
             <div class="categories-container" id="categoriesContainer">
-                <!-- Kategori 1: Amazon Games -->
-                <div class="category" data-category="games">
-                    <div class="category-header">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-gamepad"></i></div>
-                            <div class="category-name">
-                                <h2>Amazon Games</h2>
-                                <p>Oyunlar, indirimler ve gaming aksesuarları</p>
-                            </div>
-                        </div>
-                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/games">
-                                <div class="link-icon"><i class="fas fa-dice"></i></div>
-                                <div class="link-text">Amazon Games Ana Sayfa</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/gaming-deals">
-                                <div class="link-icon"><i class="fas fa-tags"></i></div>
-                                <div class="link-text">Gaming Fırsatları</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/prime-gaming">
-                                <div class="link-icon"><i class="fab fa-amazon-prime"></i></div>
-                                <div class="link-text">Prime Gaming</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/video-game-downloads">
-                                <div class="link-icon"><i class="fas fa-download"></i></div>
-                                <div class="link-text">Video Game Downloads</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kategori 2: Luxury Stores -->
-                <div class="category" data-category="luxury">
-                    <div class="category-header">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-gem"></i></div>
-                            <div class="category-name">
-                                <h2>Luxury Stores</h2>
-                                <p>Premium güzellik ve lüks moda ürünleri</p>
-                            </div>
-                        </div>
-                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/luxury-stores-beauty">
-                                <div class="link-icon"><i class="fas fa-spa"></i></div>
-                                <div class="link-text">Luxury Stores Beauty | Premium Beauty</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/luxury-stores-fashion">
-                                <div class="link-icon"><i class="fas fa-tshirt"></i></div>
-                                <div class="link-text">Luxury Stores Fashion</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/luxury-stores">
-                                <div class="link-icon"><i class="fas fa-store"></i></div>
-                                <div class="link-text">Luxury Stores Ana Sayfa</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kategori 3: Medya ve Eğlence -->
-                <div class="category" data-category="media">
-                    <div class="category-header">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-film"></i></div>
-                            <div class="category-name">
-                                <h2>Medya ve Eğlence</h2>
-                                <p>Müzik, film, video ve el yapımı ürünler</p>
-                            </div>
-                        </div>
-                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/cds-vinyl">
-                                <div class="link-icon"><i class="fas fa-compact-disc"></i></div>
-                                <div class="link-text">CDs & Vinyl</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/digital-music">
-                                <div class="link-icon"><i class="fas fa-music"></i></div>
-                                <div class="link-text">Digital Music</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/handmade">
-                                <div class="link-icon"><i class="fas fa-hands"></i></div>
-                                <div class="link-text">Handmade</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/video-on-demand">
-                                <div class="link-icon"><i class="fas fa-video"></i></div>
-                                <div class="link-text">Video On Demand: Rent or Buy</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/bluray-dvd">
-                                <div class="link-icon"><i class="fas fa-film"></i></div>
-                                <div class="link-text">Blu-Ray & DVD</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kategori 4: Otomotiv, Kitap ve Mutfak -->
-                <div class="category" data-category="automotive">
-                    <div class="category-header">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-car"></i></div>
-                            <div class="category-name">
-                                <h2>Otomotiv, Kitap ve Mutfak</h2>
-                                <p>Araçlar, kitaplar ve mutfak ürünleri</p>
-                            </div>
-                        </div>
-                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/automotive">
-                                <div class="link-icon"><i class="fas fa-car-side"></i></div>
-                                <div class="link-text">Automotive</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/books">
-                                <div class="link-icon"><i class="fas fa-book"></i></div>
-                                <div class="link-text">Books & Textbooks</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/kitchen-dining">
-                                <div class="link-icon"><i class="fas fa-utensils"></i></div>
-                                <div class="link-text">Kitchen & Dining</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kategori 5: Moda ve Elektronik -->
-                <div class="category active" data-category="fashion">
-                    <div class="category-header">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-shopping-bag"></i></div>
-                            <div class="category-name">
-                                <h2>Moda ve Elektronik</h2>
-                                <p>Giyim, aksesuar, elektronik ve akıllı cihazlar</p>
-                            </div>
-                        </div>
-                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/amazon-fashion-private-brands">
-                                <div class="link-icon"><i class="fas fa-crown"></i></div>
-                                <div class="link-text">Amazon Fashion Private Brands</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/blink-devices">
-                                <div class="link-icon"><i class="fas fa-video"></i></div>
-                                <div class="link-text">Blink Devices</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/clothing-accessories">
-                                <div class="link-icon"><i class="fas fa-tshirt"></i></div>
-                                <div class="link-text">Clothing & Accessories</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/echo-devices">
-                                <div class="link-icon"><i class="fas fa-microphone"></i></div>
-                                <div class="link-text">Echo Devices</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/fire-tv-devices">
-                                <div class="link-icon"><i class="fas fa-tv"></i></div>
-                                <div class="link-text">Fire TV Devices</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/fire-tablets">
-                                <div class="link-icon"><i class="fas fa-tablet-alt"></i></div>
-                                <div class="link-text">Fire Tablets</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/jewelry">
-                                <div class="link-icon"><i class="fas fa-gem"></i></div>
-                                <div class="link-text">Jewelry</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/kindle">
-                                <div class="link-icon"><i class="fas fa-book-reader"></i></div>
-                                <div class="link-text">Kindle E-readers</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/luggage">
-                                <div class="link-icon"><i class="fas fa-suitcase"></i></div>
-                                <div class="link-text">Luggage</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/ring-devices">
-                                <div class="link-icon"><i class="fas fa-door-closed"></i></div>
-                                <div class="link-text">Ring Devices</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/shoes-handbags">
-                                <div class="link-icon"><i class="fas fa-shoe-prints"></i></div>
-                                <div class="link-text">Shoes, Handbags, Wallets, Sunglasses</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/watches">
-                                <div class="link-icon"><i class="fas fa-clock"></i></div>
-                                <div class="link-text">Watches</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kategori 6: Ev ve Yaşam -->
-                <div class="category" data-category="home">
+                <!-- Category 1: Amazon Main Categories -->
+                <div class="category active" data-category="main">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-home"></i></div>
                             <div class="category-name">
-                                <h2>Ev ve Yaşam</h2>
-                                <p>Mobilya, ev geliştirme, bahçe ve daha fazlası</p>
+                                <h2 id="cat1Title">Amazon Main Categories</h2>
+                                <p id="cat1Desc">Basic Amazon services and main categories</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/fine-art">
-                                <div class="link-icon"><i class="fas fa-palette"></i></div>
-                                <div class="link-text">Fine Art</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/baby-nursery">
-                                <div class="link-icon"><i class="fas fa-baby"></i></div>
-                                <div class="link-text">Baby & Nursery</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/beauty-grooming">
-                                <div class="link-icon"><i class="fas fa-spa"></i></div>
-                                <div class="link-text">Beauty & Grooming</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/furniture">
-                                <div class="link-icon"><i class="fas fa-couch"></i></div>
-                                <div class="link-text">Furniture</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/home-improvement">
-                                <div class="link-icon"><i class="fas fa-tools"></i></div>
-                                <div class="link-text">Home Improvement</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/patio-lawn-garden">
-                                <div class="link-icon"><i class="fas fa-leaf"></i></div>
-                                <div class="link-text">Patio, Lawn & Garden</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/pet-supplies">
-                                <div class="link-icon"><i class="fas fa-paw"></i></div>
-                                <div class="link-text">Pet Food & Supplies</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
+                        <div class="links-grid" id="cat1Links">
+                            <!-- Links will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Diğer Kategoriler -->
-                <div class="category" data-category="other">
+                <!-- Category 2: Prime Membership & Subscriptions -->
+                <div class="category" data-category="prime">
                     <div class="category-header">
                         <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-th-large"></i></div>
+                            <div class="category-icon"><i class="fas fa-crown"></i></div>
                             <div class="category-name">
-                                <h2>Diğer Tüm Kategoriler</h2>
-                                <p>Diğer tüm Amazon kategorileri</p>
+                                <h2 id="cat2Title">Prime Membership & Subscriptions</h2>
+                                <p id="cat2Desc">Prime and other Amazon subscription services</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="links-container">
-                        <div class="links-grid">
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/amazon-fresh">
-                                <div class="link-icon"><i class="fas fa-apple-alt"></i></div>
-                                <div class="link-text">Amazon Fresh</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/grocery">
-                                <div class="link-icon"><i class="fas fa-shopping-basket"></i></div>
-                                <div class="link-text">Grocery & Gourmet Food</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/health-household">
-                                <div class="link-icon"><i class="fas fa-heartbeat"></i></div>
-                                <div class="link-text">Health & Household</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/video-games">
-                                <div class="link-icon"><i class="fas fa-gamepad"></i></div>
-                                <div class="link-text">Video Games</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/amazon-coins">
-                                <div class="link-icon"><i class="fas fa-coins"></i></div>
-                                <div class="link-text">Amazon Coins</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
-                            <a href="#" class="link-item" data-link="https://www.amazon.com/all-other-categories">
-                                <div class="link-icon"><i class="fas fa-list"></i></div>
-                                <div class="link-text">All Other Categories</div>
-                                <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
-                            </a>
+                        <div class="links-grid" id="cat2Links">
+                            <!-- Links will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- En Çok Satan Ürünler -->
-            <div class="featured-section">
-                <div class="section-title">
-                    <h2>🔥 En Çok Satan Ürünler</h2>
-                    <p style="margin-top: 15px; color: #666;">Amazon'da en popüler ve trend ürünler</p>
+                <!-- Category 3: Best Sellers -->
+                <div class="category" data-category="bestsellers">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat3Title">Best Sellers</h2>
+                                <p id="cat3Desc">Best selling products and categories on Amazon</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat3Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="products-grid" id="productsGrid">
-                    <!-- Product cards will be generated by JavaScript -->
+
+                <!-- Category 4: Movers & Shakers -->
+                <div class="category" data-category="movers">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat4Title">Movers & Shakers</h2>
+                                <p id="cat4Desc">Fastest rising products and categories</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat4Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: New Releases -->
+                <div class="category" data-category="newreleases">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-bell"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat5Title">New Releases</h2>
+                                <p id="cat5Desc">Newly released products and categories on Amazon</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat5Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 6: Other Amazon Services -->
+                <div class="category" data-category="services">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat6Title">Other Amazon Services</h2>
+                                <p id="cat6Desc">Registration, business and other special services</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat6Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
-
-        <footer>
-            <p><strong>Amazon Universe</strong> - Tüm Amazon bağlantıları tek platformda</p>
-            <div class="footer-links">
-                <a href="#"><i class="fas fa-shield-alt"></i> Gizlilik</a>
-                <a href="#"><i class="fas fa-file-contract"></i> Şartlar</a>
-                <a href="#"><i class="fas fa-question-circle"></i> Yardım</a>
-                <a href="#"><i class="fas fa-envelope"></i> İletişim</a>
-                <a href="#"><i class="fas fa-info-circle"></i> Hakkımızda</a>
-            </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p style="margin-top: 20px; font-size: 0.9rem;">© 2023 Amazon Universe. Tüm hakları saklıdır. Bu sayfa Amazon ile bağlantılı değildir.</p>
-        </footer>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Kategori açılır/kapanır fonksiyonu
+            console.log('Document loaded successfully');
+            
+            // Initialize variables
+            let isDarkTheme = true;
+            let lastScrollTop = 0;
+            const SCROLL_THRESHOLD = 100; // Pixels to scroll before hiding
+            
+            // DOM Elements
+            const themeToggleContainer = document.getElementById('themeToggleContainer');
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeText = themeToggleBtn.querySelector('.theme-text');
+            const body = document.body;
+            
+            // Theme toggle functionality
+            themeToggleBtn.addEventListener('click', function() {
+                isDarkTheme = !isDarkTheme;
+                if (isDarkTheme) {
+                    body.classList.remove('light-theme');
+                    themeText.textContent = 'Dark Theme';
+                    themeToggleBtn.querySelector('i').className = 'fas fa-moon';
+                } else {
+                    body.classList.add('light-theme');
+                    themeText.textContent = 'Light Theme';
+                    themeToggleBtn.querySelector('i').className = 'fas fa-sun';
+                }
+            });
+            
+            // Scroll event listener to make button invisible
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > SCROLL_THRESHOLD) {
+                    // Scrolled down - make button invisible but keep it in place
+                    themeToggleContainer.classList.add('hidden');
+                } else {
+                    // At top - make button visible
+                    themeToggleContainer.classList.remove('hidden');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // Links data with ALL icons
+            const linksData = {
+                cat1Links: [
+                    { text: "Echo & Alexa", link: "https://amzn.to/4prOwEW", icon: "fas fa-microphone-alt" },
+                    { text: "Fire Tablets", link: "https://amzn.to/4oKHv0O", icon: "fas fa-tablet-alt" },
+                    { text: "Amazon Luna – Cloud Gaming", link: "https://amzn.to/44L6LwQ", icon: "fas fa-cloud" },
+                    { text: "Amazon Fresh", link: "https://amzn.to/4plRIlw", icon: "fas fa-shopping-basket" },
+                    { text: "Whole Foods Market", link: "https://amzn.to/4rRMdNk", icon: "fas fa-leaf" },
+                    { text: "Amazon Go", link: "https://amzn.to/4pp57sZ", icon: "fas fa-store" },
+                    { text: "Amazon Haul: Find new faves for way less", link: "https://amzn.to/4ptLY9B", icon: "fas fa-shopping-bag" },
+                    { text: "Amazon: Luxury Stores", link: "https://amzn.to/3KAw9yC", icon: "fas fa-gem" },
+                    { text: "Amazon Fashion", link: "https://amzn.to/3XJIbIU", icon: "fas fa-tshirt" },
+                    { text: "Gift Shop", link: "https://amzn.to/4pZodGe", icon: "fas fa-gift" },
+                    { text: "Shop By Interest", link: "https://amzn.to/4aED5Fm", icon: "fas fa-shopping-cart" },
+                    { text: "Amazon Custom", link: "https://amzn.to/48K1QNM", icon: "fas fa-paint-brush" },
+                    { text: "Amazon Outlet", link: "https://amzn.to/4iNbd44", icon: "fas fa-tag" },
+                    { text: "Handpicked", link: "https://amzn.to/3XKfo78", icon: "fas fa-star" },
+                    { text: "Amazon live", link: "https://amzn.to/4oD35nT", icon: "fas fa-video" },
+                    { text: "Whole Foods Market Catering", link: "https://amzn.to/4a6DcJM", icon: "fas fa-utensils" },
+                    { text: "Amazon Shopping Spend less. Smile more.", link: "https://amzn.to/48OuZaP", icon: "fas fa-shopping-cart" },
+                    { text: "Amazon's Choice", link: "https://amzn.to/3KmPKCp", icon: "fas fa-award" },
+                    { text: "Trending Now", link: "https://amzn.to/4puvb6d", icon: "fas fa-fire" },
+                    { text: "Big Spring Sale Deals 40%", link: "https://amzn.to/44Ssran", icon: "fas fa-percent" },
+                    { text: "Amazon Basics", link: "https://amzn.to/3Mpqqw4", icon: "fas fa-box" },
+                    { text: "Gaming Deals", link: "https://amzn.to/3KRtO2j", icon: "fas fa-gamepad" },
+                    { text: "Amazon Gift Cards", link: "https://amzn.to/3XGKIDN", icon: "fas fa-credit-card" },
+                    { text: "Audible Deals", link: "https://amzn.to/48IDFj0", icon: "fas fa-headphones" },
+                    { text: "Amazon.com: Clothing, Shoes & Jewelry", link: "https://amzn.to/44YUAwp", icon: "fas fa-tshirt" }
+                ],
+                cat2Links: [
+                    { text: "Prime Free Trial", link: "https://amzn.to/3MQgyLO", icon: "fas fa-crown" },
+                    { text: "Prime for Young Adults Trial", link: "https://amzn.to/48K56su", icon: "fas fa-user-graduate" },
+                    { text: "Prime Paid Membership", link: "https://amzn.to/4rDAkdw", icon: "fas fa-crown" },
+                    { text: "Prime for Young Adults Paid Membership", link: "https://amzn.to/3XGLaSv", icon: "fas fa-user-graduate" },
+                    { text: "Prime Access Free Trial or Paid Membership", link: "https://amzn.to/4aCU5f5", icon: "fas fa-universal-access" },
+                    { text: "Prime Video Add-on Subscriptions - Free Trial", link: "https://amzn.to/4aCUmi7", icon: "fas fa-video" },
+                    { text: "Prime Video Add-on Subscriptions - Paid", link: "https://amzn.to/4iIXyuK", icon: "fas fa-video" },
+                    { text: "Audible Plus Free Trial", link: "https://amzn.to/3MyPL6F", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Free Trial", link: "https://amzn.to/4q25Twb", icon: "fas fa-headphones" },
+                    { text: "Audible Plus Membership", link: "https://amzn.to/4oK2GQH", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Annual Membership", link: "https://amzn.to/4oHO2cE", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Monthly Membership", link: "https://amzn.to/3YesARM", icon: "fas fa-headphones" },
+                    { text: "Audible Gift Membership: 1-3-6-12 month plan", link: "https://amzn.to/44DN6z5", icon: "fas fa-gift" },
+                    { text: "Kindle Unlimited Free Trial", link: "https://amzn.to/44WaKGQ", icon: "fas fa-book" },
+                    { text: "Kindle Unlimited Special Promos", link: "https://amzn.to/4q2Zl0m", icon: "fas fa-book" },
+                    { text: "Kindle Unlimited Membership: 6-12-24 month plan", link: "https://amzn.to/3MqluXM", icon: "fas fa-book" },
+                    { text: "Amazon Music Unlimited Free Trial", link: "https://amzn.to/4iMeccM", icon: "fas fa-music" },
+                    { text: "Amazon Music Unlimited Paid Subscription", link: "https://amzn.to/4psmjhp", icon: "fas fa-music" },
+                    { text: "Amazon Music Unlimited Special Promotions", link: "https://amzn.to/48Rd5Eu", icon: "fas fa-music" },
+                    { text: "Prime Music Free Trial", link: "https://amzn.to/4rGSHOJ", icon: "fas fa-music" },
+                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4rNcn3u", icon: "fas fa-baby-carriage" },
+                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/4iI43xO", icon: "fas fa-ring" },
+                    { text: "EBT Card Registration", link: "https://amzn.to/3YnOHFj", icon: "fas fa-credit-card" },
+                    { text: "Amazon Business", link: "https://amzn.to/4p2JSMV", icon: "fas fa-briefcase" },
+                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/3MyGnjs", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/4oO0yrg", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/4q2c7fu", icon: "fas fa-child" },
+                    { text: "Prime Exclusives", link: "https://amzn.to/3XJrqh6", icon: "fas fa-percent" },
+                    { text: "Prime Gaming", link: "https://amzn.to/4pzmFTA", icon: "fas fa-gamepad" },
+                    { text: "Pet Food & Supplies", link: "https://amzn.to/4pTOG7R", icon: "fas fa-paw" },
+                    { text: "Prime Book Box", link: "https://amzn.to/4iWzzbB", icon: "fas fa-box-open" },
+                    { text: "The Drop Text Alerts", link: "https://amzn.to/4pXBOO4", icon: "fas fa-sms" },
+                    { text: "Prime for Young Adults Trial", link: "https://amzn.to/4rKreeX", icon: "fas fa-user-graduate" },
+                    { text: "Prime Access Free Trial", link: "https://amzn.to/48NC9fz", icon: "fas fa-universal-access" },
+                    { text: "Home Services | Amazon.com", link: "https://amzn.to/3MOjxEA", icon: "fas fa-home" }
+                ],
+                cat3Links: [
+                    { text: "Any Department", link: "https://amzn.to/3MpZfBg", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3MOnp8x", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/3MniyeB", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/4pXiroi", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4pXJH6g", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/3Yh8syl", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/4iICaFY", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/3Mt9lBm", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/4a65nbK", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4iPsGZC", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/44iuT9V", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/4pDBNyY", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4pz1p0e", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4iLSOV2", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4a7znnG", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/4a6kkuq", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/44PHaTr", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/48trqIe", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4pXK1C0", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/3KR2y3U", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/3XFRmtU", icon: "fas fa-film" },
+                    { text: "Gift Cards", link: "https://amzn.to/4iSawGO", icon: "fas fa-credit-card" },
+                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/48ywFow", icon: "fas fa-shopping-basket" },
+                    { text: "Handmade Products", link: "https://amzn.to/4a07jm2", icon: "fas fa-hands" },
+                    { text: "Health & Household", link: "https://amzn.to/4p2lVFv", icon: "fas fa-heartbeat" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4oMFjGa", icon: "fas fa-home" },
+                    { text: "Industrial & Scientific", link: "https://amzn.to/3Yh90nT", icon: "fas fa-flask" },
+                    { text: "Kindle Store", link: "https://amzn.to/48OcbZh", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/3YfmxMG", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/4a07rSy", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/3XJ5S4c", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4oJH3Qv", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/44g9qOV", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4rNjOHQ", icon: "fas fa-paw" },
+                    { text: "Software", link: "https://amzn.to/3MPmoNx", icon: "fas fa-download" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/4oF4oD3", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/4oF4tGR", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/44Ds5EH", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4qimeNt", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4pstNAQ", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/4rKyXtJ", icon: "fas fa-gamepad" }
+                ],
+                cat4Links: [
+                    { text: "Any Department", link: "https://amzn.to/3XJGOdb", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3MqCFIU", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/4oEOOqR", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/3YgXU2h", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4a6SfDk", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/4oF6jYh", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/4p2o2cp", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/4aoNdSP", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/3KPQIag", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4pVKsMW", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/4poUDtF", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/4oF6xyB", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4pmHuBr", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4oLEVYG", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4rJCVmg", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/3Mtc6CI", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/4ptzIWD", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/3Mq2kkO", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4rDinf8", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/4rMMYXM", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/4rDiuY6", icon: "fas fa-film" },
+                    { text: "Gift Cards", link: "https://amzn.to/4aDL8SM", icon: "fas fa-credit-card" },
+                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/3Mywxy1", icon: "fas fa-shopping-basket" },
+                    { text: "Handmade Products", link: "https://amzn.to/48rY1xZ", icon: "fas fa-hands" },
+                    { text: "Health & Household", link: "https://amzn.to/3MtcqBq", icon: "fas fa-heartbeat" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4plZtYE", icon: "fas fa-home" },
+                    { text: "Kindle Store", link: "https://amzn.to/3MsaetV", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/48rY6lh", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/48NpARf", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/3KAk4cK", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4rNcdZS", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/3KwDtLD", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/3XJHj73", icon: "fas fa-paw" },
+                    { text: "Software", link: "https://amzn.to/48vae4Y", icon: "fas fa-download" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/3MqD4Lq", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/4aoNqp5", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/3KGopeg", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4oET0H5", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4p2opUl", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/48JX3vO", icon: "fas fa-gamepad" }
+                ],
+                cat5Links: [
+                    { text: "Any Department", link: "https://amzn.to/3KMG3NA", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/4aER7a2", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/3KOhyj6", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/3XJLf7W", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4rL6x2D", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/4rL2u6x", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/44lqtPI", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/4j5Wfq9", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/4rJlbay", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4j5WnWF", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/4aDJNeI", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/44ZCwSS", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4rNwRJA", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/3KLKtnX", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/48YVpaV", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/44iwfBx", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/48sruI3", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/44cCsz2", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4prBYxk", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/4rTD7Q7", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/4psuLwY", icon: "fas fa-film" },
+                    { text: "Handmade Products", link: "https://amzn.to/4aFfODf", icon: "fas fa-hands" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4pmGL3b", icon: "fas fa-home" },
+                    { text: "Kindle Store", link: "https://amzn.to/4prsySr", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/3XN1dhw", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/4oI4Q3a", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/4rM1Oh3", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4oF5DlH", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/3Ynsya9", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4oPpu1v", icon: "fas fa-paw" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/4aGmdhr", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/48KkJjQ", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/4oJIPkD", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4oJoRXm", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4pXLSXu", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/44cCWVS", icon: "fas fa-gamepad" }
+                ],
+                cat6Links: [
+                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4rNcn3u", icon: "fas fa-baby-carriage" },
+                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/4iI43xO", icon: "fas fa-ring" },
+                    { text: "EBT Card Registration", link: "https://amzn.to/3YnOHFj", icon: "fas fa-credit-card" },
+                    { text: "Amazon Business", link: "https://amzn.to/4p2JSMV", icon: "fas fa-briefcase" },
+                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/3MyGnjs", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/4oO0yrg", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/4q2c7fu", icon: "fas fa-child" },
+                    { text: "Prime Exclusives", link: "https://amzn.to/3XJrqh6", icon: "fas fa-percent" },
+                    { text: "Prime Gaming", link: "https://amzn.to/4pzmFTA", icon: "fas fa-gamepad" },
+                    { text: "Pet Food & Supplies", link: "https://amzn.to/4pTOG7R", icon: "fas fa-paw" }
+                ]
+            };
+            
+            // Function to update category links
+            function updateCategoryLinks(containerId, links) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                
+                links.forEach(link => {
+                    const linkItem = document.createElement('a');
+                    linkItem.className = 'link-item';
+                    linkItem.setAttribute('href', '#');
+                    linkItem.setAttribute('data-link', link.link);
+                    linkItem.innerHTML = `
+                        <div class="link-icon"><i class="${link.icon}"></i></div>
+                        <div class="link-text">${link.text}</div>
+                        <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
+                    `;
+                    container.appendChild(linkItem);
+                });
+                
+                // Re-attach click event listeners
+                attachLinkClickListeners();
+            }
+            
+            // Function to attach click listeners to links
+            function attachLinkClickListeners() {
+                const linkItems = document.querySelectorAll('.link-item');
+                const notification = document.getElementById('notification');
+                
+                linkItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const link = this.getAttribute('data-link');
+                        
+                        // Open link in new tab
+                        window.open(link, '_blank');
+                        
+                        // Copy to clipboard
+                        navigator.clipboard.writeText(link).then(() => {
+                            // Show notification
+                            notification.classList.add('show');
+                            
+                            setTimeout(() => {
+                                notification.classList.remove('show');
+                            }, 3000);
+                        });
+                    });
+                });
+            }
+            
+            // Category expand/collapse functionality
             const categoryHeaders = document.querySelectorAll('.category-header');
             categoryHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     const category = this.parentElement;
-                    category.classList.toggle('active');
+                    const isActive = category.classList.contains('active');
                     
-                    // Diğer kategorileri kapat
-                    if (category.classList.contains('active')) {
-                        document.querySelectorAll('.category').forEach(otherCategory => {
-                            if (otherCategory !== category) {
-                                otherCategory.classList.remove('active');
-                            }
-                        });
+                    // Close all categories first
+                    document.querySelectorAll('.category').forEach(cat => {
+                        cat.classList.remove('active');
+                    });
+                    
+                    // If it wasn't active before, activate it
+                    if (!isActive) {
+                        category.classList.add('active');
+                        
+                        // Scroll the category into view with some offset
+                        setTimeout(() => {
+                            category.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                        }, 300);
                     }
                 });
             });
-
-            // Link tıklama işleyicisi
-            const linkItems = document.querySelectorAll('.link-item');
-            const notification = document.getElementById('notification');
             
-            linkItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const link = this.getAttribute('data-link');
-                    const linkText = this.querySelector('.link-text').textContent;
-                    
-                    // Linki yeni sekmede aç
-                    window.open(link, '_blank');
-                    
-                    // Linki panoya kopyala
-                    navigator.clipboard.writeText(link).then(() => {
-                        // Bildirim göster
-                        notification.querySelector('.notification-text').textContent = `${linkText} linki kopyalandı!`;
-                        notification.classList.add('show');
-                        
-                        setTimeout(() => {
-                            notification.classList.remove('show');
-                        }, 3000);
-                    });
-                    
-                    // Tıklanan öğeye efekt ekle
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                });
-            });
-
-            // Arama fonksiyonu
+            // Search functionality
             const searchBox = document.getElementById('searchBox');
             searchBox.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
@@ -1174,27 +1496,21 @@
                     
                     let hasMatch = categoryName.includes(searchTerm) || categoryDesc.includes(searchTerm);
                     
-                    // Linklerde arama
+                    // Search in links
                     links.forEach(link => {
                         const linkText = link.textContent.toLowerCase();
                         if (linkText.includes(searchTerm)) {
                             hasMatch = true;
                             link.parentElement.style.display = 'flex';
-                            link.parentElement.style.animation = 'none';
-                            setTimeout(() => {
-                                link.parentElement.style.animation = '';
-                            }, 10);
                         } else {
                             link.parentElement.style.display = 'none';
                         }
                     });
                     
-                    // Kategori görünürlüğü
+                    // Show/hide category based on search results
                     if (hasMatch || searchTerm === '') {
                         category.style.display = 'block';
-                        category.style.animation = 'fadeInUp 0.5s ease';
-                        
-                        // Eşleşen linkleri göster
+                        // Open category if there's a search term
                         if (searchTerm !== '') {
                             category.classList.add('active');
                         }
@@ -1202,7 +1518,7 @@
                         category.style.display = 'none';
                     }
                     
-                    // Arama yoksa tüm linkleri göster
+                    // Show all links if no search
                     if (searchTerm === '') {
                         category.querySelectorAll('.link-item').forEach(link => {
                             link.style.display = 'flex';
@@ -1210,62 +1526,13 @@
                     }
                 });
             });
-
-            // En çok satan ürünleri oluştur
-            const productsGrid = document.getElementById('productsGrid');
-            const products = [
-                { id: 1, name: 'Echo Dot (4th Gen) - Smart speaker with Alexa', price: '$49.99', rating: 4.7, category: 'electronics', badge: 'Best Seller' },
-                { id: 2, name: 'Fire TV Stick 4K streaming device', price: '$39.99', rating: 4.6, category: 'electronics', badge: 'Amazon\'s Choice' },
-                { id: 3, name: 'Kindle Paperwhite - Now with a 6.8" display', price: '$139.99', rating: 4.8, category: 'electronics', badge: 'Top Rated' },
-                { id: 4, name: 'Apple AirPods Pro (2nd Generation)', price: '$249.00', rating: 4.7, category: 'electronics', badge: 'Hot Deal' },
-                { id: 5, name: 'Instant Pot Duo 7-in-1 Electric Pressure Cooker', price: '$99.95', rating: 4.7, category: 'home', badge: 'Best Seller' },
-                { id: 6, name: 'Ninja Air Fryer, 4 Quart Capacity', price: '$89.99', rating: 4.6, category: 'home', badge: 'Amazon\'s Choice' },
-                { id: 7, name: 'LEGO Star Wars Millennium Falcon', price: '$169.99', rating: 4.9, category: 'toys', badge: 'Popular' },
-                { id: 8, name: 'PlayStation 5 Console - Marvel\'s Spider-Man 2 Bundle', price: '$559.99', rating: 4.8, category: 'games', badge: 'Trending' },
-            ];
-
-            products.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.innerHTML = `
-                    <div class="product-badge">${product.badge}</div>
-                    <div class="product-image">
-                        <i class="fas fa-${product.category === 'electronics' ? 'mobile-alt' : product.category === 'home' ? 'home' : product.category === 'toys' ? 'gamepad' : 'shopping-bag'}"></i>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">${product.name}</div>
-                        <div class="product-rating">
-                            ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))} (${product.rating})
-                        </div>
-                        <div class="product-price">${product.price}</div>
-                        <a href="#" class="product-button" data-product-id="${product.id}">View on Amazon</a>
-                    </div>
-                `;
-                productsGrid.appendChild(productCard);
+            
+            // Initialize links
+            Object.keys(linksData).forEach(category => {
+                updateCategoryLinks(category, linksData[category]);
             });
-
-            // Ürün butonlarına tıklama
-            document.querySelectorAll('.product-button').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const productId = this.getAttribute('data-product-id');
-                    const product = products.find(p => p.id == productId);
-                    
-                    // Bildirim göster
-                    notification.querySelector('.notification-text').textContent = `${product.name} için Amazon sayfası açılıyor...`;
-                    notification.classList.add('show');
-                    
-                    // Simüle edilmiş Amazon linki
-                    const amazonLink = `https://www.amazon.com/product-${productId}`;
-                    window.open(amazonLink, '_blank');
-                    
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                    }, 2000);
-                });
-            });
-
-            // Animasyonları başlat
+            
+            // Animate categories
             const categories = document.querySelectorAll('.category');
             categories.forEach((category, index) => {
                 category.style.animationDelay = `${index * 0.1}s`;
@@ -1274,45 +1541,19 @@
                     category.style.transform = 'translateY(0)';
                 }, 100 + index * 100);
             });
-
-            // Moda kategorisini varsayılan olarak açık tut
-            document.querySelector('.category[data-category="fashion"]').classList.add('active');
             
-            // Floating element animasyonları
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 2}s`;
+            // Keep main category open by default
+            document.querySelector('.category[data-category="main"]').classList.add('active');
+            
+            // Prevent scroll on links container from bubbling to body
+            document.querySelectorAll('.links-container').forEach(container => {
+                container.addEventListener('wheel', function(e) {
+                    if (this.scrollHeight > this.clientHeight) {
+                        e.stopPropagation();
+                    }
+                });
             });
         });
-
-        // Rastgele renk efekti
-        function getRandomColor() {
-            const colors = ['#ff9900', '#146eb4', '#8a2be2', '#00a8a8', '#e74c3c', '#2ecc71'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        // Rastgele link ikonuna efekt ekle
-        setInterval(() => {
-            const linkIcons = document.querySelectorAll('.link-icon');
-            if (linkIcons.length > 0) {
-                const randomIndex = Math.floor(Math.random() * linkIcons.length);
-                const randomIcon = linkIcons[randomIndex];
-                
-                // Geçici renk değişimi
-                const originalColor = randomIcon.style.backgroundColor;
-                const originalTextColor = randomIcon.style.color;
-                
-                randomIcon.style.backgroundColor = getRandomColor();
-                randomIcon.style.color = 'white';
-                randomIcon.style.transform = 'scale(1.2) rotate(10deg)';
-                
-                setTimeout(() => {
-                    randomIcon.style.backgroundColor = originalColor;
-                    randomIcon.style.color = originalTextColor;
-                    randomIcon.style.transform = '';
-                }, 800);
-            }
-        }, 4000);
     </script>
 </body>
 </html>

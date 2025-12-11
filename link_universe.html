@@ -475,18 +475,18 @@
         }
 
         .category.active .links-container {
-            max-height: 500px;
-            transition: max-height 1s ease-in-out;
-            overflow-y: auto;
-        }
+			max-height: 700px; /* 500px'ten 700px'e çıkarıldı */
+			transition: max-height 1s ease-in-out;
+			overflow-y: auto;
+		}
 
-        .links-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            padding: 30px;
-            max-height: 450px;
-        }
+		.links-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 20px;
+			padding: 30px;
+			max-height: 650px; /* 450px'ten 650px'e çıkarıldı */
+		}
 
         /* Custom scrollbar for links container */
         .category.active .links-container::-webkit-scrollbar {
@@ -751,13 +751,13 @@
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             }
             
-            .category.active .links-container {
-                max-height: 600px;
-            }
-            
-            .links-grid {
-                max-height: 550px;
-            }
+             .category.active .links-container {
+				max-height: 800px; /* 600px'ten 800px'e çıkarıldı */
+			}
+			
+			.links-grid {
+				max-height: 750px; /* 550px'ten 750px'e çıkarıldı */
+			}
         }
 
         @media (min-width: 992px) {
@@ -774,13 +774,13 @@
                 font-size: 4rem;
             }
             
-            .category.active .links-container {
-                max-height: 700px;
-            }
-            
-            .links-grid {
-                max-height: 650px;
-            }
+             .category.active .links-container {
+				max-height: 900px; /* 700px'ten 900px'e çıkarıldı */
+			}
+			
+			.links-grid {
+				max-height: 850px; /* 650px'ten 850px'e çıkarıldı */
+			}
         }
 
         @media (max-width: 576px) {
@@ -863,13 +863,13 @@
             }
             
             .category.active .links-container {
-                max-height: 400px;
-            }
-            
-            .links-grid {
-                max-height: 380px;
-                padding: 20px;
-            }
+				max-height: 500px; /* 400px'ten 500px'e çıkarıldı */
+			}
+			
+			.links-grid {
+				max-height: 480px; /* 380px'ten 480px'e çıkarıldı */
+				padding: 20px;
+			}
         }
 
         @media (max-width: 400px) {
@@ -1174,6 +1174,25 @@
             const themeText = themeToggleBtn.querySelector('.theme-text');
             const body = document.body;
             
+            // TEMA KAYDETME ÖZELLİĞİ - SAYFA YÜKLENDİĞİNDE KONTROL ET
+            const savedTheme = localStorage.getItem('preferredTheme');
+            if (savedTheme === 'light') {
+                isDarkTheme = false;
+                body.classList.add('light-theme');
+                themeText.textContent = 'Light Theme';
+                themeToggleBtn.querySelector('i').className = 'fas fa-sun';
+            } else {
+                // Varsayılan olarak dark theme
+                isDarkTheme = true;
+                body.classList.remove('light-theme');
+                themeText.textContent = 'Dark Theme';
+                themeToggleBtn.querySelector('i').className = 'fas fa-moon';
+                // Eğer hiç tema kaydedilmemişse, dark theme kaydet
+                if (!savedTheme) {
+                    localStorage.setItem('preferredTheme', 'dark');
+                }
+            }
+            
             // Theme toggle functionality
             themeToggleBtn.addEventListener('click', function() {
                 isDarkTheme = !isDarkTheme;
@@ -1181,10 +1200,14 @@
                     body.classList.remove('light-theme');
                     themeText.textContent = 'Dark Theme';
                     themeToggleBtn.querySelector('i').className = 'fas fa-moon';
+                    // Tema tercihini kaydet
+                    localStorage.setItem('preferredTheme', 'dark');
                 } else {
                     body.classList.add('light-theme');
                     themeText.textContent = 'Light Theme';
                     themeToggleBtn.querySelector('i').className = 'fas fa-sun';
+                    // Tema tercihini kaydet
+                    localStorage.setItem('preferredTheme', 'light');
                 }
             });
             

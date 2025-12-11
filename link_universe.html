@@ -156,13 +156,14 @@
 
         /* Theme Toggle Button - Fixed in left corner, becomes invisible on scroll but stays in place */
         .theme-toggle-container {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            transition: opacity 0.5s ease;
-            opacity: 1;
-        }
+			position: fixed;
+			top: 20px;
+			right: 20px; /* SOL -> SAĞ */
+			left: auto; /* left özelliğini kaldır */
+			z-index: 1000;
+			transition: opacity 0.5s ease;
+			opacity: 1;
+		}
 
         .theme-toggle-container.hidden {
             opacity: 0;
@@ -786,7 +787,8 @@
         @media (max-width: 576px) {
             .theme-toggle-container {
                 top: 15px;
-                left: 15px;
+				right: 15px; /* SAĞDAN 15px */
+				left: auto;
             }
             
             .theme-toggle-btn {
@@ -876,7 +878,8 @@
         @media (max-width: 400px) {
             .theme-toggle-container {
                 top: 10px;
-                left: 10px;
+				right: 10px; /* SAĞDAN 10px */
+				left: auto;
             }
             
             .theme-toggle-btn {
@@ -1034,14 +1037,13 @@
                     <img src="https://i.hizliresim.com/8fn897l.gif" alt="Discount Campaign">
                 </div>
                 <div class="logo-text">
-                    <h1 id="mainTitle">Discount Opportunity Campaign Universe</h1>
-                    <span id="mainSubtitle"></span>
+                    
                 </div>
             </div>
             <p class="subtitle" id="mainDescription">All best-selling products, services and special links from all Amazon categories in a single platform. Expand the categories below to access related links.</p>
             
             <div class="search-container">
-                <input type="text" class="search-box" id="searchBox" placeholder="Search in categories or links...">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search in categories...">
                 <div class="search-icon"><i class="fas fa-search"></i></div>
             </div>
         </header>

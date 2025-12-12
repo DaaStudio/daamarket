@@ -1101,47 +1101,57 @@
             const notification = document.getElementById('notification');
             const notificationText = notification.querySelector('.notification-text');
             
-            // Check URL for theme
+            // TEMA KONTROL FONKSİYONU - DÜZELTİLMİŞ
             function checkUrlTheme() {
                 const hash = window.location.hash.substring(1);
                 const savedTheme = localStorage.getItem('preferredTheme');
                 
-                let theme = 'dark'; // Default theme
+                let theme = 'dark'; // Varsayılan tema
                 
-                // First check URL hash
+                // Önce URL hash'ine bak
                 if (hash === 'light') {
                     theme = 'light';
-                } else if (hash === 'blue') {
-                    theme = 'blue';
                 }
-                // Then check localStorage
-                else if (savedTheme === 'light' || savedTheme === 'blue') {
+                // Yoksa localStorage'a bak
+                else if (savedTheme === 'light') {
                     theme = savedTheme;
                 }
                 
-                // Apply theme
+                // Temayı uygula
+                applyTheme(theme);
+                
+                console.log('Applied theme:', theme, 'from hash:', hash, 'saved:', savedTheme);
+            }
+            
+            function applyTheme(theme) {
+                // Tema sınıfını kaldır
+                body.classList.remove('light-theme');
+                
+                // Seçilen temayı uygula
                 if (theme === 'light') {
-                    isDarkTheme = false;
                     body.classList.add('light-theme');
-                } else if (theme === 'blue') {
                     isDarkTheme = false;
-                    body.classList.add('blue-theme');
                 } else {
+                    // Varsayılan: dark theme (sınıf eklenmez)
                     isDarkTheme = true;
-                    body.classList.remove('light-theme', 'blue-theme');
                 }
                 
-                // Save theme preference
+                // Tema tercihini kaydet
                 localStorage.setItem('preferredTheme', theme);
             }
             
-            // Apply theme on page load
+            // Sayfa yüklendiğinde temayı kontrol et
             checkUrlTheme();
             
-            // Listen for hash changes
+            // Hash değişikliklerini dinle
             window.addEventListener('hashchange', function() {
+                console.log('Hash changed to:', window.location.hash);
                 checkUrlTheme();
             });
+            
+            // Debug için
+            console.log('Initial hash:', window.location.hash);
+            console.log('Initial theme:', localStorage.getItem('preferredTheme'));
             
             // Links data with ALL icons
             const linksData = {

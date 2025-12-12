@@ -154,105 +154,6 @@
             position: relative;
         }
 
-        /* Menu Button - Fixed in left corner */
-        .menu-button-container {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            transition: opacity 0.5s ease;
-            opacity: 1;
-        }
-
-        .menu-button-container.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .menu-button {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            color: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-            transition: var(--transition);
-            font-size: 14px;
-            min-width: 150px;
-            text-decoration: none;
-        }
-
-        .light-theme .menu-button {
-            background: rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            color: #333;
-        }
-
-        .menu-button:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
-        .light-theme .menu-button:hover {
-            background: rgba(0, 0, 0, 0.12);
-        }
-
-        /* Theme Toggle Button - Fixed in right corner */
-        .theme-toggle-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            transition: opacity 0.5s ease;
-            opacity: 1;
-        }
-
-        .theme-toggle-container.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .theme-toggle-btn {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            color: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-            transition: var(--transition);
-            font-size: 14px;
-            min-width: 150px;
-        }
-
-        .light-theme .theme-toggle-btn {
-            background: rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            color: #333;
-        }
-
-        .theme-toggle-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
-        .light-theme .theme-toggle-btn:hover {
-            background: rgba(0, 0, 0, 0.12);
-        }
-
         /* Header Styles */
         header {
             text-align: center;
@@ -647,12 +548,46 @@
             opacity: 0.95;
         }
 
+        .link-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .light-theme .share-btn {
+            background: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .share-btn:hover {
+            background: var(--success);
+            color: white;
+            transform: scale(1.1);
+            border-color: var(--success);
+        }
+
         .link-arrow {
             color: var(--text-muted);
             transition: var(--transition);
             font-size: 1.3rem;
             flex-shrink: 0;
-            margin-left: 15px;
+            margin-left: 5px;
             opacity: 0.8;
         }
 
@@ -697,12 +632,20 @@
 
         .notification-icon {
             font-size: 1.8rem;
-            color: var(--primary);
+            color: var(--success);
         }
 
         .notification-text {
             font-weight: 600;
             font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .notification-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+            font-weight: 400;
         }
 
         /* Animations */
@@ -834,23 +777,6 @@
         }
 
         @media (max-width: 576px) {
-            .menu-button-container {
-                top: 15px;
-                left: 15px;
-            }
-            
-            .theme-toggle-container {
-                top: 15px;
-                right: 15px;
-            }
-            
-            .menu-button,
-            .theme-toggle-btn {
-                padding: 10px 16px;
-                font-size: 13px;
-                min-width: 130px;
-            }
-            
             .category-header {
                 padding: 20px 25px;
             }
@@ -886,6 +812,12 @@
             .link-text {
                 font-size: 1rem;
                 line-height: 1.3;
+            }
+            
+            .share-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
             }
             
             .logo-text h1 {
@@ -930,23 +862,6 @@
         }
 
         @media (max-width: 400px) {
-            .menu-button-container {
-                top: 10px;
-                left: 10px;
-            }
-            
-            .theme-toggle-container {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .menu-button,
-            .theme-toggle-btn {
-                padding: 8px 14px;
-                min-width: 120px;
-                font-size: 12px;
-            }
-            
             .logo-text h1 {
                 font-size: 1.6rem;
                 line-height: 1.3;
@@ -981,68 +896,16 @@
                 margin-right: 15px;
             }
             
+            .share-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
             .links-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
                 padding: 18px;
-            }
-        }
-
-        @media (max-width: 350px) {
-            .menu-button,
-            .theme-toggle-btn {
-                min-width: auto;
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-                padding: 0;
-                justify-content: center;
-                overflow: hidden;
-            }
-            
-            .menu-button .menu-text,
-            .theme-toggle-btn .theme-text {
-                display: none;
-            }
-            
-            .menu-button i,
-            .theme-toggle-btn i {
-                margin: 0;
-                font-size: 1.2rem;
-            }
-            
-            .category-header {
-                padding: 15px 18px;
-            }
-            
-            .category-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .category-name h2 {
-                font-size: 1.2rem;
-            }
-            
-            .link-item {
-                padding: 15px;
-            }
-            
-            .link-icon {
-                width: 40px;
-                height: 40px;
-                margin-right: 12px;
-                font-size: 1.1rem;
-            }
-            
-            .link-text {
-                font-size: 0.95rem;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.4rem;
-                line-height: 1.3;
             }
         }
 
@@ -1079,26 +942,13 @@
         <div class="floating-element"></div>
     </div>
 
-    <!-- Menu Button - Fixed in left corner -->
-    <div class="menu-button-container" id="menuButtonContainer">
-        <a href="https://daastudio.github.io/daamarket/menu.html" class="menu-button" id="menuButton">
-            <i class="fas fa-bars"></i>
-            <span class="menu-text">Menu</span>
-        </a>
-    </div>
-
-    <!-- Theme Toggle Button - Fixed in right corner -->
-    <div class="theme-toggle-container" id="themeToggleContainer">
-        <div class="theme-toggle-btn" id="themeToggleBtn">
-            <i class="fas fa-moon"></i>
-            <span class="theme-text">Dark Theme</span>
-        </div>
-    </div>
-
     <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-icon"><i class="fas fa-check-circle"></i></div>
-        <div class="notification-text">Link copied!</div>
+        <div class="notification-text">
+            <div>Link copied to clipboard!</div>
+            <div class="notification-subtext">You can now share it wherever you want</div>
+        </div>
     </div>
 
     <div class="container">
@@ -1245,68 +1095,52 @@
             
             // Initialize variables
             let isDarkTheme = true;
-            let lastScrollTop = 0;
-            const SCROLL_THRESHOLD = 100; // Pixels to scroll before hiding
             
             // DOM Elements
-            const menuButtonContainer = document.getElementById('menuButtonContainer');
-            const themeToggleContainer = document.getElementById('themeToggleContainer');
-            const themeToggleBtn = document.getElementById('themeToggleBtn');
-            const themeText = themeToggleBtn.querySelector('.theme-text');
             const body = document.body;
+            const notification = document.getElementById('notification');
+            const notificationText = notification.querySelector('.notification-text');
             
-            // TEMA KAYDETME ÖZELLİĞİ - SAYFA YÜKLENDİĞİNDE KONTROL ET
-            const savedTheme = localStorage.getItem('preferredTheme');
-            if (savedTheme === 'light') {
-                isDarkTheme = false;
-                body.classList.add('light-theme');
-                themeText.textContent = 'Light Theme';
-                themeToggleBtn.querySelector('i').className = 'fas fa-sun';
-            } else {
-                // Varsayılan olarak dark theme
-                isDarkTheme = true;
-                body.classList.remove('light-theme');
-                themeText.textContent = 'Dark Theme';
-                themeToggleBtn.querySelector('i').className = 'fas fa-moon';
-                // Eğer hiç tema kaydedilmemişse, dark theme kaydet
-                if (!savedTheme) {
-                    localStorage.setItem('preferredTheme', 'dark');
+            // Check URL for theme
+            function checkUrlTheme() {
+                const hash = window.location.hash.substring(1);
+                const savedTheme = localStorage.getItem('preferredTheme');
+                
+                let theme = 'dark'; // Default theme
+                
+                // First check URL hash
+                if (hash === 'light') {
+                    theme = 'light';
+                } else if (hash === 'blue') {
+                    theme = 'blue';
                 }
+                // Then check localStorage
+                else if (savedTheme === 'light' || savedTheme === 'blue') {
+                    theme = savedTheme;
+                }
+                
+                // Apply theme
+                if (theme === 'light') {
+                    isDarkTheme = false;
+                    body.classList.add('light-theme');
+                } else if (theme === 'blue') {
+                    isDarkTheme = false;
+                    body.classList.add('blue-theme');
+                } else {
+                    isDarkTheme = true;
+                    body.classList.remove('light-theme', 'blue-theme');
+                }
+                
+                // Save theme preference
+                localStorage.setItem('preferredTheme', theme);
             }
             
-            // Theme toggle functionality
-            themeToggleBtn.addEventListener('click', function() {
-                isDarkTheme = !isDarkTheme;
-                if (isDarkTheme) {
-                    body.classList.remove('light-theme');
-                    themeText.textContent = 'Dark Theme';
-                    themeToggleBtn.querySelector('i').className = 'fas fa-moon';
-                    // Tema tercihini kaydet
-                    localStorage.setItem('preferredTheme', 'dark');
-                } else {
-                    body.classList.add('light-theme');
-                    themeText.textContent = 'Light Theme';
-                    themeToggleBtn.querySelector('i').className = 'fas fa-sun';
-                    // Tema tercihini kaydet
-                    localStorage.setItem('preferredTheme', 'light');
-                }
-            });
+            // Apply theme on page load
+            checkUrlTheme();
             
-            // Scroll event listener to make buttons invisible
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > SCROLL_THRESHOLD) {
-                    // Scrolled down - make buttons invisible but keep them in place
-                    menuButtonContainer.classList.add('hidden');
-                    themeToggleContainer.classList.add('hidden');
-                } else {
-                    // At top - make buttons visible
-                    menuButtonContainer.classList.remove('hidden');
-                    themeToggleContainer.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollTop;
+            // Listen for hash changes
+            window.addEventListener('hashchange', function() {
+                checkUrlTheme();
             });
             
             // Links data with ALL icons
@@ -1518,13 +1352,18 @@
                 container.innerHTML = '';
                 
                 links.forEach(link => {
-                    const linkItem = document.createElement('a');
+                    const linkItem = document.createElement('div');
                     linkItem.className = 'link-item';
-                    linkItem.setAttribute('href', '#');
                     linkItem.setAttribute('data-link', link.link);
+                    linkItem.setAttribute('data-title', link.text);
                     linkItem.innerHTML = `
                         <div class="link-icon"><i class="${link.icon}"></i></div>
                         <div class="link-text">${link.text}</div>
+                        <div class="link-actions">
+                            <div class="share-btn" title="Copy link to share">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
                         <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
                     `;
                     container.appendChild(linkItem);
@@ -1537,25 +1376,71 @@
             // Function to attach click listeners to links
             function attachLinkClickListeners() {
                 const linkItems = document.querySelectorAll('.link-item');
-                const notification = document.getElementById('notification');
+                const shareButtons = document.querySelectorAll('.share-btn');
                 
+                // Link click - open in new tab
                 linkItems.forEach(item => {
                     item.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        const link = this.getAttribute('data-link');
-                        
-                        // Open link in new tab
-                        window.open(link, '_blank');
+                        // Prevent click if share button was clicked
+                        if (!e.target.closest('.share-btn')) {
+                            const link = this.getAttribute('data-link');
+                            window.open(link, '_blank');
+                        }
+                    });
+                });
+                
+                // Share button click - copy to clipboard
+                shareButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const linkItem = this.closest('.link-item');
+                        const link = linkItem.getAttribute('data-link');
+                        const title = linkItem.getAttribute('data-title');
                         
                         // Copy to clipboard
                         navigator.clipboard.writeText(link).then(() => {
+                            // Update notification text
+                            notificationText.innerHTML = `
+                                <div>Link copied to clipboard!</div>
+                                <div class="notification-subtext">You can now share it wherever you want</div>
+                            `;
+                            
                             // Show notification
                             notification.classList.add('show');
                             
+                            // Hide after 4 seconds
                             setTimeout(() => {
                                 notification.classList.remove('show');
-                            }, 3000);
+                            }, 4000);
+                        }).catch(err => {
+                            console.error('Failed to copy: ', err);
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = link;
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            try {
+                                document.execCommand('copy');
+                                notificationText.innerHTML = `
+                                    <div>Link copied to clipboard!</div>
+                                    <div class="notification-subtext">You can now share it wherever you want</div>
+                                `;
+                                notification.classList.add('show');
+                                setTimeout(() => {
+                                    notification.classList.remove('show');
+                                }, 4000);
+                            } catch (err) {
+                                console.error('Fallback copy failed: ', err);
+                                notificationText.innerHTML = `
+                                    <div>Failed to copy link</div>
+                                    <div class="notification-subtext">Please try again or copy manually</div>
+                                `;
+                                notification.classList.add('show');
+                                setTimeout(() => {
+                                    notification.classList.remove('show');
+                                }, 4000);
+                            }
+                            document.body.removeChild(textArea);
                         });
                     });
                 });

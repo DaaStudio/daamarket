@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Discount Opportunity Campaign Universe Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            /* Light Theme (Only Theme) */
+            --primary: #FF9900;
+            --primary-dark: #e68a00;
+            --secondary: #146eb4;
+            --secondary-dark: #115c96;
+            --light: #fafafa;
+            --gray: #f2f2f2;
+            --accent: #ff6b6b;
+            --success: #2ecc71;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --gradient: linear-gradient(135deg, #FF9900 0%, #FF6B6B 100%);
+            --gradient2: linear-gradient(135deg, #146eb4 0%, #2ecc71 100%);
+            --gradient3: linear-gradient(135deg, #8a2be2 0%, #4facfe 100%);
+            
+            /* Theme Variables - Light Only */
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e8edf2;
+            --text-primary: #222222;
+            --text-secondary: #444444;
+            --text-muted: #666666;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --header-gradient: linear-gradient(90deg, rgba(255,153,0,0.15), rgba(20,110,180,0.15));
+            --search-bg: rgba(0, 0, 0, 0.05);
+            --search-border: rgba(0, 0, 0, 0.15);
+            --overlay: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background: var(--bg-primary);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            padding-bottom: 20px;
+            transition: background 0.5s ease;
+        }
+
+        /* Floating Background Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 153, 0, 0.08);
+            animation: float 20s infinite linear;
+            filter: blur(1px);
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            background: rgba(20, 110, 180, 0.1);
+            animation-duration: 25s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 5%;
+            background: rgba(255, 107, 107, 0.1);
+            animation-duration: 30s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 15%;
+            background: rgba(46, 204, 113, 0.1);
+            animation-duration: 22s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 15%;
+            background: rgba(138, 43, 226, 0.08);
+            animation-duration: 28s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(40px, -60px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-30px, 30px) rotate(240deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 15px 20px;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-direction: column;
+        }
+
+        .logo-gif {
+            width: 140px;
+            height: 140px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(255, 153, 0, 0.3);
+            border: 4px solid var(--primary);
+            background: linear-gradient(45deg, #FF9900, #FF6B6B);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 25px 70px rgba(255, 153, 0, 0.3);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 25px 90px rgba(255, 153, 0, 0.5);
+                transform: scale(1.05);
+            }
+        }
+
+        .logo-gif img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            text-align: center;
+        }
+
+        .logo-text h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, #FF9900, #FF6B6B, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 5px;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 850px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--card-border);
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 100%;
+            margin: 0 auto 25px;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 20px 30px;
+            padding-right: 70px;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            background: var(--search-bg);
+            transition: var(--transition);
+            border: 2px solid var(--search-border);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .search-box::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border: 2px solid var(--primary);
+            background: var(--search-bg);
+            box-shadow: 0 25px 60px rgba(255, 153, 0, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.3rem;
+        }
+
+        /* Category Styles */
+        .categories-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category {
+            background: var(--card-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 153, 0, 0.4);
+        }
+
+        .category-header {
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--header-gradient);
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+            transition: var(--transition);
+        }
+
+        .category-header:hover::before {
+            left: 100%;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .category-name {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .category-name h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.3;
+            opacity: 0.95;
+        }
+
+        .category-name p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+            margin-left: 15px;
+            color: var(--primary);
+            opacity: 0.9;
+        }
+
+        .category.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Links Container - Scrollable */
+        .links-container {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .category.active .links-container {
+            max-height: 700px;
+            transition: max-height 1s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 30px;
+            max-height: 650px;
+        }
+
+        /* Custom scrollbar for links container */
+        .category.active .links-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .category.active .links-container::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 18px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-left: 6px solid transparent;
+            position: relative;
+            overflow: hidden;
+            min-width: 0;
+            border: 1px solid var(--card-border);
+            opacity: 0.95;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+            transition: var(--transition);
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-item:hover {
+            background: rgba(255, 153, 0, 0.15);
+            transform: translateX(12px);
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255, 153, 0, 0.4);
+            opacity: 1;
+        }
+
+        .link-item:hover .link-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        .link-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex: 1;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            line-height: 1.4;
+            min-width: 0;
+            opacity: 0.95;
+        }
+
+        .link-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .share-btn:hover {
+            background: var(--success);
+            color: white;
+            transform: scale(1.1);
+            border-color: var(--success);
+        }
+
+        .link-arrow {
+            color: var(--text-muted);
+            transition: var(--transition);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-left: 5px;
+            opacity: 0.8;
+        }
+
+        .link-item:hover .link-arrow {
+            color: var(--primary);
+            transform: translateX(8px);
+            opacity: 1;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            left: 25px;
+            background: var(--overlay);
+            backdrop-filter: blur(20px);
+            color: #333;
+            padding: 20px 30px;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            transform: translateX(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            max-width: 100%;
+            border: 1px solid rgba(255, 153, 0, 0.6);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .notification-icon {
+            font-size: 1.8rem;
+            color: var(--success);
+        }
+
+        .notification-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .notification-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 576px) {
+            .container {
+                padding: 25px;
+            }
+            
+            .logo-text h1 {
+                font-size: 3.5rem;
+            }
+            
+            .logo-text span {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+                padding: 35px;
+            }
+            
+            .search-box {
+                padding: 22px 35px;
+                padding-right: 75px;
+                font-size: 1.25rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 25px;
+            }
+            
+            .notification {
+                left: auto;
+                right: 30px;
+                max-width: 450px;
+            }
+            
+            .category-name h2 {
+                font-size: 2rem;
+            }
+            
+            .category-name p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                flex-direction: row;
+                gap: 35px;
+            }
+            
+            .logo-text {
+                text-align: left;
+            }
+            
+            .logo-text h1 {
+                font-size: 3.8rem;
+            }
+            
+            .logo-gif {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .subtitle {
+                font-size: 1.35rem;
+                padding: 40px;
+            }
+            
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .category.active .links-container {
+                max-height: 800px;
+            }
+            
+            .links-grid {
+                max-height: 750px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+                gap: 25px;
+            }
+            
+            .search-container {
+                max-width: 800px;
+            }
+            
+            .logo-text h1 {
+                font-size: 4rem;
+            }
+            
+            .category.active .links-container {
+                max-height: 900px;
+            }
+            
+            .links-grid {
+                max-height: 850px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-header {
+                padding: 20px 25px;
+            }
+            
+            .category-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .category-name h2 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+            
+            .category-name p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+            
+            .link-item {
+                padding: 18px 20px;
+                flex-wrap: nowrap;
+            }
+            
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-right: 18px;
+            }
+            
+            .link-text {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            
+            .share-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                padding-bottom: 2px;
+            }
+            
+            .logo-gif {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .logo-text span {
+                font-size: 1.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                padding: 25px;
+                line-height: 1.6;
+            }
+            
+            .search-box {
+                padding: 18px 25px;
+                padding-right: 65px;
+                font-size: 1.1rem;
+            }
+            
+            .search-icon {
+                right: 30px;
+            }
+            
+            .category.active .links-container {
+                max-height: 500px;
+            }
+            
+            .links-grid {
+                max-height: 480px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo-text h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+            
+            .logo-gif {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .category-header {
+                padding: 18px 20px;
+            }
+            
+            .category-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .category-name h2 {
+                font-size: 1.3rem;
+            }
+            
+            .link-item {
+                padding: 16px 18px;
+            }
+            
+            .link-icon {
+                width: 45px;
+                height: 45px;
+                margin-right: 15px;
+            }
+            
+            .share-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 18px;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="notification-text">
+            <div>Link copied to clipboard!</div>
+            <div class="notification-subtext">You can now share it wherever you want</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-gif">
+                    <img src="https://i.hizliresim.com/8fn897l.gif" alt="Discount Campaign">
+                </div>
+                <div class="logo-text">
+                    <h1 id="mainTitle">Discount Opportunity Campaign Universe</h1>
+                    <span id="mainSubtitle"></span>
+                </div>
+            </div>
+            <p class="subtitle" id="mainDescription">All best-selling products, services and special links from all Amazon categories in a single platform. Expand the categories below to access related links.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search in categories...">
+                <div class="search-icon"><i class="fas fa-search"></i></div>
+            </div>
+        </header>
+
+        <main>
+            <div class="categories-container" id="categoriesContainer">
+                <!-- Category 1: Amazon Main Categories -->
+                <div class="category active" data-category="main">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-home"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat1Title">Amazon Main Categories</h2>
+                                <p id="cat1Desc">Basic Amazon services and main categories</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat1Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Prime Membership & Subscriptions -->
+                <div class="category" data-category="prime">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-crown"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat2Title">Prime Membership & Subscriptions</h2>
+                                <p id="cat2Desc">Prime and other Amazon subscription services</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat2Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Best Sellers -->
+                <div class="category" data-category="bestsellers">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat3Title">Best Sellers</h2>
+                                <p id="cat3Desc">Best selling products and categories on Amazon</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat3Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Movers & Shakers -->
+                <div class="category" data-category="movers">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat4Title">Movers & Shakers</h2>
+                                <p id="cat4Desc">Fastest rising products and categories</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat4Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: New Releases -->
+                <div class="category" data-category="newreleases">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-bell"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat5Title">New Releases</h2>
+                                <p id="cat5Desc">Newly released products and categories on Amazon</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat5Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 6: Other Amazon Services -->
+                <div class="category" data-category="services">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="category-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="category-name">
+                                <h2 id="cat6Title">Other Amazon Services</h2>
+                                <p id="cat6Desc">Registration, business and other special services</p>
+                            </div>
+                        </div>
+                        <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="links-container">
+                        <div class="links-grid" id="cat6Links">
+                            <!-- Links will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Document loaded successfully');
+            
+            // DOM Elements
+            const notification = document.getElementById('notification');
+            const notificationText = notification.querySelector('.notification-text');
+            
+            // Links data with ALL icons
+            const linksData = {
+                cat1Links: [
+                    { text: "Echo & Alexa", link: "https://amzn.to/4prOwEW", icon: "fas fa-microphone-alt" },
+                    { text: "Fire Tablets", link: "https://amzn.to/4oKHv0O", icon: "fas fa-tablet-alt" },
+                    { text: "Amazon Luna – Cloud Gaming", link: "https://amzn.to/44L6LwQ", icon: "fas fa-cloud" },
+                    { text: "Amazon Fresh", link: "https://amzn.to/4plRIlw", icon: "fas fa-shopping-basket" },
+                    { text: "Whole Foods Market", link: "https://amzn.to/4rRMdNk", icon: "fas fa-leaf" },
+                    { text: "Amazon Go", link: "https://amzn.to/4pp57sZ", icon: "fas fa-store" },
+                    { text: "Amazon Haul: Find new faves for way less", link: "https://amzn.to/4ptLY9B", icon: "fas fa-shopping-bag" },
+                    { text: "Amazon: Luxury Stores", link: "https://amzn.to/3KAw9yC", icon: "fas fa-gem" },
+                    { text: "Amazon Fashion", link: "https://amzn.to/3XJIbIU", icon: "fas fa-tshirt" },
+                    { text: "Gift Shop", link: "https://amzn.to/4pZodGe", icon: "fas fa-gift" },
+                    { text: "Shop By Interest", link: "https://amzn.to/4aED5Fm", icon: "fas fa-shopping-cart" },
+                    { text: "Amazon Custom", link: "https://amzn.to/48K1QNM", icon: "fas fa-paint-brush" },
+                    { text: "Amazon Outlet", link: "https://amzn.to/4iNbd44", icon: "fas fa-tag" },
+                    { text: "Handpicked", link: "https://amzn.to/3XKfo78", icon: "fas fa-star" },
+                    { text: "Amazon live", link: "https://amzn.to/4oD35nT", icon: "fas fa-video" },
+                    { text: "Whole Foods Market Catering", link: "https://amzn.to/4a6DcJM", icon: "fas fa-utensils" },
+                    { text: "Amazon Shopping Spend less. Smile more.", link: "https://amzn.to/48OuZaP", icon: "fas fa-shopping-cart" },
+                    { text: "Amazon's Choice", link: "https://amzn.to/3KmPKCp", icon: "fas fa-award" },
+                    { text: "Trending Now", link: "https://amzn.to/4puvb6d", icon: "fas fa-fire" },
+                    { text: "Big Spring Sale Deals 40%", link: "https://amzn.to/44Ssran", icon: "fas fa-percent" },
+                    { text: "Amazon Basics", link: "https://amzn.to/3Mpqqw4", icon: "fas fa-box" },
+                    { text: "Gaming Deals", link: "https://amzn.to/3KRtO2j", icon: "fas fa-gamepad" },
+                    { text: "Amazon Gift Cards", link: "https://amzn.to/3XGKIDN", icon: "fas fa-credit-card" },
+                    { text: "Audible Deals", link: "https://amzn.to/48IDFj0", icon: "fas fa-headphones" },
+                    { text: "Amazon.com: Clothing, Shoes & Jewelry", link: "https://amzn.to/44YUAwp", icon: "fas fa-tshirt" }
+                ],
+                cat2Links: [
+                    { text: "Prime Free Trial", link: "https://amzn.to/3MQgyLO", icon: "fas fa-crown" },
+                    { text: "Prime for Young Adults Trial", link: "https://amzn.to/48K56su", icon: "fas fa-user-graduate" },
+                    { text: "Prime Paid Membership", link: "https://amzn.to/4rDAkdw", icon: "fas fa-crown" },
+                    { text: "Prime for Young Adults Paid Membership", link: "https://amzn.to/3XGLaSv", icon: "fas fa-user-graduate" },
+                    { text: "Prime Access Free Trial or Paid Membership", link: "https://amzn.to/4aCU5f5", icon: "fas fa-universal-access" },
+                    { text: "Prime Video Add-on Subscriptions - Free Trial", link: "https://amzn.to/4aCUmi7", icon: "fas fa-video" },
+                    { text: "Prime Video Add-on Subscriptions - Paid", link: "https://amzn.to/4iIXyuK", icon: "fas fa-video" },
+                    { text: "Audible Plus Free Trial", link: "https://amzn.to/3MyPL6F", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Free Trial", link: "https://amzn.to/4q25Twb", icon: "fas fa-headphones" },
+                    { text: "Audible Plus Membership", link: "https://amzn.to/4oK2GQH", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Annual Membership", link: "https://amzn.to/4oHO2cE", icon: "fas fa-headphones" },
+                    { text: "Audible Premium Plus Monthly Membership", link: "https://amzn.to/3YesARM", icon: "fas fa-headphones" },
+                    { text: "Audible Gift Membership: 1-3-6-12 month plan", link: "https://amzn.to/44DN6z5", icon: "fas fa-gift" },
+                    { text: "Kindle Unlimited Free Trial", link: "https://amzn.to/44WaKGQ", icon: "fas fa-book" },
+                    { text: "Kindle Unlimited Special Promos", link: "https://amzn.to/4q2Zl0m", icon: "fas fa-book" },
+                    { text: "Kindle Unlimited Membership: 6-12-24 month plan", link: "https://amzn.to/3MqluXM", icon: "fas fa-book" },
+                    { text: "Amazon Music Unlimited Free Trial", link: "https://amzn.to/4iMeccM", icon: "fas fa-music" },
+                    { text: "Amazon Music Unlimited Paid Subscription", link: "https://amzn.to/4psmjhp", icon: "fas fa-music" },
+                    { text: "Amazon Music Unlimited Special Promotions", link: "https://amzn.to/48Rd5Eu", icon: "fas fa-music" },
+                    { text: "Prime Music Free Trial", link: "https://amzn.to/4rGSHOJ", icon: "fas fa-music" },
+                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4rNcn3u", icon: "fas fa-baby-carriage" },
+                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/4iI43xO", icon: "fas fa-ring" },
+                    { text: "EBT Card Registration", link: "https://amzn.to/3YnOHFj", icon: "fas fa-credit-card" },
+                    { text: "Amazon Business", link: "https://amzn.to/4p2JSMV", icon: "fas fa-briefcase" },
+                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/3MyGnjs", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/4oO0yrg", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/4q2c7fu", icon: "fas fa-child" },
+                    { text: "Prime Exclusives", link: "https://amzn.to/3XJrqh6", icon: "fas fa-percent" },
+                    { text: "Prime Gaming", link: "https://amzn.to/4pzmFTA", icon: "fas fa-gamepad" },
+                    { text: "Pet Food & Supplies", link: "https://amzn.to/4pTOG7R", icon: "fas fa-paw" },
+                    { text: "Prime Book Box", link: "https://amzn.to/4iWzzbB", icon: "fas fa-box-open" },
+                    { text: "The Drop Text Alerts", link: "https://amzn.to/4pXBOO4", icon: "fas fa-sms" },
+                    { text: "Prime for Young Adults Trial", link: "https://amzn.to/4rKreeX", icon: "fas fa-user-graduate" },
+                    { text: "Prime Access Free Trial", link: "https://amzn.to/48NC9fz", icon: "fas fa-universal-access" },
+                    { text: "Home Services | Amazon.com", link: "https://amzn.to/3MOjxEA", icon: "fas fa-home" }
+                ],
+                cat3Links: [
+                    { text: "Any Department", link: "https://amzn.to/3MpZfBg", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3MOnp8x", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/3MniyeB", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/4pXiroi", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4pXJH6g", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/3Yh8syl", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/4iICaFY", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/3Mt9lBm", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/4a65nbK", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4iPsGZC", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/44iuT9V", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/4pDBNyY", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4pz1p0e", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4iLSOV2", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4a7znnG", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/4a6kkuq", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/44PHaTr", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/48trqIe", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4pXK1C0", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/3KR2y3U", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/3XFRmtU", icon: "fas fa-film" },
+                    { text: "Gift Cards", link: "https://amzn.to/4iSawGO", icon: "fas fa-credit-card" },
+                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/48ywFow", icon: "fas fa-shopping-basket" },
+                    { text: "Handmade Products", link: "https://amzn.to/4a07jm2", icon: "fas fa-hands" },
+                    { text: "Health & Household", link: "https://amzn.to/4p2lVFv", icon: "fas fa-heartbeat" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4oMFjGa", icon: "fas fa-home" },
+                    { text: "Industrial & Scientific", link: "https://amzn.to/3Yh90nT", icon: "fas fa-flask" },
+                    { text: "Kindle Store", link: "https://amzn.to/48OcbZh", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/3YfmxMG", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/4a07rSy", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/3XJ5S4c", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4oJH3Qv", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/44g9qOV", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4rNjOHQ", icon: "fas fa-paw" },
+                    { text: "Software", link: "https://amzn.to/3MPmoNx", icon: "fas fa-download" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/4oF4oD3", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/4oF4tGR", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/44Ds5EH", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4qimeNt", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4pstNAQ", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/4rKyXtJ", icon: "fas fa-gamepad" }
+                ],
+                cat4Links: [
+                    { text: "Any Department", link: "https://amzn.to/3XJGOdb", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3MqCFIU", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/4oEOOqR", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/3YgXU2h", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4a6SfDk", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/4oF6jYh", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/4p2o2cp", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/4aoNdSP", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/3KPQIag", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4pVKsMW", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/4poUDtF", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/4oF6xyB", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4pmHuBr", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4oLEVYG", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4rJCVmg", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/3Mtc6CI", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/4ptzIWD", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/3Mq2kkO", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4rDinf8", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/4rMMYXM", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/4rDiuY6", icon: "fas fa-film" },
+                    { text: "Gift Cards", link: "https://amzn.to/4aDL8SM", icon: "fas fa-credit-card" },
+                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/3Mywxy1", icon: "fas fa-shopping-basket" },
+                    { text: "Handmade Products", link: "https://amzn.to/48rY1xZ", icon: "fas fa-hands" },
+                    { text: "Health & Household", link: "https://amzn.to/3MtcqBq", icon: "fas fa-heartbeat" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4plZtYE", icon: "fas fa-home" },
+                    { text: "Kindle Store", link: "https://amzn.to/3MsaetV", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/48rY6lh", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/48NpARf", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/3KAk4cK", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4rNcdZS", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/3KwDtLD", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/3XJHj73", icon: "fas fa-paw" },
+                    { text: "Software", link: "https://amzn.to/48vae4Y", icon: "fas fa-download" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/3MqD4Lq", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/4aoNqp5", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/3KGopeg", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4oET0H5", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4p2opUl", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/48JX3vO", icon: "fas fa-gamepad" }
+                ],
+                cat5Links: [
+                    { text: "Any Department", link: "https://amzn.to/3KMG3NA", icon: "fas fa-th-large" },
+                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/4aER7a2", icon: "fas fa-laptop" },
+                    { text: "Amazon Renewed", link: "https://amzn.to/3KOhyj6", icon: "fas fa-recycle" },
+                    { text: "Appliances", link: "https://amzn.to/3XJLf7W", icon: "fas fa-blender" },
+                    { text: "Apps & Games", link: "https://amzn.to/4rL6x2D", icon: "fas fa-mobile-alt" },
+                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/4rL2u6x", icon: "fas fa-paint-brush" },
+                    { text: "Audible Books & Originals", link: "https://amzn.to/44lqtPI", icon: "fas fa-headphones" },
+                    { text: "Automotive", link: "https://amzn.to/4j5Wfq9", icon: "fas fa-car" },
+                    { text: "Baby", link: "https://amzn.to/4rJlbay", icon: "fas fa-baby" },
+                    { text: "Beauty & Personal Care", link: "https://amzn.to/4j5WnWF", icon: "fas fa-spa" },
+                    { text: "Books", link: "https://amzn.to/4aDJNeI", icon: "fas fa-book" },
+                    { text: "Camera & Photo Products", link: "https://amzn.to/44ZCwSS", icon: "fas fa-camera" },
+                    { text: "CDs & Vinyl", link: "https://amzn.to/4rNwRJA", icon: "fas fa-compact-disc" },
+                    { text: "Cell Phones & Accessories", link: "https://amzn.to/3KLKtnX", icon: "fas fa-mobile-alt" },
+                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/48YVpaV", icon: "fas fa-tshirt" },
+                    { text: "Collectible Coins", link: "https://amzn.to/44iwfBx", icon: "fas fa-coins" },
+                    { text: "Computers & Accessories", link: "https://amzn.to/48sruI3", icon: "fas fa-desktop" },
+                    { text: "Digital Educational Resources", link: "https://amzn.to/44cCsz2", icon: "fas fa-graduation-cap" },
+                    { text: "Digital Music", link: "https://amzn.to/4prBYxk", icon: "fas fa-music" },
+                    { text: "Electronics", link: "https://amzn.to/4rTD7Q7", icon: "fas fa-plug" },
+                    { text: "Entertainment Collectibles", link: "https://amzn.to/4psuLwY", icon: "fas fa-film" },
+                    { text: "Handmade Products", link: "https://amzn.to/4aFfODf", icon: "fas fa-hands" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4pmGL3b", icon: "fas fa-home" },
+                    { text: "Kindle Store", link: "https://amzn.to/4prsySr", icon: "fas fa-book-reader" },
+                    { text: "Kitchen & Dining", link: "https://amzn.to/3XN1dhw", icon: "fas fa-utensils" },
+                    { text: "Movies & TV", link: "https://amzn.to/4oI4Q3a", icon: "fas fa-film" },
+                    { text: "Musical Instruments", link: "https://amzn.to/4rM1Oh3", icon: "fas fa-guitar" },
+                    { text: "Office Products", link: "https://amzn.to/4oF5DlH", icon: "fas fa-briefcase" },
+                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/3Ynsya9", icon: "fas fa-tree" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4oPpu1v", icon: "fas fa-paw" },
+                    { text: "Sports & Outdoors", link: "https://amzn.to/4aGmdhr", icon: "fas fa-football-ball" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/48KkJjQ", icon: "fas fa-trophy" },
+                    { text: "Tools & Home Improvement", link: "https://amzn.to/4oJIPkD", icon: "fas fa-tools" },
+                    { text: "Toys & Games", link: "https://amzn.to/4oJoRXm", icon: "fas fa-gamepad" },
+                    { text: "Unique Finds", link: "https://amzn.to/4pXLSXu", icon: "fas fa-gem" },
+                    { text: "Video Games", link: "https://amzn.to/44cCWVS", icon: "fas fa-gamepad" }
+                ],
+                cat6Links: [
+                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4rNcn3u", icon: "fas fa-baby-carriage" },
+                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/4iI43xO", icon: "fas fa-ring" },
+                    { text: "EBT Card Registration", link: "https://amzn.to/3YnOHFj", icon: "fas fa-credit-card" },
+                    { text: "Amazon Business", link: "https://amzn.to/4p2JSMV", icon: "fas fa-briefcase" },
+                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/3MyGnjs", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/4oO0yrg", icon: "fas fa-child" },
+                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/4q2c7fu", icon: "fas fa-child" },
+                    { text: "Prime Exclusives", link: "https://amzn.to/3XJrqh6", icon: "fas fa-percent" },
+                    { text: "Prime Gaming", link: "https://amzn.to/4pzmFTA", icon: "fas fa-gamepad" },
+                    { text: "Pet Food & Supplies", link: "https://amzn.to/4pTOG7R", icon: "fas fa-paw" }
+                ]
+            };
+            
+            // Function to update category links
+            function updateCategoryLinks(containerId, links) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                
+                links.forEach(link => {
+                    const linkItem = document.createElement('div');
+                    linkItem.className = 'link-item';
+                    linkItem.setAttribute('data-link', link.link);
+                    linkItem.setAttribute('data-title', link.text);
+                    linkItem.innerHTML = `
+                        <div class="link-icon"><i class="${link.icon}"></i></div>
+                        <div class="link-text">${link.text}</div>
+                        <div class="link-actions">
+                            <div class="share-btn" title="Copy link to share">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <div class="link-arrow"><i class="fas fa-chevron-right"></i></div>
+                    `;
+                    container.appendChild(linkItem);
+                });
+                
+                // Re-attach click event listeners
+                attachLinkClickListeners();
+            }
+            
+            // Function to attach click listeners to links
+            function attachLinkClickListeners() {
+                const linkItems = document.querySelectorAll('.link-item');
+                const shareButtons = document.querySelectorAll('.share-btn');
+                
+                // Link click - open in new tab
+                linkItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Prevent click if share button was clicked
+                        if (!e.target.closest('.share-btn')) {
+                            const link = this.getAttribute('data-link');
+                            window.open(link, '_blank');
+                        }
+                    });
+                });
+                
+                // Share button click - copy to clipboard
+                shareButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const linkItem = this.closest('.link-item');
+                        const link = linkItem.getAttribute('data-link');
+                        const title = linkItem.getAttribute('data-title');
+                        
+                        // Copy to clipboard
+                        navigator.clipboard.writeText(link).then(() => {
+                            // Update notification text
+                            notificationText.innerHTML = `
+                                <div>Link copied to clipboard!</div>
+                                <div class="notification-subtext">You can now share it wherever you want</div>
+                            `;
+                            
+                            // Show notification
+                            notification.classList.add('show');
+                            
+                            // Hide after 4 seconds
+                            setTimeout(() => {
+                                notification.classList.remove('show');
+                            }, 4000);
+                        }).catch(err => {
+                            console.error('Failed to copy: ', err);
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = link;
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            try {
+                                document.execCommand('copy');
+                                notificationText.innerHTML = `
+                                    <div>Link copied to clipboard!</div>
+                                    <div class="notification-subtext">You can now share it wherever you want</div>
+                                `;
+                                notification.classList.add('show');
+                                setTimeout(() => {
+                                    notification.classList.remove('show');
+                                }, 4000);
+                            } catch (err) {
+                                console.error('Fallback copy failed: ', err);
+                                notificationText.innerHTML = `
+                                    <div>Failed to copy link</div>
+                                    <div class="notification-subtext">Please try again or copy manually</div>
+                                `;
+                                notification.classList.add('show');
+                                setTimeout(() => {
+                                    notification.classList.remove('show');
+                                }, 4000);
+                            }
+                            document.body.removeChild(textArea);
+                        });
+                    });
+                });
+            }
+            
+            // Category expand/collapse functionality
+            const categoryHeaders = document.querySelectorAll('.category-header');
+            categoryHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const category = this.parentElement;
+                    const isActive = category.classList.contains('active');
+                    
+                    // Close all categories first
+                    document.querySelectorAll('.category').forEach(cat => {
+                        cat.classList.remove('active');
+                    });
+                    
+                    // If it wasn't active before, activate it
+                    if (!isActive) {
+                        category.classList.add('active');
+                        
+                        // Scroll the category into view with some offset
+                        setTimeout(() => {
+                            category.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Search functionality
+            const searchBox = document.getElementById('searchBox');
+            searchBox.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const categories = document.querySelectorAll('.category');
+                
+                categories.forEach(category => {
+                    const categoryName = category.querySelector('.category-name h2').textContent.toLowerCase();
+                    const categoryDesc = category.querySelector('.category-name p').textContent.toLowerCase();
+                    const links = category.querySelectorAll('.link-text');
+                    
+                    let hasMatch = categoryName.includes(searchTerm) || categoryDesc.includes(searchTerm);
+                    
+                    // Search in links
+                    links.forEach(link => {
+                        const linkText = link.textContent.toLowerCase();
+                        if (linkText.includes(searchTerm)) {
+                            hasMatch = true;
+                            link.parentElement.style.display = 'flex';
+                        } else {
+                            link.parentElement.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide category based on search results
+                    if (hasMatch || searchTerm === '') {
+                        category.style.display = 'block';
+                        // Open category if there's a search term
+                        if (searchTerm !== '') {
+                            category.classList.add('active');
+                        }
+                    } else {
+                        category.style.display = 'none';
+                    }
+                    
+                    // Show all links if no search
+                    if (searchTerm === '') {
+                        category.querySelectorAll('.link-item').forEach(link => {
+                            link.style.display = 'flex';
+                        });
+                    }
+                });
+            });
+            
+            // Initialize links
+            Object.keys(linksData).forEach(category => {
+                updateCategoryLinks(category, linksData[category]);
+            });
+            
+            // Animate categories
+            const categories = document.querySelectorAll('.category');
+            categories.forEach((category, index) => {
+                category.style.animationDelay = `${index * 0.1}s`;
+                setTimeout(() => {
+                    category.style.opacity = '1';
+                    category.style.transform = 'translateY(0)';
+                }, 100 + index * 100);
+            });
+            
+            // Keep main category open by default
+            document.querySelector('.category[data-category="main"]').classList.add('active');
+            
+            // Prevent scroll on links container from bubbling to body
+            document.querySelectorAll('.links-container').forEach(container => {
+                container.addEventListener('wheel', function(e) {
+                    if (this.scrollHeight > this.clientHeight) {
+                        e.stopPropagation();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

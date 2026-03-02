@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Discount Opportunity Campaign Universe - Smart Buying Tips & Campaigns</title>
-    <meta name="description" content="Comprehensive guide for the best shopping experience on Amazon. Prime membership benefits, campaigns, discounts and purchasing tips.">
-    <meta name="keywords" content="amazon shopping, prime membership, amazon campaigns, discount guide, shopping tips">
+    <title>Deal Finder Universe - Smart Shopping Tips & Campaigns</title>
+    <meta name="description" content="Comprehensive guide for the best online shopping experience. Membership benefits, campaigns, discounts and purchasing tips.">
+    <meta name="keywords" content="online shopping, membership benefits, campaigns, discount guide, shopping tips">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -24,26 +24,26 @@
             --secondary-dark: #115c96;
             --accent: #ff6b6b;
             --success: #2ecc71;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --gradient: linear-gradient(135deg, #FF9900 0%, #FF6B6B 100%);
             --gradient2: linear-gradient(135deg, #146eb4 0%, #2ecc71 100%);
             --gradient3: linear-gradient(135deg, #8a2be2 0%, #4facfe 100%);
             
-            /* Theme Variables - Light Theme */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-tertiary: #f1f3f5;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
-            --text-muted: #777777;
+            /* Light Theme Variables */
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
             --card-bg: #ffffff;
-            --card-border: rgba(0, 0, 0, 0.08);
+            --card-border: #dee2e6;
             --header-gradient: linear-gradient(90deg, rgba(255,153,0,0.1), rgba(20,110,180,0.1));
-            --search-bg: #f5f5f5;
-            --search-border: rgba(0, 0, 0, 0.1);
-            --overlay: rgba(255, 255, 255, 0.98);
+            --search-bg: #ffffff;
+            --search-border: #ced4da;
+            --overlay: rgba(255, 255, 255, 0.95);
+            --footer-border: #dee2e6;
         }
 
         body {
@@ -52,10 +52,8 @@
             color: var(--text-primary);
             overflow-x: hidden;
             padding-bottom: 20px;
-            line-height: 1.6;
         }
 
-        /* Floating Background Elements */
         .floating-elements {
             position: fixed;
             top: 0;
@@ -69,6 +67,7 @@
         .floating-element {
             position: absolute;
             border-radius: 50%;
+            background: rgba(255, 153, 0, 0.1);
             animation: float 20s infinite linear;
             filter: blur(1px);
         }
@@ -87,7 +86,7 @@
             height: 150px;
             top: 60%;
             right: 5%;
-            background: rgba(255, 107, 107, 0.08);
+            background: rgba(255, 107, 107, 0.1);
             animation-duration: 30s;
         }
 
@@ -105,7 +104,7 @@
             height: 120px;
             top: 20%;
             right: 15%;
-            background: rgba(138, 43, 226, 0.05);
+            background: rgba(138, 43, 226, 0.1);
             animation-duration: 28s;
         }
 
@@ -131,7 +130,6 @@
             position: relative;
         }
 
-        /* Header Styles */
         header {
             text-align: center;
             padding: 40px 15px 20px;
@@ -148,12 +146,12 @@
             flex-direction: column;
         }
 
-        .logo-gif {
+        .logo-icon {
             width: 140px;
             height: 140px;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(255, 153, 0, 0.2);
+            box-shadow: 0 25px 70px rgba(255, 153, 0, 0.3);
             border: 4px solid var(--primary);
             background: linear-gradient(45deg, #FF9900, #FF6B6B);
             display: flex;
@@ -167,19 +165,17 @@
 
         @keyframes pulseGlow {
             0% {
-                box-shadow: 0 20px 50px rgba(255, 153, 0, 0.2);
+                box-shadow: 0 25px 70px rgba(255, 153, 0, 0.3);
                 transform: scale(1);
             }
             100% {
-                box-shadow: 0 20px 70px rgba(255, 153, 0, 0.4);
+                box-shadow: 0 25px 90px rgba(255, 153, 0, 0.5);
                 transform: scale(1.05);
             }
         }
 
-        .logo-gif img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .logo-icon i {
+            font-size: 4rem;
         }
 
         .logo-text {
@@ -189,6 +185,7 @@
         .logo-text h1 {
             font-size: 3rem;
             font-weight: 900;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.1);
             background: linear-gradient(to right, #FF9900, #FF6B6B, #8a2be2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -204,7 +201,6 @@
             font-weight: 500;
             margin-top: 5px;
             text-align: center;
-            opacity: 0.9;
         }
 
         .subtitle {
@@ -219,10 +215,8 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--card-border);
             font-weight: 400;
-            opacity: 0.95;
         }
 
-        /* Blog Introduction Section */
         .blog-intro {
             max-width: 850px;
             margin: 0 auto 50px;
@@ -259,7 +253,7 @@
         }
 
         .intro-highlight {
-            background: rgba(255, 153, 0, 0.08);
+            background: rgba(255, 153, 0, 0.1);
             padding: 20px;
             border-radius: 15px;
             margin: 25px 0;
@@ -272,7 +266,6 @@
             font-size: 1.4rem;
         }
 
-        /* Search Bar */
         .search-container {
             max-width: 100%;
             margin: 0 auto 25px;
@@ -304,7 +297,7 @@
             outline: none;
             border: 2px solid var(--primary);
             background: var(--search-bg);
-            box-shadow: 0 20px 50px rgba(255, 153, 0, 0.15);
+            box-shadow: 0 25px 60px rgba(255, 153, 0, 0.2);
         }
 
         .search-icon {
@@ -316,7 +309,6 @@
             font-size: 1.3rem;
         }
 
-        /* Category Styles */
         .categories-container {
             display: flex;
             flex-direction: column;
@@ -338,8 +330,8 @@
 
         .category:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border: 1px solid rgba(255, 153, 0, 0.3);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--primary);
         }
 
         .category-header {
@@ -353,6 +345,7 @@
             color: var(--text-primary);
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid transparent;
         }
 
         .category-header::before {
@@ -362,7 +355,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,153,0,0.1), transparent);
             transition: var(--transition);
         }
 
@@ -381,14 +374,14 @@
         .category-icon {
             width: 60px;
             height: 60px;
-            background: rgba(255, 153, 0, 0.1);
+            background: rgba(255, 153, 0, 0.15);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             color: var(--primary);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             flex-shrink: 0;
         }
 
@@ -407,7 +400,6 @@
             overflow-wrap: break-word;
             white-space: normal;
             line-height: 1.3;
-            opacity: 0.95;
         }
 
         .category-name p {
@@ -417,7 +409,6 @@
             overflow-wrap: break-word;
             white-space: normal;
             line-height: 1.5;
-            opacity: 0.85;
         }
 
         .toggle-icon {
@@ -426,20 +417,18 @@
             flex-shrink: 0;
             margin-left: 15px;
             color: var(--primary);
-            opacity: 0.9;
         }
 
         .category.active .toggle-icon {
             transform: rotate(180deg);
         }
 
-        /* Category Description */
         .category-description {
             padding: 0 30px 20px;
             color: var(--text-secondary);
             font-size: 1.1rem;
             line-height: 1.7;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--card-border);
             margin-bottom: 20px;
             display: none;
         }
@@ -449,7 +438,6 @@
             animation: fadeIn 0.5s ease;
         }
 
-        /* Links Container - Scrollable */
         .links-container {
             padding: 0;
             max-height: 0;
@@ -471,13 +459,12 @@
             max-height: 650px;
         }
 
-        /* Custom scrollbar for links container */
         .category.active .links-container::-webkit-scrollbar {
             width: 8px;
         }
 
         .category.active .links-container::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
+            background: var(--bg-tertiary);
             border-radius: 10px;
             margin: 10px 0;
         }
@@ -495,7 +482,7 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background: var(--card-bg);
+            background: var(--bg-primary);
             border-radius: 18px;
             transition: var(--transition);
             cursor: pointer;
@@ -506,7 +493,6 @@
             overflow: hidden;
             min-width: 0;
             border: 1px solid var(--card-border);
-            opacity: 0.95;
         }
 
         .link-item::before {
@@ -516,7 +502,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,153,0,0.1), transparent);
             transition: var(--transition);
         }
 
@@ -525,12 +511,11 @@
         }
 
         .link-item:hover {
-            background: rgba(255, 153, 0, 0.08);
+            background: var(--bg-secondary);
             transform: translateX(12px);
             border-left: 6px solid var(--primary);
-            box-shadow: var(--shadow-hover);
-            border: 1px solid rgba(255, 153, 0, 0.3);
-            opacity: 1;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 1px solid var(--primary);
         }
 
         .link-item:hover .link-icon {
@@ -542,7 +527,7 @@
         .link-icon {
             width: 60px;
             height: 60px;
-            background: rgba(255, 153, 0, 0.1);
+            background: rgba(255, 153, 0, 0.15);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -551,7 +536,7 @@
             color: var(--primary);
             font-size: 1.5rem;
             transition: var(--transition);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             flex-shrink: 0;
         }
 
@@ -565,7 +550,6 @@
             white-space: normal;
             line-height: 1.4;
             min-width: 0;
-            opacity: 0.95;
         }
 
         .link-description {
@@ -573,8 +557,7 @@
             font-size: 0.9rem;
             font-weight: normal;
             margin-top: 5px;
-            opacity: 0.8;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             line-height: 1.5;
         }
 
@@ -589,9 +572,9 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(255, 153, 0, 0.1);
-            border: 1px solid rgba(255, 153, 0, 0.2);
-            color: var(--primary);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -613,16 +596,13 @@
             font-size: 1.3rem;
             flex-shrink: 0;
             margin-left: 5px;
-            opacity: 0.8;
         }
 
         .link-item:hover .link-arrow {
             color: var(--primary);
             transform: translateX(8px);
-            opacity: 1;
         }
 
-        /* Notification */
         .notification {
             position: fixed;
             bottom: 25px;
@@ -642,7 +622,8 @@
             align-items: center;
             gap: 18px;
             max-width: 100%;
-            border: 1px solid rgba(255, 153, 0, 0.3);
+            border: 1px solid var(--primary);
+            background: white;
         }
 
         .notification.show {
@@ -659,16 +640,16 @@
             font-weight: 600;
             font-size: 1.1rem;
             line-height: 1.4;
+            color: var(--text-primary);
         }
 
         .notification-subtext {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--text-muted);
             margin-top: 5px;
             font-weight: 400;
         }
 
-        /* Amazon Services Blog Section */
         .services-blog {
             margin-top: 60px;
             padding: 40px;
@@ -696,7 +677,7 @@
         .blog-post {
             margin-bottom: 40px;
             padding-bottom: 40px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .blog-post:last-child {
@@ -719,7 +700,7 @@
         }
 
         .blog-highlight {
-            background: rgba(255, 153, 0, 0.08);
+            background: rgba(255, 153, 0, 0.1);
             padding: 20px;
             border-radius: 15px;
             margin: 20px 0;
@@ -732,14 +713,13 @@
             font-size: 1.3rem;
         }
 
-        /* Modal Styles */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
@@ -756,13 +736,13 @@
         }
 
         .modal-content {
-            background: var(--card-bg);
+            background: white;
             border-radius: 25px;
             width: 90%;
             max-width: 800px;
             max-height: 85vh;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--card-border);
             transform: translateY(50px) scale(0.9);
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -777,7 +757,7 @@
         .modal-header {
             padding: 25px 30px;
             background: var(--header-gradient);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .modal-header h2 {
@@ -794,6 +774,8 @@
             padding: 30px;
             overflow-y: auto;
             flex: 1;
+            color: var(--text-secondary);
+            background: white;
         }
 
         .modal-body h3 {
@@ -831,7 +813,7 @@
         }
 
         .modal-disclosure {
-            background: rgba(255, 153, 0, 0.08);
+            background: rgba(255, 153, 0, 0.1);
             padding: 25px;
             border-radius: 15px;
             margin: 30px 0;
@@ -850,9 +832,9 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            color: var(--text-primary);
+            background: white;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
             font-size: 1.5rem;
             cursor: pointer;
             display: flex;
@@ -860,16 +842,17 @@
             justify-content: center;
             transition: var(--transition);
             z-index: 2001;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .modal-close:hover {
             background: var(--primary);
             color: white;
             transform: rotate(90deg);
+            border-color: var(--primary);
         }
 
-        /* Amazon Associate Disclosure */
-        .amazon-disclosure {
+        .disclosure-section {
             margin-top: 40px;
             text-align: center;
             padding: 30px;
@@ -883,14 +866,14 @@
             animation-delay: 0.6s;
         }
 
-        .amazon-disclosure h3 {
+        .disclosure-section h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--text-primary);
             font-weight: 700;
         }
 
-        .amazon-disclosure p {
+        .disclosure-section p {
             font-size: 1rem;
             line-height: 1.6;
             color: var(--text-secondary);
@@ -904,8 +887,8 @@
             display: inline-block;
             margin-top: 15px;
             padding: 12px 25px;
-            background: rgba(255, 153, 0, 0.1);
-            border: 1px solid rgba(255, 153, 0, 0.2);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--card-border);
             color: var(--text-primary);
             border-radius: 12px;
             font-weight: 600;
@@ -919,24 +902,23 @@
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);
+            border-color: var(--primary);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-top: 40px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid var(--footer-border);
         }
 
         footer p {
             margin-bottom: 10px;
         }
 
-        /* Animations */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -964,7 +946,6 @@
             to { opacity: 1; }
         }
 
-        /* Responsive Design */
         @media (min-width: 576px) {
             .container {
                 padding: 25px;
@@ -1008,7 +989,7 @@
                 font-size: 1.1rem;
             }
             
-            .blog-intro, .services-blog, .amazon-disclosure {
+            .blog-intro, .services-blog, .disclosure-section {
                 padding: 50px;
             }
             
@@ -1032,9 +1013,13 @@
                 font-size: 3.8rem;
             }
             
-            .logo-gif {
+            .logo-icon {
                 width: 160px;
                 height: 160px;
+            }
+            
+            .logo-icon i {
+                font-size: 5rem;
             }
             
             .subtitle {
@@ -1062,7 +1047,7 @@
                 font-size: 1.8rem;
             }
             
-            .amazon-disclosure h3 {
+            .disclosure-section h3 {
                 font-size: 1.8rem;
             }
         }
@@ -1149,9 +1134,13 @@
                 padding-bottom: 2px;
             }
             
-            .logo-gif {
+            .logo-icon {
                 width: 120px;
                 height: 120px;
+            }
+            
+            .logo-icon i {
+                font-size: 3.5rem;
             }
             
             .logo-text span {
@@ -1183,7 +1172,7 @@
                 padding: 20px;
             }
             
-            .blog-intro, .services-blog, .amazon-disclosure {
+            .blog-intro, .services-blog, .disclosure-section {
                 padding: 25px;
             }
             
@@ -1206,7 +1195,7 @@
                 line-height: 1.3;
             }
             
-            .logo-gif {
+            .logo-icon {
                 width: 100px;
                 height: 100px;
             }
@@ -1248,13 +1237,12 @@
             }
         }
 
-        /* Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 12px;
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
+            background: var(--bg-tertiary);
             border-radius: 10px;
         }
 
@@ -1272,7 +1260,7 @@
         }
         
         .modal-body::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
+            background: var(--bg-tertiary);
             border-radius: 10px;
             margin: 5px;
         }
@@ -1288,7 +1276,6 @@
     </style>
 </head>
 <body>
-    <!-- Floating Background Elements -->
     <div class="floating-elements">
         <div class="floating-element"></div>
         <div class="floating-element"></div>
@@ -1296,51 +1283,49 @@
         <div class="floating-element"></div>
     </div>
 
-    <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-icon"><i class="fas fa-check-circle"></i></div>
         <div class="notification-text">
             <div>Link copied successfully!</div>
-            <div class="notification-subtext">You can now share it with others</div>
+            <div class="notification-subtext">Ready to share</div>
         </div>
     </div>
 
-    <!-- Modal for Amazon Associate Program -->
-    <div class="modal-overlay" id="legalModal">
+    <div class="modal-overlay" id="infoModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Amazon Associate Program Disclosure</h2>
+                <h2>Information</h2>
             </div>
             <div class="modal-body">
                 <div class="modal-disclosure">
-                    <h3>About the Amazon Associate Program</h3>
-                    <p>This site is part of Amazon's official Affiliate Program.
-Shared product links are intended to direct users to Amazon.
-From time to time, we may share special campaigns, discounts, and advantageous shopping opportunities for you.
-Our goal is to bring you reliable products at affordable prices.</p>
+                    <h3>About This Site</h3>
+                    <p>This site contains links that direct to various online shopping platforms.
+Shared product links are intended to guide users to the respective platforms.
+From time to time, we may share special campaigns, discounts, and advantageous shopping opportunities.
+Our goal is to help you find reliable products at affordable prices.</p>
                 </div>
                 
                 <h3>Our Mission: Helping You Find the Best Deals</h3>
-                <p>Our primary goal is to help you discover Amazon's vast selection of products, services, and special offers. We curate these links to make your shopping experience more convenient and to highlight interesting campaigns and promotions you might otherwise miss.</p>
+                <p>Our primary goal is to help you discover the vast selection of products, services, and special offers available online. We curate these links to make your shopping experience more convenient and to highlight interesting campaigns and promotions you might otherwise miss.</p>
                 
                 <h3>How We Help You Save</h3>
-                <p>• We organize Amazon's extensive catalog into easy-to-navigate categories<br>
+                <p>• We organize extensive product catalogs into easy-to-navigate categories<br>
                 • We highlight special promotions and limited-time offers<br>
                 • We provide detailed descriptions to help you make informed decisions<br>
                 • We showcase new releases and trending products<br>
-                • We help you discover Amazon services you might not know about</p>
+                • We help you discover services you might not know about</p>
                 
                 <h3>Price and Availability Information</h3>
-                <p>Product prices and availability on Amazon change frequently and in real-time. The prices and product information shown on this site reflect data at the time of our last update. For the most current information, always check Amazon's official website before making a purchase.</p>
+                <p>Product prices and availability change frequently and in real-time. The prices and product information shown on this site reflect data at the time of our last update. For the most current information, always check the official website of the respective platform before making a purchase.</p>
                 
                 <h3>Content Accuracy</h3>
-                <p>The information provided on this site is for general shopping guidance purposes. Product features, prices, and campaign details may be changed by Amazon. We recommend always checking Amazon's official website for the most current information.</p>
+                <p>The information provided on this site is for general shopping guidance purposes. Product features, prices, and campaign details may be changed by the respective platforms. We recommend always checking the official website for the most current information.</p>
                 
                 <h3>Terms of Use</h3>
                 <p>By using this site, you agree to the following terms:</p>
                 <ul>
                     <li>This site is for informational purposes only</li>
-                    <li>Amazon's own terms of service and privacy policies apply</li>
+                    <li>The terms of service and privacy policies of the respective platforms apply</li>
                     <li>Your purchasing decisions are your own responsibility</li>
                     <li>Users under 18 should use this site under adult supervision</li>
                 </ul>
@@ -1348,10 +1333,7 @@ Our goal is to bring you reliable products at affordable prices.</p>
                 <h3>Disclaimer</h3>
                 <p>The information on this site is provided for general shopping guidance. We do not provide recommendations or guarantees for any products or services. We recommend carefully reviewing product reviews and specifications before making purchasing decisions.</p>
                 
-                <h3>Trademark Information</h3>
-                <p>Amazon and Amazon.com are trademarks of Amazon.com, Inc. or its affiliates. This site is not officially affiliated with Amazon.</p>
-                
-                <p><strong>Last Updated:</strong> This page was last updated in February 2026. Changes may be made without prior notice.</p>
+                <p><strong>Last Updated:</strong> This page was last updated in 2026. Changes may be made without prior notice.</p>
             </div>
         </div>
         <div class="modal-close" id="modalClose">
@@ -1362,15 +1344,15 @@ Our goal is to bring you reliable products at affordable prices.</p>
     <div class="container">
         <header>
             <div class="logo">
-                <div class="logo-gif">
-                    <img src="https://i.hizliresim.com/8fn897l.gif" alt="Discount Opportunity Campaign Universe">
+                <div class="logo-icon">
+                    <i class="fas fa-tags"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>Discount Opportunity Campaign Universe</h1>
-                    <span>Smart Buying Tips & Exclusive Campaigns</span>
+                    <h1>Deal Finder Universe</h1>
+                    <span>Smart Shopping Tips & Exclusive Campaigns</span>
                 </div>
             </div>
-            <p class="subtitle">Your comprehensive guide to getting the most out of Amazon. Discover Prime membership benefits, exclusive campaigns, money-saving tips, and smart purchasing strategies - all in one place!</p>
+            <p class="subtitle">Your comprehensive guide to getting the most out of online shopping. Discover membership benefits, exclusive campaigns, money-saving tips, and smart purchasing strategies - all in one place!</p>
             
             <div class="search-container">
                 <input type="text" class="search-box" id="searchBox" placeholder="Search in categories...">
@@ -1380,58 +1362,51 @@ Our goal is to bring you reliable products at affordable prices.</p>
 
         <main>
             <div class="categories-container" id="categoriesContainer">
-                <!-- Category 1: Amazon Main Categories -->
                 <div class="category active" data-category="main">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-home"></i></div>
                             <div class="category-name">
-                                <h2>Amazon Main Categories</h2>
-                                <p>Essential Amazon services and primary shopping categories</p>
+                                <h2>Main Categories</h2>
+                                <p>Essential services and primary shopping categories</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="category-description">
-                        Explore Amazon's fundamental services and main shopping departments. From Echo & Alexa devices to Amazon Fresh, from fashion to luxury stores - access all major sections through these organized links.
+                        Explore fundamental services and main shopping departments. From smart devices to fresh groceries, from fashion to luxury stores - access all major sections through these organized links.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat1Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat1Links"></div>
                     </div>
                 </div>
 
-                <!-- Category 2: Prime Membership & Subscriptions -->
-                <div class="category" data-category="prime">
+                <div class="category" data-category="membership">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-crown"></i></div>
                             <div class="category-name">
-                                <h2>Prime Membership & Subscriptions</h2>
-                                <p>Prime and other Amazon subscription services</p>
+                                <h2>Membership Programs</h2>
+                                <p>Membership and subscription services</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="category-description">
-                        All the benefits of Amazon Prime membership: Free shipping, Prime Video, Prime Music, and much more. Find information about free trials, special promotions, and subscription options to enhance your Amazon experience.
+                        All the benefits of membership programs: Free shipping, video content, music, and much more. Find information about free trials, special promotions, and subscription options to enhance your shopping experience.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat2Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat2Links"></div>
                     </div>
                 </div>
 
-                <!-- Category 3: Best Sellers -->
                 <div class="category" data-category="bestsellers">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-trophy"></i></div>
                             <div class="category-name">
                                 <h2>Best Sellers</h2>
-                                <p>Most popular products and categories on Amazon</p>
+                                <p>Most popular products and categories</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
@@ -1440,14 +1415,11 @@ Our goal is to bring you reliable products at affordable prices.</p>
                         Discover the most popular and best-selling products across all categories. Browse what other customers are buying most frequently to make informed shopping decisions and find products with proven customer satisfaction.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat3Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat3Links"></div>
                     </div>
                 </div>
 
-                <!-- Category 4: Movers & Shakers -->
-                <div class="category" data-category="movers">
+                <div class="category" data-category="trends">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-chart-line"></i></div>
@@ -1459,137 +1431,124 @@ Our goal is to bring you reliable products at affordable prices.</p>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="category-description">
-                        See which products have seen the fastest sales increases in the last 24 hours. Track emerging trends and suddenly popular products to discover new opportunities and stay ahead of what's trending on Amazon.
+                        See which products have seen the fastest sales increases in the last 24 hours. Track emerging trends and suddenly popular products to discover new opportunities and stay ahead of what's trending.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat4Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat4Links"></div>
                     </div>
                 </div>
 
-                <!-- Category 5: New Releases -->
                 <div class="category" data-category="newreleases">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-bell"></i></div>
                             <div class="category-name">
                                 <h2>New Releases</h2>
-                                <p>Newly launched products and categories on Amazon</p>
+                                <p>Newly launched products and categories</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="category-description">
-                        Explore the newest products in every category. Be among the first to discover newly released books, electronic devices, fashion items, and much more. Stay updated with Amazon's latest offerings across all departments.
+                        Explore the newest products in every category. Be among the first to discover newly released books, electronic devices, fashion items, and much more. Stay updated with the latest offerings across all departments.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat5Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat5Links"></div>
                     </div>
                 </div>
 
-                <!-- Category 6: Other Amazon Services -->
                 <div class="category" data-category="services">
                     <div class="category-header">
                         <div class="category-title">
                             <div class="category-icon"><i class="fas fa-cogs"></i></div>
                             <div class="category-name">
-                                <h2>Other Amazon Services</h2>
+                                <h2>Other Services</h2>
                                 <p>Registration, business, and other special services</p>
                             </div>
                         </div>
                         <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="category-description">
-                        Discover Amazon's other special services: Baby and wedding registries, Amazon Business for companies, EBT card registration, and exclusive promotions. These services can enhance your Amazon experience in specialized ways.
+                        Discover other special services: Baby and wedding registries, business solutions, payment card registration, and exclusive promotions. These services can enhance your shopping experience in specialized ways.
                     </div>
                     <div class="links-container">
-                        <div class="links-grid" id="cat6Links">
-                            <!-- Links will be populated by JavaScript -->
-                        </div>
+                        <div class="links-grid" id="cat6Links"></div>
                     </div>
                 </div>
             </div>
             
-            <!-- Blog Introduction Section -->
             <div class="blog-intro">
-                <h2>Smart Shopping Secrets on Amazon</h2>
+                <h2>Smart Shopping Secrets</h2>
                 <div class="intro-content">
-                    <p>Amazon offers millions of products and services, making it one of the world's largest online shopping platforms. However, navigating this vast selection to find the best deals, staying updated on the right campaigns, and getting full value for your money requires a reliable guide.</p>
+                    <p>Online shopping platforms offer millions of products and services, making them some of the world's largest online marketplaces. However, navigating this vast selection to find the best deals, staying updated on the right campaigns, and getting full value for your money requires a reliable guide.</p>
                     
                     <div class="intro-highlight">
                         <h3>What This Guide Offers You</h3>
-                        <p>• Learn all the advantages of Prime membership<br>
+                        <p>• Learn all the advantages of membership programs<br>
                         • Access the latest campaigns and discounts<br>
                         • Discover best-selling products by category<br>
-                        • Utilize Amazon's special services<br>
+                        • Utilize special services<br>
                         • Get tips for safe and advantageous shopping</p>
                     </div>
                     
-                    <p>Below, you'll find official Amazon links, campaigns, and special services organized into categories. Expand any category to access all related links and detailed descriptions to enhance your Amazon shopping experience.</p>
+                    <p>Below, you'll find official links, campaigns, and special services organized into categories. Expand any category to access all related links and detailed descriptions to enhance your shopping experience.</p>
                 </div>
             </div>
             
-            <!-- Amazon Services Blog Section -->
             <div class="services-blog">
-                <h2>Everything You Need to Know About Amazon Services</h2>
+                <h2>Everything You Need to Know About Shopping Services</h2>
                 
                 <div class="blog-post">
-                    <h3>Amazon Prime: More Than Just Fast Shipping</h3>
-                    <p>While most users know Amazon Prime for its fast and free shipping benefits, this subscription service actually offers much more value than meets the eye. With millions of Prime members worldwide, Amazon has continuously expanded the program to include a comprehensive suite of benefits that go far beyond delivery advantages.</p>
+                    <h3>Membership: More Than Just Fast Shipping</h3>
+                    <p>While most users know membership programs for their fast and free shipping benefits, these subscription services actually offer much more value than meets the eye. With millions of members worldwide, platforms have continuously expanded their programs to include a comprehensive suite of benefits that go far beyond delivery advantages.</p>
                     
                     <div class="blog-highlight">
-                        <h4>The Hidden Benefits of Prime Membership</h4>
-                        <p>• <strong>Prime Video:</strong> Thousands of movies, TV shows, and award-winning Amazon Originals<br>
-                        • <strong>Prime Music:</strong> Over 2 million songs ad-free and thousands of playlists<br>
-                        • <strong>Prime Gaming:</strong> Free games every month and in-game content<br>
-                        • <strong>Prime Reading:</strong> Access to thousands of books, magazines, and comics<br>
-                        • <strong>Prime Wardrobe:</strong> Try before you buy fashion service<br>
-                        • <strong>Amazon Photos:</strong> Unlimited full-resolution photo storage<br>
-                        • <strong>Whole Foods Discounts:</strong> Exclusive savings for Prime members</p>
+                        <h4>The Hidden Benefits of Membership</h4>
+                        <p>• <strong>Video Content:</strong> Thousands of movies, TV shows, and original productions<br>
+                        • <strong>Music Streaming:</strong> Ad-free millions of songs and thousands of playlists<br>
+                        • <strong>Gaming Benefits:</strong> Free games every month and in-game content<br>
+                        • <strong>Reading Opportunities:</strong> Access to thousands of books, magazines, and comics<br>
+                        • <strong>Fashion Try-On:</strong> Try before you buy fashion service<br>
+                        • <strong>Photo Storage:</strong> Unlimited photo backup<br>
+                        • <strong>Exclusive Discounts:</strong> Member-only savings opportunities</p>
                     </div>
                     
-                    <p>Prime membership also gives you access to exclusive deals, early access to sales like Prime Day, and special promotions throughout the year. For frequent shoppers, the annual membership offers significant savings compared to monthly billing. Many users find that the entertainment benefits alone justify the subscription cost, making the shipping benefits essentially free bonuses.</p>
+                    <p>Membership also gives you access to exclusive deals, early access to sales, and special promotions throughout the year. For frequent shoppers, annual membership offers significant savings compared to monthly billing.</p>
                 </div>
                 
                 <div class="blog-post">
-                    <h3>Amazon Business: Enterprise Solutions for Every Size Company</h3>
-                    <p>Amazon Business is specifically designed for corporate customers, providing tools and features that streamline business purchasing processes. Whether you're a small startup or a large corporation, this platform offers solutions to make business procurement more efficient and cost-effective.</p>
+                    <h3>Business Solutions: Solutions for Every Size Company</h3>
+                    <p>Platforms specifically designed for corporate customers provide tools and features that streamline business purchasing processes. Whether you're a small startup or a large corporation, these platforms offer solutions to make business procurement more efficient and cost-effective.</p>
                     
                     <p>• <strong>Business Pricing:</strong> Get access to quantity discounts and business-only pricing<br>
                     • <strong>Spend Control:</strong> Set purchasing limits and approval workflows for employees<br>
                     • <strong>Tax Exemption:</strong> Easily upload tax exemption certificates for qualified purchases<br>
                     • <strong>Analytics & Reporting:</strong> Detailed purchasing reports to track spending patterns<br>
-                    • <strong>Multi-User Accounts:</strong> Share account access while maintaining control<br>
-                    • <strong>Business-Only Selection:</strong> Discover products specifically for business use</p>
+                    • <strong>Multi-User Accounts:</strong> Share account access while maintaining control</p>
                     
-                    <p>Amazon Business helps companies of all sizes optimize their procurement processes and reduce costs. The platform integrates seamlessly with existing procurement systems and provides the transparency and control that businesses need. From office supplies to industrial equipment, Amazon Business offers a curated selection with the convenience and reliability that Amazon is known for.</p>
+                    <p>These services help companies of all sizes optimize their procurement processes and reduce costs. The platforms integrate seamlessly with existing procurement systems and provide the transparency and control that businesses need.</p>
                 </div>
                 
                 <div class="blog-post">
-                    <h3>Amazon Fresh & Whole Foods: Revolutionizing Grocery Shopping</h3>
-                    <p>Amazon is transforming the grocery shopping experience through Amazon Fresh and its integration with Whole Foods Market. These services combine the convenience of online shopping with the quality and freshness that customers expect from premium grocery experiences.</p>
+                    <h3>Grocery Shopping: Revolutionary Services</h3>
+                    <p>Online shopping is transforming the grocery shopping experience. These services combine the convenience of online shopping with the quality and freshness that customers expect from premium grocery experiences.</p>
                     
                     <div class="blog-highlight">
-                        <h4>Benefits of Amazon's Grocery Services</h4>
-                        <p>• <strong>Same-Day Delivery:</strong> Get fresh groceries delivered in hours, not days<br>
-                        • <strong>Organic & Quality Options:</strong> Whole Foods Market's quality standards<br>
+                        <h4>Benefits of Grocery Services</h4>
+                        <p>• <strong>Same-Day Delivery:</strong> Get fresh groceries delivered in hours<br>
+                        • <strong>Organic & Quality Options:</strong> High-quality products with premium standards<br>
                         • <strong>Smart Recommendations:</strong> Personalized shopping lists based on your habits<br>
-                        • <strong>Prime Member Discounts:</strong> Exclusive savings for Prime members<br>
-                        • <strong>In-Store Benefits:</strong> Additional discounts when shopping at Whole Foods<br>
-                        • <strong>Alexa Integration:</strong> Add items to your cart using voice commands</p>
+                        • <strong>Member Discounts:</strong> Exclusive savings for members</p>
                     </div>
                     
-                    <p>Prime members in eligible areas can enjoy free grocery delivery from Amazon Fresh, while all Prime members receive exclusive discounts at Whole Foods Market stores. The service combines Amazon's logistical expertise with Whole Foods' reputation for quality, creating a grocery shopping experience that saves time while maintaining high standards for freshness and selection.</p>
+                    <p>Eligible members can enjoy free grocery delivery, combining logistical expertise with quality reputation, creating a shopping experience that saves time while maintaining high standards for freshness and selection.</p>
                 </div>
                 
                 <div class="blog-post">
-                    <h3>Kindle Unlimited: Unlimited Reading Paradise</h3>
-                    <p>For book lovers, Kindle Unlimited represents an exceptional value proposition. For a single monthly fee, subscribers gain unlimited access to over 1 million e-books, thousands of audiobooks, and current magazines. This service is particularly valuable for avid readers who consume multiple books each month.</p>
+                    <h3>Unlimited Reading: A World of Books</h3>
+                    <p>For book lovers, unlimited reading services represent an exceptional value proposition. For a single monthly fee, subscribers gain unlimited access to over 1 million e-books, thousands of audiobooks, and current magazines. This service is particularly valuable for avid readers who consume multiple books each month.</p>
                     
-                    <p><strong>Who is Kindle Unlimited perfect for?</strong><br>
+                    <p><strong>Who is it ideal for?</strong><br>
                     • Readers who finish 2-3+ books per month<br>
                     • Readers who enjoy exploring different genres<br>
                     • Travelers who want to carry multiple books without the weight<br>
@@ -1597,329 +1556,323 @@ Our goal is to bring you reliable products at affordable prices.</p>
                     • Students and researchers needing access to various texts<br>
                     • Families with multiple readers in the household</p>
                     
-                    <p>The greatest advantage of Kindle Unlimited is that you can read as much as you want without worrying about individual book costs. New titles are added regularly, and popular series are often available in their entirety. The service works across all Kindle devices and the free Kindle reading app, making your books accessible on phones, tablets, and computers.</p>
+                    <p>The greatest advantage is that you can read as much as you want without worrying about individual book costs. New titles are added regularly.</p>
                 </div>
                 
                 <div class="blog-post">
-                    <h3>Audible: The Modern Way to Experience Books</h3>
-                    <p>Audible has revolutionized how people consume literature in our busy modern world. As the largest audiobook platform, it offers professionally narrated books that can be enjoyed during commutes, workouts, or while multitasking. For those with packed schedules, audiobooks provide a practical way to maintain reading habits.</p>
+                    <h3>Audiobooks: The Modern Way to Experience Books</h3>
+                    <p>Audiobook platforms have revolutionized how people consume literature in our busy modern world. As the largest audiobook platforms, they offer professionally narrated books that can be enjoyed during commutes, workouts, or while multitasking. For those with packed schedules, audiobooks provide a practical way to maintain reading habits.</p>
                     
                     <div class="blog-highlight">
-                        <h4>What Makes Audible Special</h4>
+                        <h4>What Makes Audiobooks Special</h4>
                         <p>• <strong>Professional Narration:</strong> Books performed by professional actors and narrators<br>
                         • <strong>Speed Control:</strong> Adjust listening speed to your preference<br>
                         • <strong>Offline Listening:</strong> Download books for listening without internet<br>
-                        • <strong>Original Content:</strong> Exclusive productions available only on Audible<br>
-                        • <strong>Podcast Integration:</strong> Thousands of included podcasts<br>
-                        • <strong>Whispersync:</strong> Switch seamlessly between reading and listening</p>
+                        • <strong>Original Content:</strong> Exclusive productions available only on these platforms<br>
+                        • <strong>Podcast Integration:</strong> Thousands of included podcasts</p>
                     </div>
                     
-                    <p>With Audible Premium Plus membership, you receive one audiobook credit each month that can be exchanged for any title regardless of price, and these books remain yours even if you cancel your membership. Additionally, you get access to thousands of free audiobooks, podcasts, and original content. The platform supports various listening devices and offers features like bookmarks, clips, and sleep timers to enhance the listening experience.</p>
+                    <p>With membership, you receive credits each month that can be exchanged for any title regardless of price, and these books remain yours even if you cancel your membership.</p>
                 </div>
                 
                 <div class="blog-post">
-                    <h3>Amazon Main Categories - Your Shopping Headquarters</h3>
-                    <p>Amazon's main categories represent the core of what makes the platform such a comprehensive shopping destination. These categories encompass everything from Amazon's own hardware ecosystem to specialized shopping experiences that cater to diverse consumer needs.</p>
+                    <h3>Main Categories - Your Shopping Headquarters</h3>
+                    <p>Main categories represent the core of what makes these platforms such comprehensive shopping destinations. These categories encompass everything from hardware ecosystems to specialized shopping experiences that cater to diverse consumer needs.</p>
                     
                     <div class="blog-highlight">
                         <h4>Key Areas in Main Categories</h4>
-                        <p>• <strong>Amazon Devices:</strong> Echo smart speakers, Fire tablets, Kindle e-readers, and Ring security systems form Amazon's hardware ecosystem<br>
-                        • <strong>Shopping Experiences:</strong> Amazon Fresh for groceries, Luxury Stores for premium brands, Amazon Outlet for discounts<br>
-                        • <strong>Specialized Shopping:</strong> Amazon Custom for personalized products, Amazon Live for interactive shopping<br>
-                        • <strong>Content Services:</strong> Access to Audible, Amazon Music, and Prime Video through integrated shopping links</p>
+                        <p>• <strong>Devices:</strong> Smart speakers, tablets, e-readers, and security systems<br>
+                        • <strong>Shopping Experiences:</strong> Fresh groceries, luxury brands, discounted products<br>
+                        • <strong>Specialized Shopping:</strong> Personalized products, interactive shopping<br>
+                        • <strong>Content Services:</strong> Access to audiobooks, music, and video platforms</p>
                     </div>
                     
-                    <p>Understanding Amazon's main categories helps you navigate the platform more efficiently. For instance, Amazon Basics offers affordable everyday essentials with Amazon's quality assurance, while Amazon's Choice highlights highly-rated, well-priced items ready to ship. The "Trending Now" section shows what's currently popular across all categories, helping you stay updated with consumer trends. These main categories serve as your gateway to millions of products organized in a way that makes discovery intuitive and shopping efficient.</p>
+                    <p>Understanding main categories helps you navigate platforms more efficiently. Basic products offer affordable everyday essentials, while special badges highlight highly-rated, well-priced items ready to ship. The "Trending Now" section shows what's currently popular across all categories.</p>
                 </div>
                 
                 <div class="blog-post">
                     <h3>Best Sellers - What Everyone is Buying</h3>
-                    <p>Amazon's Best Sellers list represents the most purchased items across every category, updated hourly. This real-time ranking provides valuable insights into product popularity, customer preferences, and market trends that can inform your purchasing decisions.</p>
+                    <p>Best Sellers lists represent the most purchased items across every category, updated hourly. This real-time ranking provides valuable insights into product popularity, customer preferences, and market trends that can inform your purchasing decisions.</p>
                     
                     <div class="blog-highlight">
                         <h4>Why Best Sellers Matter</h4>
                         <p>• <strong>Social Proof:</strong> Products with high sales volume often indicate customer satisfaction<br>
                         • <strong>Trend Identification:</strong> Spot emerging product trends before they become mainstream<br>
                         • <strong>Quality Indicators:</strong> Frequently best-selling items typically represent good value<br>
-                        • <strong>Seasonal Awareness:</strong> Track seasonal trends in categories like holiday decor, summer gear, or back-to-school supplies</p>
+                        • <strong>Seasonal Awareness:</strong> Track seasonal trends in various categories</p>
                     </div>
                     
-                    <p>The Best Sellers page functions as a constantly updated recommendation engine based on actual purchase data rather than algorithms. Each product's ranking reflects its sales velocity relative to other items in the same category over a specific time period. The "Amazon's Choice" badge often appears alongside best sellers, indicating products that are highly rated, well-priced, and available for immediate shipping. Monitoring best sellers in your areas of interest can help you discover products you might have otherwise overlooked and provides confidence that you're considering items with proven track records.</p>
+                    <p>The Best Sellers page functions as a constantly updated recommendation engine based on actual purchase data. Each product's ranking reflects its sales velocity relative to other items in the same category over a specific time period.</p>
                 </div>
                 
                 <div class="blog-post">
                     <h3>Rising Trends - Spotting What's Hot</h3>
-                    <p>The "Movers & Shakers" section tracks products with the biggest sales gains over the past 24 hours, providing a real-time view of what's gaining momentum on Amazon. This section is particularly valuable for identifying emerging trends, viral products, and items experiencing sudden popularity spikes.</p>
+                    <p>The "Movers & Shakers" section tracks products with the biggest sales gains over the past 24 hours, providing a real-time view of what's gaining momentum. This section is particularly valuable for identifying emerging trends, viral products, and items experiencing sudden popularity spikes.</p>
                     
-                    <p>• <strong>Real-Time Insights:</strong> See what's trending right now, not just what's been popular historically<br>
+                    <p>• <strong>Real-Time Insights:</strong> See what's trending right now<br>
                     • <strong>Early Adoption:</strong> Discover products before they hit mainstream awareness<br>
-                    • <strong>Seasonal Spikes:</strong> Track products gaining popularity due to seasonal factors or events<br>
-                    • <strong>Influencer Impact:</strong> Often reflects products featured in social media or influencer content</p>
+                    • <strong>Seasonal Spikes:</strong> Track products gaining popularity due to seasonal factors<br>
+                    • <strong>Influencer Impact:</strong> Often reflects products featured in social media content</p>
                     
-                    <p>Products in the Movers & Shakers section have typically seen significant sales increases relative to their usual sales volume. This could be due to various factors including media coverage, influencer endorsements, seasonal relevance, or price drops. The percentage gain shown indicates how much sales have increased compared to the product's normal sales trajectory. This section is particularly useful for gift shopping during holidays, as you can see what's becoming popular as shopping seasons progress. It's also valuable for business owners monitoring competitor products or market trends in their industry.</p>
+                    <p>Products in this section have typically seen significant sales increases relative to their usual sales volume. This could be due to various factors including media coverage, influencer endorsements, seasonal relevance, or price drops.</p>
                 </div>
                 
                 <div class="blog-post">
                     <h3>New Releases - First Access to Innovation</h3>
-                    <p>Amazon's New Releases section showcases recently launched products across all categories, providing early access to innovations, updated models, and fresh content. This section is essential for early adopters, tech enthusiasts, and anyone who wants to stay current with the latest products.</p>
+                    <p>New Releases sections showcase recently launched products across all categories, providing early access to innovations, updated models, and fresh content. This section is essential for early adopters, tech enthusiasts, and anyone who wants to stay current with the latest products.</p>
                     
                     <div class="blog-highlight">
                         <h4>Benefits of Monitoring New Releases</h4>
                         <p>• <strong>Early Access:</strong> Be among the first to purchase newly available products<br>
                         • <strong>Updated Technology:</strong> Discover the latest models with improved features<br>
                         • <strong>Fresh Content:</strong> Access new books, music, movies, and games as they release<br>
-                        • <strong>Innovation Tracking:</strong> Stay informed about product innovations across industries</p>
+                        • <strong>Innovation Tracking:</strong> Stay informed about product innovations</p>
                     </div>
                     
-                    <p>The New Releases section is organized by category and update frequency, with some categories (like books and video games) having daily updates while others may update weekly. For physical products, new releases often represent the latest generations with improved specifications, better performance, or enhanced features. In media categories, new releases provide access to fresh content from your favorite authors, musicians, and filmmakers. Many products in this section come with launch promotions or introductory pricing, providing additional value for early purchasers. Regular monitoring of new releases in your areas of interest ensures you never miss important product launches or content releases.</p>
+                    <p>The New Releases section is organized by category and update frequency. For physical products, new releases often represent the latest generations with improved specifications. Many products in this section come with launch promotions or introductory pricing.</p>
                 </div>
                 
                 <div class="blog-post">
                     <h3>Special Services - Beyond Basic Shopping</h3>
-                    <p>Amazon offers numerous specialized services that extend beyond traditional shopping, designed to support specific customer needs throughout various life stages and business requirements. These services demonstrate Amazon's evolution from a simple retailer to a comprehensive service provider.</p>
+                    <p>Numerous specialized services extend beyond traditional shopping, designed to support specific customer needs throughout various life stages and business requirements. These services demonstrate evolution from simple retail to comprehensive service provision.</p>
                     
-                    <p>• <strong>Registry Services:</strong> Wedding and baby registries with completion discounts and universal gifting<br>
-                    • <strong>Business Solutions:</strong> Amazon Business with tax-exempt shopping, business pricing, and procurement tools<br>
-                    • <strong>Accessibility Programs:</strong> EBT acceptance for SNAP beneficiaries, Prime Access for qualifying individuals<br>
-                    • <strong>Family Services:</strong> Amazon Kids+ for age-appropriate content, Prime Book Box for children's books<br>
-                    • <strong>Subscription Management:</strong> Pet food subscriptions, repeat delivery savings on household essentials</p>
+                    <p>• <strong>Registry Services:</strong> Wedding and baby registries with completion discounts<br>
+                    • <strong>Business Solutions:</strong> Business accounts with tax-exempt shopping and procurement tools<br>
+                    • <strong>Accessibility Programs:</strong> Payment card acceptance for qualifying individuals<br>
+                    • <strong>Family Services:</strong> Age-appropriate content, children's book subscriptions<br>
+                    • <strong>Subscription Management:</strong> Pet food subscriptions, repeat delivery savings</p>
                     
-                    <p>These specialized services address specific pain points in traditional shopping and life management. Registry services, for example, simplify gift coordination for major life events while providing value through completion discounts. Amazon Business transforms how companies procure supplies with features like multi-user accounts, purchasing approval workflows, and business-only pricing. Accessibility programs ensure that Amazon's convenience and value are available to broader audiences regardless of economic circumstances. Family-focused services provide curated, age-appropriate experiences while giving parents control over content and spending. Together, these services create a more personalized Amazon experience tailored to individual circumstances and needs.</p>
+                    <p>These specialized services address specific pain points in traditional shopping and life management. Registry services simplify gift coordination for major life events. Business accounts transform how companies procure supplies. Accessibility programs ensure convenience and value are available to broader audiences. Together, these services create more personalized experiences tailored to individual circumstances and needs.</p>
                 </div>
             </div>
             
-            <!-- Amazon Associate Disclosure Section -->
-            <div class="amazon-disclosure">
-                <h3>Amazon Services LLC Associates Program</h3>
-                <p>We participate in the Amazon Services LLC Associates Program, which allows us to highlight Amazon's vast selection of products and special offers to our readers. Our goal is to help you discover valuable campaigns and services that enhance your shopping experience on Amazon.</p>
-                <p>We carefully organize and present Amazon's extensive catalog to make it easier for you to find what you're looking for and discover new opportunities. Our focus is on providing useful information about Amazon's services, promotions, and product categories to help you make informed shopping decisions.</p>
-                <a href="#" class="disclosure-link" id="disclosureLink">Learn More About Our Program</a>
+            <div class="disclosure-section">
+                <h3>Information</h3>
+                <p>This site contains links that direct to various online shopping platforms. Our goal is to help readers discover valuable campaigns and services that enhance their shopping experience.</p>
+                <p>We carefully organize and present extensive product catalogs to make it easier for you to find what you're looking for and discover new opportunities. Our focus is on providing useful information to help you make informed shopping decisions.</p>
+                <a href="#" class="disclosure-link" id="infoLink">Learn More</a>
             </div>
         </main>
     </div>
 
     <footer>
-        <p>Discount Opportunity Campaign Universe - All rights reserved © 2026</p>
-        <p>This site participates in the Amazon Services LLC Associates Program</p>
-        <p>Amazon is a trademark of Amazon.com, Inc. or its affiliates</p>
+        <p>Deal Finder Universe - All rights reserved © 2026</p>
+        <p>This site contains links to various online shopping platforms</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Document loaded successfully');
             
-            // DOM Elements
             const notification = document.getElementById('notification');
             const notificationText = notification.querySelector('.notification-text');
-            const legalModal = document.getElementById('legalModal');
+            const infoModal = document.getElementById('infoModal');
             const modalClose = document.getElementById('modalClose');
-            const disclosureLink = document.getElementById('disclosureLink');
+            const infoLink = document.getElementById('infoLink');
             
-            // Links data with SHORT descriptions
             const linksData = {
                 cat1Links: [
-                    { text: "Echo & Alexa", link: "https://amzn.to/4ajkm1z", icon: "fas fa-microphone-alt", description: "Smart assistant devices and Alexa-compatible products" },
-                    { text: "Fire Tablets", link: "https://amzn.to/3Z4e3st", icon: "fas fa-tablet-alt", description: "Amazon's affordable tablet series" },
-                    { text: "Amazon Luna – Cloud Gaming", link: "https://amzn.to/4a5FfvQ", icon: "fas fa-cloud", description: "Cloud-based game streaming service" },
-                    { text: "Amazon Fresh", link: "https://amzn.to/4k95wy4", icon: "fas fa-shopping-basket", description: "Fresh groceries and market shopping" },
-                    { text: "Whole Foods Market", link: "https://amzn.to/4alWgmK", icon: "fas fa-leaf", description: "Organic and quality food products" },
-                    { text: "Amazon Go", link: "https://amzn.to/3LUgNWn", icon: "fas fa-store", description: "Checkout-free shopping experience" },
-                    { text: "Amazon Haul: Find new faves for way less", link: "https://amzn.to/4btAeQg", icon: "fas fa-shopping-bag", description: "Affordable discovery products" },
-                    { text: "Amazon: Luxury Stores", link: "https://amzn.to/4k8XAwN", icon: "fas fa-gem", description: "Luxury brands and products" },
-                    { text: "Amazon Fashion", link: "https://amzn.to/4q6UElG", icon: "fas fa-tshirt", description: "Clothing, shoes and accessories" },
-                    { text: "Gift Shop", link: "https://amzn.to/45GxACW", icon: "fas fa-gift", description: "Gift ideas and special packages" },
-                    { text: "Shop By Interest", link: "https://amzn.to/3MbpSKq", icon: "fas fa-shopping-cart", description: "Shopping by hobbies and interests" },
-                    { text: "Amazon Custom", link: "https://amzn.to/4k8XEwx", icon: "fas fa-paint-brush", description: "Personalized products" },
-                    { text: "Amazon Outlet", link: "https://amzn.to/4k95YfK", icon: "fas fa-tag", description: "Discounted products and deals" },
-                    { text: "Handpicked", link: "https://amzn.to/4k96lXG", icon: "fas fa-star", description: "Carefully selected collections" },
-                    { text: "Amazon live", link: "https://amzn.to/4k82Oso", icon: "fas fa-video", description: "Live shopping broadcasts" },
-                    { text: "Whole Foods Market Catering", link: "https://amzn.to/4q6uRdi", icon: "fas fa-utensils", description: "Meeting and event catering" },
-                    { text: "Amazon Shopping Spend less. Smile more.", link: "https://amzn.to/3NLtVO4", icon: "fas fa-shopping-cart", description: "Main shopping homepage" },
-                    { text: "Amazon's Choice", link: "https://amzn.to/4q6YfA0", icon: "fas fa-award", description: "Highly-rated reliable products" },
-                    { text: "Trending Now", link: "https://amzn.to/45Du5NF", icon: "fas fa-fire", description: "Current trending products" },
-                    { text: "Same-Day Store", link: "https://amzn.to/3Z8fTbO", icon: "fas fa-percent", description: "Same-day delivery products" },
-                    { text: "Amazon Basics", link: "https://amzn.to/4rgdgR4", icon: "fas fa-box", description: "Amazon's essential product line" },
+                    { text: "Echo & Alexa", link: "https://amzn.to/4ajkm1z", icon: "fas fa-microphone-alt", description: "Smart assistant devices" },
+                    { text: "Fire Tablets", link: "https://amzn.to/3Z4e3st", icon: "fas fa-tablet-alt", description: "Affordable tablet series" },
+                    { text: "Luna – Cloud Gaming", link: "https://amzn.to/4a5FfvQ", icon: "fas fa-cloud", description: "Cloud-based game streaming" },
+                    { text: "Fresh", link: "https://amzn.to/4k95wy4", icon: "fas fa-shopping-basket", description: "Fresh groceries and market" },
+                    { text: "Whole Foods Market", link: "https://amzn.to/4alWgmK", icon: "fas fa-leaf", description: "Organic food products" },
+                    { text: "Go", link: "https://amzn.to/3LUgNWn", icon: "fas fa-store", description: "Checkout-free shopping" },
+                    { text: "Haul", link: "https://amzn.to/4btAeQg", icon: "fas fa-shopping-bag", description: "Affordable discoveries" },
+                    { text: "Luxury Stores", link: "https://amzn.to/4k8XAwN", icon: "fas fa-gem", description: "Luxury brands" },
+                    { text: "Fashion", link: "https://amzn.to/4q6UElG", icon: "fas fa-tshirt", description: "Clothing, shoes" },
+                    { text: "Gift Shop", link: "https://amzn.to/45GxACW", icon: "fas fa-gift", description: "Gift ideas" },
+                    { text: "Shop By Interest", link: "https://amzn.to/3MbpSKq", icon: "fas fa-heart", description: "Shopping by hobbies" },
+                    { text: "Custom", link: "https://amzn.to/4k8XEwx", icon: "fas fa-paint-brush", description: "Personalized products" },
+                    { text: "Outlet", link: "https://amzn.to/4k95YfK", icon: "fas fa-tag", description: "Discounted products" },
+                    { text: "Handpicked", link: "https://amzn.to/4k96lXG", icon: "fas fa-star", description: "Curated collections" },
+                    { text: "Live", link: "https://amzn.to/4k82Oso", icon: "fas fa-video", description: "Live shopping broadcasts" },
+                    { text: "Whole Foods Catering", link: "https://amzn.to/4q6uRdi", icon: "fas fa-utensils", description: "Event catering" },
+                    { text: "Shopping", link: "https://amzn.to/3NLtVO4", icon: "fas fa-shopping-cart", description: "Main shopping page" },
+                    { text: "Choice", link: "https://amzn.to/4q6YfA0", icon: "fas fa-award", description: "Highly-rated products" },
+                    { text: "Trending Now", link: "https://amzn.to/45Du5NF", icon: "fas fa-fire", description: "Trending products" },
+                    { text: "Same-Day Store", link: "https://amzn.to/3Z8fTbO", icon: "fas fa-clock", description: "Same-day delivery" },
+                    { text: "Basics", link: "https://amzn.to/4rgdgR4", icon: "fas fa-box", description: "Essential product line" },
                     { text: "Gaming Deals", link: "https://amzn.to/49ZQaao", icon: "fas fa-gamepad", description: "Game and equipment deals" },
-                    { text: "Amazon Gift Cards", link: "https://amzn.to/4qaXS7Q", icon: "fas fa-credit-card", description: "Gift cards and digital codes" },
+                    { text: "Gift Cards", link: "https://amzn.to/4qaXS7Q", icon: "fas fa-gift", description: "Gift cards" },
                     { text: "Audible Deals", link: "https://amzn.to/4qJj0Ty", icon: "fas fa-headphones", description: "Audiobook deals" },
-                    { text: "Amazon Clothing, Shoes & Jewelry", link: "https://amzn.to/4c0OxvI", icon: "fas fa-tshirt", description: "Complete fashion collection" }
+                    { text: "Clothing & Jewelry", link: "https://amzn.to/4c0OxvI", icon: "fas fa-tshirt", description: "Fashion collection" }
                 ],
                 cat2Links: [
-                    { text: "Prime Free Trial", link: "https://amzn.to/4anOEQE", icon: "fas fa-crown", description: "30-day free Prime trial" },
-                    { text: "Prime for Young Adults Trial", link: "https://amzn.to/3ZE96Xp", icon: "fas fa-user-graduate", description: "Prime trial for students" },
-                    { text: "Prime Paid Membership", link: "https://amzn.to/4sZK02G", icon: "fas fa-crown", description: "Subscribe to Prime" },
-                    { text: "Prime for Young Adults Paid Membership", link: "https://amzn.to/4towg1Q", icon: "fas fa-user-graduate", description: "Prime for young adults" },
-                    { text: "Prime Access Free Trial or Paid Membership", link: "https://amzn.to/4tgsIyD", icon: "fas fa-universal-access", description: "Prime for assistance recipients" },
-                    { text: "Prime Video Add-on Subscriptions - Free Trial", link: "https://amzn.to/4amSgCx", icon: "fas fa-video", description: "Try Prime Video channels" },
-                    { text: "Prime Video Add-on Subscriptions - Paid", link: "https://amzn.to/4c7pGGu", icon: "fas fa-video", description: "Subscribe to video channels" },
-                    { text: "Audible Plus Free Trial", link: "https://amzn.to/4t7lTPN", icon: "fas fa-headphones", description: "Try Audible Plus" },
-                    { text: "Audible Premium Plus Free Trial", link: "https://amzn.to/4c2G4rP", icon: "fas fa-headphones", description: "Try premium audiobooks" },
-                    { text: "Audible Plus Membership", link: "https://amzn.to/4q1Nj6J", icon: "fas fa-headphones", description: "Audible Plus subscription" },
-                    { text: "Audible Premium Plus Annual Membership", link: "https://amzn.to/3M3ZMJ9", icon: "fas fa-headphones", description: "Yearly audiobook membership" },
-                    { text: "Audible Premium Plus Monthly Membership", link: "https://amzn.to/4a9Tn7t", icon: "fas fa-headphones", description: "Monthly audiobook membership" },
-                    { text: "Audible Gift Membership: 1-3-6-12 month plan", link: "https://amzn.to/4a01Vxy", icon: "fas fa-gift", description: "Gift audiobook membership" },
-                    { text: "Kindle Unlimited Free Trial", link: "https://amzn.to/4a6z4I8", icon: "fas fa-book", description: "Try unlimited e-books" },
-                    { text: "Kindle Unlimited Special Promos", link: "https://amzn.to/49ZxvLW", icon: "fas fa-book", description: "Kindle special promotions" },
-                    { text: "Kindle Unlimited Membership: 6-12-24 month plan", link: "https://amzn.to/4a4eOqe", icon: "fas fa-book", description: "Long-term Kindle membership" },
-                    { text: "Amazon Music Unlimited Free Trial", link: "https://amzn.to/3ZGjZrL", icon: "fas fa-music", description: "Try unlimited music" },
-                    { text: "Amazon Music Unlimited Paid Subscription", link: "https://amzn.to/3ZE9k0H", icon: "fas fa-music", description: "Subscribe to music" },
-                    { text: "Amazon Music Unlimited Special Promotions", link: "https://amzn.to/4qQVCni", icon: "fas fa-music", description: "Music special promotions" },
-                    { text: "Prime Music Free Trial", link: "https://amzn.to/3M404Qf", icon: "fas fa-music", description: "Try Prime Music" },
-                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4btMW1q", icon: "fas fa-baby-carriage", description: "Create baby registry" },
-                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/49ZxPu8", icon: "fas fa-ring", description: "Create wedding registry" },
-                    { text: "EBT Card Registration", link: "https://amzn.to/4rlzqS3", icon: "fas fa-credit-card", description: "Register EBT card" },
-                    { text: "Amazon Business", link: "https://amzn.to/4rtkhON", icon: "fas fa-briefcase", description: "Business Amazon service" },
-                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/45Bjzqe", icon: "fas fa-child", description: "Try kids content" },
-                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/46f1Y7B", icon: "fas fa-child", description: "3-month kids promotion" },
-                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/45Fd6uk", icon: "fas fa-child", description: "1-year kids promotion" },
-                    { text: "Prime Exclusives", link: "https://amzn.to/3NOQcdN", icon: "fas fa-percent", description: "Prime member exclusives" },
-                    { text: "Prime Gaming", link: "https://amzn.to/3NM1Aal", icon: "fas fa-gamepad", description: "Prime gaming content" },
-                    { text: "Pet Food & Supplies", link: "https://amzn.to/4k6rXE9", icon: "fas fa-paw", description: "Pet supplies subscription" },
-                    { text: "Prime Book Box", link: "https://amzn.to/3M82c9E", icon: "fas fa-box-open", description: "Children's book subscription" },
-                    { text: "The Drop Text Alerts", link: "https://amzn.to/3M2afos", icon: "fas fa-sms", description: "Fashion collection alerts" },
-                    { text: "Prime Access Free Trial", link: "https://amzn.to/4teruUC", icon: "fas fa-universal-access", description: "Assistance program trial" },
-                    { text: "Home Services | Amazon", link: "https://amzn.to/4qcrMbM", icon: "fas fa-home", description: "Professional home services" }
+                    { text: "Free Trial", link: "https://amzn.to/4anOEQE", icon: "fas fa-crown", description: "30-day free trial" },
+                    { text: "Young Adults Trial", link: "https://amzn.to/3ZE96Xp", icon: "fas fa-user-graduate", description: "Student trial" },
+                    { text: "Paid Membership", link: "https://amzn.to/4sZK02G", icon: "fas fa-crown", description: "Subscribe to membership" },
+                    { text: "Young Adults Membership", link: "https://amzn.to/4towg1Q", icon: "fas fa-user-graduate", description: "Membership for young adults" },
+                    { text: "Access Program", link: "https://amzn.to/4tgsIyD", icon: "fas fa-universal-access", description: "For assistance recipients" },
+                    { text: "Video Add-ons Trial", link: "https://amzn.to/4amSgCx", icon: "fas fa-video", description: "Try video channels" },
+                    { text: "Video Channels", link: "https://amzn.to/4c7pGGu", icon: "fas fa-video", description: "Subscribe to video channels" },
+                    { text: "Audible Plus Trial", link: "https://amzn.to/4t7lTPN", icon: "fas fa-headphones", description: "Try Audible Plus" },
+                    { text: "Audible Premium Trial", link: "https://amzn.to/4c2G4rP", icon: "fas fa-headphones", description: "Try Premium" },
+                    { text: "Audible Plus", link: "https://amzn.to/4q1Nj6J", icon: "fas fa-headphones", description: "Audible Plus subscription" },
+                    { text: "Audible Annual", link: "https://amzn.to/3M3ZMJ9", icon: "fas fa-headphones", description: "Annual audiobook" },
+                    { text: "Audible Monthly", link: "https://amzn.to/4a9Tn7t", icon: "fas fa-headphones", description: "Monthly audiobook" },
+                    { text: "Audible Gift", link: "https://amzn.to/4a01Vxy", icon: "fas fa-gift", description: "Gift audiobook" },
+                    { text: "Kindle Unlimited Trial", link: "https://amzn.to/4a6z4I8", icon: "fas fa-book", description: "Try unlimited e-books" },
+                    { text: "Kindle Offers", link: "https://amzn.to/49ZxvLW", icon: "fas fa-book", description: "Kindle special offers" },
+                    { text: "Kindle Long Term", link: "https://amzn.to/4a4eOqe", icon: "fas fa-book", description: "6-12-24 month membership" },
+                    { text: "Music Unlimited Trial", link: "https://amzn.to/3ZGjZrL", icon: "fas fa-music", description: "Try unlimited music" },
+                    { text: "Music Subscription", link: "https://amzn.to/3ZE9k0H", icon: "fas fa-music", description: "Music subscription" },
+                    { text: "Music Offers", link: "https://amzn.to/4qQVCni", icon: "fas fa-music", description: "Music special offers" },
+                    { text: "Prime Music Trial", link: "https://amzn.to/3M404Qf", icon: "fas fa-music", description: "Try Prime Music" },
+                    { text: "Baby Registry", link: "https://amzn.to/4btMW1q", icon: "fas fa-baby-carriage", description: "Create baby registry" },
+                    { text: "Wedding Registry", link: "https://amzn.to/49ZxPu8", icon: "fas fa-ring", description: "Create wedding registry" },
+                    { text: "EBT Registration", link: "https://amzn.to/4rlzqS3", icon: "fas fa-credit-card", description: "EBT card registration" },
+                    { text: "Business", link: "https://amzn.to/4rtkhON", icon: "fas fa-briefcase", description: "Business service" },
+                    { text: "Kids+ Trial", link: "https://amzn.to/45Bjzqe", icon: "fas fa-child", description: "Try kids content" },
+                    { text: "Kids+ 3 Months", link: "https://amzn.to/46f1Y7B", icon: "fas fa-child", description: "3-month kids promotion" },
+                    { text: "Kids+ 1 Year", link: "https://amzn.to/45Fd6uk", icon: "fas fa-child", description: "1-year kids promotion" },
+                    { text: "Member Exclusives", link: "https://amzn.to/3NOQcdN", icon: "fas fa-percent", description: "Member-only offers" },
+                    { text: "Gaming", link: "https://amzn.to/3NM1Aal", icon: "fas fa-gamepad", description: "Gaming content" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4k6rXE9", icon: "fas fa-paw", description: "Pet products" },
+                    { text: "Book Box", link: "https://amzn.to/3M82c9E", icon: "fas fa-box-open", description: "Children's book subscription" },
+                    { text: "Text Alerts", link: "https://amzn.to/3M2afos", icon: "fas fa-sms", description: "Fashion collection alerts" },
+                    { text: "Home Services", link: "https://amzn.to/4qcrMbM", icon: "fas fa-home", description: "Professional home services" }
                 ],
                 cat3Links: [
-                    { text: "Any Department", link: "https://amzn.to/3ZGr63n", icon: "fas fa-th-large", description: "Best sellers across all categories" },
-                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3LTcNW5", icon: "fas fa-laptop", description: "Best Amazon hardware" },
-                    { text: "Amazon Renewed", link: "https://amzn.to/3Z8B7pT", icon: "fas fa-recycle", description: "Popular refurbished products" },
-                    { text: "Appliances", link: "https://amzn.to/4t4qxOB", icon: "fas fa-blender", description: "Top home appliances" },
-                    { text: "Apps & Games", link: "https://amzn.to/4rrWhvs", icon: "fas fa-mobile-alt", description: "Popular apps and games" },
-                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/3Z4MNKn", icon: "fas fa-paint-brush", description: "Best creative supplies" },
-                    { text: "Audible Books & Originals", link: "https://amzn.to/3NVAm0Y", icon: "fas fa-headphones", description: "Popular audiobooks" },
-                    { text: "Automotive", link: "https://amzn.to/3NFQXpF", icon: "fas fa-car", description: "Top automotive products" },
-                    { text: "Baby", link: "https://amzn.to/49NB3SG", icon: "fas fa-baby", description: "Best baby products" },
-                    { text: "Beauty & Personal Care", link: "https://amzn.to/46cJeFL", icon: "fas fa-spa", description: "Popular beauty products" },
+                    { text: "All Departments", link: "https://amzn.to/3ZGr63n", icon: "fas fa-th-large", description: "Best sellers across all" },
+                    { text: "Devices", link: "https://amzn.to/3LTcNW5", icon: "fas fa-laptop", description: "Best-selling devices" },
+                    { text: "Renewed", link: "https://amzn.to/3Z8B7pT", icon: "fas fa-recycle", description: "Popular renewed products" },
+                    { text: "Appliances", link: "https://amzn.to/4t4qxOB", icon: "fas fa-blender", description: "Popular appliances" },
+                    { text: "Apps & Games", link: "https://amzn.to/4rrWhvs", icon: "fas fa-mobile-alt", description: "Popular apps" },
+                    { text: "Arts & Crafts", link: "https://amzn.to/3Z4MNKn", icon: "fas fa-paint-brush", description: "Popular craft supplies" },
+                    { text: "Audiobooks", link: "https://amzn.to/3NVAm0Y", icon: "fas fa-headphones", description: "Popular audiobooks" },
+                    { text: "Automotive", link: "https://amzn.to/3NFQXpF", icon: "fas fa-car", description: "Popular auto products" },
+                    { text: "Baby", link: "https://amzn.to/49NB3SG", icon: "fas fa-baby", description: "Popular baby products" },
+                    { text: "Beauty", link: "https://amzn.to/46cJeFL", icon: "fas fa-spa", description: "Popular beauty products" },
                     { text: "Books", link: "https://amzn.to/3NOR0PR", icon: "fas fa-book", description: "Best-selling books" },
-                    { text: "Camera & Photo Products", link: "https://amzn.to/45DjDWk", icon: "fas fa-camera", description: "Popular camera gear" },
-                    { text: "CDs & Vinyl", link: "https://amzn.to/45DHHIL", icon: "fas fa-compact-disc", description: "Best music albums" },
-                    { text: "Cell Phones & Accessories", link: "https://amzn.to/3M40VQX", icon: "fas fa-mobile-alt", description: "Top phone accessories" },
-                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4t7jAvR", icon: "fas fa-tshirt", description: "Popular fashion items" },
-                    { text: "Collectible Coins", link: "https://amzn.to/4t4mWA1", icon: "fas fa-coins", description: "Best collectible coins" },
-                    { text: "Computers & Accessories", link: "https://amzn.to/4aotu52", icon: "fas fa-desktop", description: "Top computer products" },
-                    { text: "Digital Educational Resources", link: "https://amzn.to/3Od0S64", icon: "fas fa-graduation-cap", description: "Best learning materials" },
+                    { text: "Camera", link: "https://amzn.to/45DjDWk", icon: "fas fa-camera", description: "Popular camera gear" },
+                    { text: "Music", link: "https://amzn.to/45DHHIL", icon: "fas fa-compact-disc", description: "Popular music albums" },
+                    { text: "Phones", link: "https://amzn.to/3M40VQX", icon: "fas fa-mobile-alt", description: "Popular phone accessories" },
+                    { text: "Fashion", link: "https://amzn.to/4t7jAvR", icon: "fas fa-tshirt", description: "Popular fashion items" },
+                    { text: "Collectibles", link: "https://amzn.to/4t4mWA1", icon: "fas fa-coins", description: "Popular collectibles" },
+                    { text: "Computers", link: "https://amzn.to/4aotu52", icon: "fas fa-desktop", description: "Popular computer products" },
+                    { text: "Education", link: "https://amzn.to/3Od0S64", icon: "fas fa-graduation-cap", description: "Popular learning materials" },
                     { text: "Digital Music", link: "https://amzn.to/4rkLgvw", icon: "fas fa-music", description: "Popular digital music" },
-                    { text: "Electronics", link: "https://amzn.to/4anfCrJ", icon: "fas fa-plug", description: "Best electronic products" },
-                    { text: "Entertainment Collectibles", link: "https://amzn.to/4k9noZG", icon: "fas fa-film", description: "Popular entertainment collectibles" },
-                    { text: "Gift Cards", link: "https://amzn.to/3LWHD02", icon: "fas fa-credit-card", description: "Best gift cards" },
-                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/4bZq9dN", icon: "fas fa-shopping-basket", description: "Popular food products" },
-                    { text: "Handmade Products", link: "https://amzn.to/4k7Dcfn", icon: "fas fa-hands", description: "Best handmade items" },
-                    { text: "Health & Household", link: "https://amzn.to/4t92Pk7", icon: "fas fa-heartbeat", description: "Top health products" },
-                    { text: "Home & Kitchen", link: "https://amzn.to/4c0nRLu", icon: "fas fa-home", description: "Best home products" },
-                    { text: "Industrial & Scientific", link: "https://amzn.to/4rpk9j7", icon: "fas fa-flask", description: "Top industrial products" },
-                    { text: "Kindle Store", link: "https://amzn.to/4kcD7Hp", icon: "fas fa-book-reader", description: "Best Kindle books" },
-                    { text: "Kitchen & Dining", link: "https://amzn.to/3ZaKBkx", icon: "fas fa-utensils", description: "Popular kitchen products" },
-                    { text: "Movies & TV", link: "https://amzn.to/4a03Fa4", icon: "fas fa-film", description: "Best movies and shows" },
-                    { text: "Musical Instruments", link: "https://amzn.to/4qNwxcG", icon: "fas fa-guitar", description: "Popular music instruments" },
-                    { text: "Office Products", link: "https://amzn.to/45F4YKp", icon: "fas fa-briefcase", description: "Top office supplies" },
-                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/3M41t9t", icon: "fas fa-tree", description: "Best garden products" },
+                    { text: "Electronics", link: "https://amzn.to/4anfCrJ", icon: "fas fa-plug", description: "Popular electronics" },
+                    { text: "Entertainment", link: "https://amzn.to/4k9noZG", icon: "fas fa-film", description: "Popular entertainment" },
+                    { text: "Gift Cards", link: "https://amzn.to/3LWHD02", icon: "fas fa-gift", description: "Popular gift cards" },
+                    { text: "Gourmet Food", link: "https://amzn.to/4bZq9dN", icon: "fas fa-utensils", description: "Popular gourmet foods" },
+                    { text: "Handmade", link: "https://amzn.to/4k7Dcfn", icon: "fas fa-hands", description: "Popular handmade items" },
+                    { text: "Health", link: "https://amzn.to/4t92Pk7", icon: "fas fa-heartbeat", description: "Popular health products" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4c0nRLu", icon: "fas fa-home", description: "Popular home products" },
+                    { text: "Industrial", link: "https://amzn.to/4rpk9j7", icon: "fas fa-industry", description: "Popular industrial products" },
+                    { text: "Kindle", link: "https://amzn.to/4kcD7Hp", icon: "fas fa-book-reader", description: "Popular Kindle books" },
+                    { text: "Kitchen", link: "https://amzn.to/3ZaKBkx", icon: "fas fa-utensils", description: "Popular kitchen products" },
+                    { text: "Movies & TV", link: "https://amzn.to/4a03Fa4", icon: "fas fa-film", description: "Popular movies and shows" },
+                    { text: "Instruments", link: "https://amzn.to/4qNwxcG", icon: "fas fa-guitar", description: "Popular instruments" },
+                    { text: "Office", link: "https://amzn.to/45F4YKp", icon: "fas fa-briefcase", description: "Popular office supplies" },
+                    { text: "Garden", link: "https://amzn.to/3M41t9t", icon: "fas fa-tree", description: "Popular garden products" },
                     { text: "Pet Supplies", link: "https://amzn.to/4qStlwG", icon: "fas fa-paw", description: "Popular pet products" },
-                    { text: "Software", link: "https://amzn.to/3ZcFQqC", icon: "fas fa-download", description: "Best software" },
-                    { text: "Sports & Outdoors", link: "https://amzn.to/4qbBriG", icon: "fas fa-football-ball", description: "Top sports products" },
+                    { text: "Software", link: "https://amzn.to/3ZcFQqC", icon: "fas fa-download", description: "Popular software" },
+                    { text: "Sports", link: "https://amzn.to/4qbBriG", icon: "fas fa-futbol", description: "Popular sports products" },
                     { text: "Sports Collectibles", link: "https://amzn.to/4tac57t", icon: "fas fa-trophy", description: "Popular sports collectibles" },
-                    { text: "Tools & Home Improvement", link: "https://amzn.to/4tqUdFR", icon: "fas fa-tools", description: "Best tools" },
-                    { text: "Toys & Games", link: "https://amzn.to/46m57lY", icon: "fas fa-gamepad", description: "Popular toys and games" },
-                    { text: "Unique Finds", link: "https://amzn.to/3MaTgR3", icon: "fas fa-gem", description: "Best unique products" },
-                    { text: "Video Games", link: "https://amzn.to/3ZGlRRj", icon: "fas fa-gamepad", description: "Top video games" }
+                    { text: "Tools", link: "https://amzn.to/4tqUdFR", icon: "fas fa-tools", description: "Popular tools" },
+                    { text: "Toys", link: "https://amzn.to/46m57lY", icon: "fas fa-puzzle-piece", description: "Popular toys" },
+                    { text: "Unique Finds", link: "https://amzn.to/3MaTgR3", icon: "fas fa-gem", description: "Popular unique items" },
+                    { text: "Video Games", link: "https://amzn.to/3ZGlRRj", icon: "fas fa-gamepad", description: "Popular video games" }
                 ],
                 cat4Links: [
-                    { text: "Any Department", link: "https://amzn.to/4ta0pSh", icon: "fas fa-th-large", description: "Fastest rising across categories" },
-                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3ZEbf5p", icon: "fas fa-laptop", description: "Trending Amazon devices" },
-                    { text: "Amazon Renewed", link: "https://amzn.to/3LTe7Z3", icon: "fas fa-recycle", description: "Popular renewed products" },
-                    { text: "Appliances", link: "https://amzn.to/4q3R9fF", icon: "fas fa-blender", description: "Trending home appliances" },
-                    { text: "Apps & Games", link: "https://amzn.to/4t6o6uC", icon: "fas fa-mobile-alt", description: "Trending apps and games" },
-                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/49RKNeA", icon: "fas fa-paint-brush", description: "Trending creative supplies" },
-                    { text: "Audible Books & Originals", link: "https://amzn.to/3ZHK5dU", icon: "fas fa-headphones", description: "Trending audiobooks" },
-                    { text: "Automotive", link: "https://amzn.to/3ZEP3bg", icon: "fas fa-car", description: "Trending auto products" },
-                    { text: "Baby", link: "https://amzn.to/4rmXyUb", icon: "fas fa-baby", description: "Trending baby products" },
-                    { text: "Beauty & Personal Care", link: "https://amzn.to/45Itt9w", icon: "fas fa-spa", description: "Trending beauty products" },
-                    { text: "Books", link: "https://amzn.to/4rgt32i", icon: "fas fa-book", description: "Trending books" },
-                    { text: "Camera & Photo Products", link: "https://amzn.to/4a3ZABP", icon: "fas fa-camera", description: "Trending camera gear" },
-                    { text: "CDs & Vinyl", link: "https://amzn.to/4rfaPyi", icon: "fas fa-compact-disc", description: "Trending music albums" },
-                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4q3RiQf", icon: "fas fa-mobile-alt", description: "Trending phone accessories" },
-                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4q45wR5", icon: "fas fa-tshirt", description: "Trending fashion items" },
-                    { text: "Collectible Coins", link: "https://amzn.to/4q7hVDS", icon: "fas fa-coins", description: "Trending collectible coins" },
-                    { text: "Computers & Accessories", link: "https://amzn.to/3LIycBn", icon: "fas fa-desktop", description: "Trending computer products" },
-                    { text: "Digital Educational Resources", link: "https://amzn.to/4aouohW", icon: "fas fa-graduation-cap", description: "Trending learning materials" },
-                    { text: "Digital Music", link: "https://amzn.to/3MaU0Wl", icon: "fas fa-music", description: "Trending digital music" },
-                    { text: "Electronics", link: "https://amzn.to/45BlF9A", icon: "fas fa-plug", description: "Trending electronic products" },
-                    { text: "Entertainment Collectibles", link: "https://amzn.to/4t80O7J", icon: "fas fa-film", description: "Trending entertainment collectibles" },
-                    { text: "Gift Cards", link: "https://amzn.to/4qPM7EZ", icon: "fas fa-credit-card", description: "Trending gift cards" },
-                    { text: "Grocery & Gourmet Food", link: "https://amzn.to/4rlG0bd", icon: "fas fa-shopping-basket", description: "Trending food products" },
-                    { text: "Handmade Products", link: "https://amzn.to/4a6eRBY", icon: "fas fa-hands", description: "Trending handmade items" },
-                    { text: "Health & Household", link: "https://amzn.to/3NNzDiA", icon: "fas fa-heartbeat", description: "Trending health products" },
-                    { text: "Home & Kitchen", link: "https://amzn.to/4k5TEg8", icon: "fas fa-home", description: "Trending home products" },
-                    { text: "Kindle Store", link: "https://amzn.to/45ItTwC", icon: "fas fa-book-reader", description: "Trending Kindle books" },
-                    { text: "Kitchen & Dining", link: "https://amzn.to/4rplpCR", icon: "fas fa-utensils", description: "Trending kitchen products" },
-                    { text: "Movies & TV", link: "https://amzn.to/3LXvdFa", icon: "fas fa-film", description: "Trending movies and shows" },
-                    { text: "Musical Instruments", link: "https://amzn.to/4ao1G0z", icon: "fas fa-guitar", description: "Trending music instruments" },
-                    { text: "Office Products", link: "https://amzn.to/45GMitE", icon: "fas fa-briefcase", description: "Trending office supplies" },
-                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/49Opgn7", icon: "fas fa-tree", description: "Trending garden products" },
-                    { text: "Pet Supplies", link: "https://amzn.to/45DJfT5", icon: "fas fa-paw", description: "Trending pet products" },
-                    { text: "Software", link: "https://amzn.to/45BffXV", icon: "fas fa-download", description: "Trending software" },
-                    { text: "Sports & Outdoors", link: "https://amzn.to/4k4gOn2", icon: "fas fa-football-ball", description: "Trending sports products" },
-                    { text: "Sports Collectibles", link: "https://amzn.to/4kbPyTO", icon: "fas fa-trophy", description: "Trending sports collectibles" },
-                    { text: "Tools & Home Improvement", link: "https://amzn.to/4tadcEb", icon: "fas fa-tools", description: "Trending tools" },
-                    { text: "Toys & Games", link: "https://amzn.to/4k9tvNp", icon: "fas fa-gamepad", description: "Trending toys and games" },
-                    { text: "Unique Finds", link: "https://amzn.to/4c1QzvB", icon: "fas fa-gem", description: "Trending unique products" },
-                    { text: "Video Games", link: "https://amzn.to/45GNRI5", icon: "fas fa-gamepad", description: "Trending video games" }
+                    { text: "All Departments", link: "https://amzn.to/4ta0pSh", icon: "fas fa-th-large", description: "Rising across all" },
+                    { text: "Devices", link: "https://amzn.to/3ZEbf5p", icon: "fas fa-laptop", description: "Rising devices" },
+                    { text: "Renewed", link: "https://amzn.to/3LTe7Z3", icon: "fas fa-recycle", description: "Rising renewed products" },
+                    { text: "Appliances", link: "https://amzn.to/4q3R9fF", icon: "fas fa-blender", description: "Rising appliances" },
+                    { text: "Apps & Games", link: "https://amzn.to/4t6o6uC", icon: "fas fa-mobile-alt", description: "Rising apps" },
+                    { text: "Arts & Crafts", link: "https://amzn.to/49RKNeA", icon: "fas fa-paint-brush", description: "Rising craft supplies" },
+                    { text: "Audiobooks", link: "https://amzn.to/3ZHK5dU", icon: "fas fa-headphones", description: "Rising audiobooks" },
+                    { text: "Automotive", link: "https://amzn.to/3ZEP3bg", icon: "fas fa-car", description: "Rising auto products" },
+                    { text: "Baby", link: "https://amzn.to/4rmXyUb", icon: "fas fa-baby", description: "Rising baby products" },
+                    { text: "Beauty", link: "https://amzn.to/45Itt9w", icon: "fas fa-spa", description: "Rising beauty products" },
+                    { text: "Books", link: "https://amzn.to/4rgt32i", icon: "fas fa-book", description: "Rising books" },
+                    { text: "Camera", link: "https://amzn.to/4a3ZABP", icon: "fas fa-camera", description: "Rising camera gear" },
+                    { text: "Music", link: "https://amzn.to/4rfaPyi", icon: "fas fa-compact-disc", description: "Rising music albums" },
+                    { text: "Phones", link: "https://amzn.to/4q3RiQf", icon: "fas fa-mobile-alt", description: "Rising phone accessories" },
+                    { text: "Fashion", link: "https://amzn.to/4q45wR5", icon: "fas fa-tshirt", description: "Rising fashion items" },
+                    { text: "Collectibles", link: "https://amzn.to/4q7hVDS", icon: "fas fa-coins", description: "Rising collectibles" },
+                    { text: "Computers", link: "https://amzn.to/3LIycBn", icon: "fas fa-desktop", description: "Rising computer products" },
+                    { text: "Education", link: "https://amzn.to/4aouohW", icon: "fas fa-graduation-cap", description: "Rising learning materials" },
+                    { text: "Digital Music", link: "https://amzn.to/3MaU0Wl", icon: "fas fa-music", description: "Rising digital music" },
+                    { text: "Electronics", link: "https://amzn.to/45BlF9A", icon: "fas fa-plug", description: "Rising electronics" },
+                    { text: "Entertainment", link: "https://amzn.to/4t80O7J", icon: "fas fa-film", description: "Rising entertainment" },
+                    { text: "Gift Cards", link: "https://amzn.to/4qPM7EZ", icon: "fas fa-gift", description: "Rising gift cards" },
+                    { text: "Gourmet Food", link: "https://amzn.to/4rlG0bd", icon: "fas fa-utensils", description: "Rising gourmet foods" },
+                    { text: "Handmade", link: "https://amzn.to/4a6eRBY", icon: "fas fa-hands", description: "Rising handmade items" },
+                    { text: "Health", link: "https://amzn.to/3NNzDiA", icon: "fas fa-heartbeat", description: "Rising health products" },
+                    { text: "Home & Kitchen", link: "https://amzn.to/4k5TEg8", icon: "fas fa-home", description: "Rising home products" },
+                    { text: "Kindle", link: "https://amzn.to/45ItTwC", icon: "fas fa-book-reader", description: "Rising Kindle books" },
+                    { text: "Kitchen", link: "https://amzn.to/4rplpCR", icon: "fas fa-utensils", description: "Rising kitchen products" },
+                    { text: "Movies & TV", link: "https://amzn.to/3LXvdFa", icon: "fas fa-film", description: "Rising movies and shows" },
+                    { text: "Instruments", link: "https://amzn.to/4ao1G0z", icon: "fas fa-guitar", description: "Rising instruments" },
+                    { text: "Office", link: "https://amzn.to/45GMitE", icon: "fas fa-briefcase", description: "Rising office supplies" },
+                    { text: "Garden", link: "https://amzn.to/49Opgn7", icon: "fas fa-tree", description: "Rising garden products" },
+                    { text: "Pet Supplies", link: "https://amzn.to/45DJfT5", icon: "fas fa-paw", description: "Rising pet products" },
+                    { text: "Software", link: "https://amzn.to/45BffXV", icon: "fas fa-download", description: "Rising software" },
+                    { text: "Sports", link: "https://amzn.to/4k4gOn2", icon: "fas fa-futbol", description: "Rising sports products" },
+                    { text: "Sports Collectibles", link: "https://amzn.to/4kbPyTO", icon: "fas fa-trophy", description: "Rising sports collectibles" },
+                    { text: "Tools", link: "https://amzn.to/4tadcEb", icon: "fas fa-tools", description: "Rising tools" },
+                    { text: "Toys", link: "https://amzn.to/4k9tvNp", icon: "fas fa-puzzle-piece", description: "Rising toys" },
+                    { text: "Unique Finds", link: "https://amzn.to/4c1QzvB", icon: "fas fa-gem", description: "Rising unique items" },
+                    { text: "Video Games", link: "https://amzn.to/45GNRI5", icon: "fas fa-gamepad", description: "Rising video games" }
                 ],
                 cat5Links: [
-                    { text: "Any Department", link: "https://amzn.to/4rnrvDR", icon: "fas fa-th-large", description: "New releases across categories" },
-                    { text: "Amazon Devices & Accessories", link: "https://amzn.to/3ZaMvSd", icon: "fas fa-laptop", description: "New Amazon devices" },
-                    { text: "Amazon Renewed", link: "https://amzn.to/4qZqvG7", icon: "fas fa-recycle", description: "New renewed products" },
-                    { text: "Appliances", link: "https://amzn.to/3LUwiO3", icon: "fas fa-blender", description: "New home appliances" },
-                    { text: "Apps & Games", link: "https://amzn.to/4q6BdsY", icon: "fas fa-mobile-alt", description: "New apps and games" },
-                    { text: "Arts, Crafts & Sewing", link: "https://amzn.to/4tex9dk", icon: "fas fa-paint-brush", description: "New creative supplies" },
-                    { text: "Audible Books & Originals", link: "https://amzn.to/4qRchXT", icon: "fas fa-headphones", description: "New audiobooks" },
+                    { text: "All Departments", link: "https://amzn.to/4rnrvDR", icon: "fas fa-th-large", description: "New releases across all" },
+                    { text: "Devices", link: "https://amzn.to/3ZaMvSd", icon: "fas fa-laptop", description: "New devices" },
+                    { text: "Renewed", link: "https://amzn.to/4qZqvG7", icon: "fas fa-recycle", description: "New renewed products" },
+                    { text: "Appliances", link: "https://amzn.to/3LUwiO3", icon: "fas fa-blender", description: "New appliances" },
+                    { text: "Apps & Games", link: "https://amzn.to/4q6BdsY", icon: "fas fa-mobile-alt", description: "New apps" },
+                    { text: "Arts & Crafts", link: "https://amzn.to/4tex9dk", icon: "fas fa-paint-brush", description: "New craft supplies" },
+                    { text: "Audiobooks", link: "https://amzn.to/4qRchXT", icon: "fas fa-headphones", description: "New audiobooks" },
                     { text: "Automotive", link: "https://amzn.to/3MbG3r8", icon: "fas fa-car", description: "New auto products" },
                     { text: "Baby", link: "https://amzn.to/4t9F6Ak", icon: "fas fa-baby", description: "New baby products" },
-                    { text: "Beauty & Personal Care", link: "https://amzn.to/46oI2z8", icon: "fas fa-spa", description: "New beauty products" },
+                    { text: "Beauty", link: "https://amzn.to/46oI2z8", icon: "fas fa-spa", description: "New beauty products" },
                     { text: "Books", link: "https://amzn.to/4t9eU8W", icon: "fas fa-book", description: "New books" },
-                    { text: "Camera & Photo Products", link: "https://amzn.to/45CJ4Y5", icon: "fas fa-camera", description: "New camera gear" },
-                    { text: "CDs & Vinyl", link: "https://amzn.to/4kiTy4X", icon: "fas fa-compact-disc", description: "New music albums" },
-                    { text: "Cell Phones & Accessories", link: "https://amzn.to/4qOJFyf", icon: "fas fa-mobile-alt", description: "New phone accessories" },
-                    { text: "Clothing, Shoes & Jewelry", link: "https://amzn.to/4bmwVdw", icon: "fas fa-tshirt", description: "New fashion items" },
-                    { text: "Collectible Coins", link: "https://amzn.to/46kCCFi", icon: "fas fa-coins", description: "New collectible coins" },
-                    { text: "Computers & Accessories", link: "https://amzn.to/4t9GsuM", icon: "fas fa-desktop", description: "New computer products" },
-                    { text: "Digital Educational Resources", link: "https://amzn.to/4k5dZCa", icon: "fas fa-graduation-cap", description: "New learning materials" },
+                    { text: "Camera", link: "https://amzn.to/45CJ4Y5", icon: "fas fa-camera", description: "New camera gear" },
+                    { text: "Music", link: "https://amzn.to/4kiTy4X", icon: "fas fa-compact-disc", description: "New music albums" },
+                    { text: "Phones", link: "https://amzn.to/4qOJFyf", icon: "fas fa-mobile-alt", description: "New phone accessories" },
+                    { text: "Fashion", link: "https://amzn.to/4bmwVdw", icon: "fas fa-tshirt", description: "New fashion items" },
+                    { text: "Collectibles", link: "https://amzn.to/46kCCFi", icon: "fas fa-coins", description: "New collectibles" },
+                    { text: "Computers", link: "https://amzn.to/4t9GsuM", icon: "fas fa-desktop", description: "New computer products" },
+                    { text: "Education", link: "https://amzn.to/4k5dZCa", icon: "fas fa-graduation-cap", description: "New learning materials" },
                     { text: "Digital Music", link: "https://amzn.to/4606kj5", icon: "fas fa-music", description: "New digital music" },
-                    { text: "Electronics", link: "https://amzn.to/3LHPcaT", icon: "fas fa-plug", description: "New electronic products" },
-                    { text: "Entertainment Collectibles", link: "https://amzn.to/4astDU7", icon: "fas fa-film", description: "New entertainment collectibles" },
-                    { text: "Handmade Products", link: "https://amzn.to/46m71mC", icon: "fas fa-hands", description: "New handmade items" },
+                    { text: "Electronics", link: "https://amzn.to/3LHPcaT", icon: "fas fa-plug", description: "New electronics" },
+                    { text: "Entertainment", link: "https://amzn.to/4astDU7", icon: "fas fa-film", description: "New entertainment" },
+                    { text: "Handmade", link: "https://amzn.to/46m71mC", icon: "fas fa-hands", description: "New handmade items" },
                     { text: "Home & Kitchen", link: "https://amzn.to/4qrGcoF", icon: "fas fa-home", description: "New home products" },
-                    { text: "Kindle Store", link: "https://amzn.to/49PDwvP", icon: "fas fa-book-reader", description: "New Kindle books" },
-                    { text: "Kitchen & Dining", link: "https://amzn.to/3LLzdsl", icon: "fas fa-utensils", description: "New kitchen products" },
+                    { text: "Kindle", link: "https://amzn.to/49PDwvP", icon: "fas fa-book-reader", description: "New Kindle books" },
+                    { text: "Kitchen", link: "https://amzn.to/3LLzdsl", icon: "fas fa-utensils", description: "New kitchen products" },
                     { text: "Movies & TV", link: "https://amzn.to/4ajAujD", icon: "fas fa-film", description: "New movies and shows" },
-                    { text: "Musical Instruments", link: "https://amzn.to/3LLzmfn", icon: "fas fa-guitar", description: "New music instruments" },
-                    { text: "Office Products", link: "https://amzn.to/4rhQY1f", icon: "fas fa-briefcase", description: "New office supplies" },
-                    { text: "Patio, Lawn & Garden", link: "https://amzn.to/4adjpH4", icon: "fas fa-tree", description: "New garden products" },
+                    { text: "Instruments", link: "https://amzn.to/3LLzmfn", icon: "fas fa-guitar", description: "New instruments" },
+                    { text: "Office", link: "https://amzn.to/4rhQY1f", icon: "fas fa-briefcase", description: "New office supplies" },
+                    { text: "Garden", link: "https://amzn.to/4adjpH4", icon: "fas fa-tree", description: "New garden products" },
                     { text: "Pet Supplies", link: "https://amzn.to/49ME6dO", icon: "fas fa-paw", description: "New pet products" },
-                    { text: "Sports & Outdoors", link: "https://amzn.to/45GNcX4", icon: "fas fa-football-ball", description: "New sports products" },
+                    { text: "Sports", link: "https://amzn.to/45GNcX4", icon: "fas fa-futbol", description: "New sports products" },
                     { text: "Sports Collectibles", link: "https://amzn.to/4a9ACRC", icon: "fas fa-trophy", description: "New sports collectibles" },
-                    { text: "Tools & Home Improvement", link: "https://amzn.to/4ksmHuN", icon: "fas fa-tools", description: "New tools" },
-                    { text: "Toys & Games", link: "https://amzn.to/3NLGVmR", icon: "fas fa-gamepad", description: "New toys and games" },
-                    { text: "Unique Finds", link: "https://amzn.to/3ZGnIWh", icon: "fas fa-gem", description: "New unique products" },
+                    { text: "Tools", link: "https://amzn.to/4ksmHuN", icon: "fas fa-tools", description: "New tools" },
+                    { text: "Toys", link: "https://amzn.to/3NLGVmR", icon: "fas fa-puzzle-piece", description: "New toys" },
+                    { text: "Unique Finds", link: "https://amzn.to/3ZGnIWh", icon: "fas fa-gem", description: "New unique items" },
                     { text: "Video Games", link: "https://amzn.to/4qSvqsu", icon: "fas fa-gamepad", description: "New video games" }
                 ],
                 cat6Links: [
-                    { text: "Amazon Baby Registry Create", link: "https://amzn.to/4btMW1q", icon: "fas fa-baby-carriage", description: "Create baby registry" },
-                    { text: "Amazon Wedding Registry Create", link: "https://amzn.to/49ZxPu8", icon: "fas fa-ring", description: "Create wedding registry" },
-                    { text: "EBT Card Registration", link: "https://amzn.to/4rlzqS3", icon: "fas fa-credit-card", description: "Register EBT card" },
-                    { text: "Amazon Business", link: "https://amzn.to/4rtkhON", icon: "fas fa-briefcase", description: "Business Amazon service" },
-                    { text: "Amazon Kids+ Free Trial", link: "https://amzn.to/45Bjzqe", icon: "fas fa-child", description: "Try kids content" },
-                    { text: "Amazon Kids+ Special Promotions 3 Month", link: "https://amzn.to/46f1Y7B", icon: "fas fa-child", description: "3-month kids promotion" },
-                    { text: "Amazon Kids+ Special Promotions 1 Year", link: "https://amzn.to/45Fd6uk", icon: "fas fa-child", description: "1-year kids promotion" },
-                    { text: "Prime Exclusives", link: "https://amzn.to/3NOQcdN", icon: "fas fa-percent", description: "Prime member exclusives" },
-                    { text: "Prime Gaming", link: "https://amzn.to/3NM1Aal", icon: "fas fa-gamepad", description: "Prime gaming content" },
-                    { text: "Pet Food & Supplies", link: "https://amzn.to/4k6rXE9", icon: "fas fa-paw", description: "Pet supplies subscription" }
+                    { text: "Baby Registry", link: "https://amzn.to/4btMW1q", icon: "fas fa-baby-carriage", description: "Create baby registry" },
+                    { text: "Wedding Registry", link: "https://amzn.to/49ZxPu8", icon: "fas fa-ring", description: "Create wedding registry" },
+                    { text: "EBT Registration", link: "https://amzn.to/4rlzqS3", icon: "fas fa-credit-card", description: "EBT card registration" },
+                    { text: "Business", link: "https://amzn.to/4rtkhON", icon: "fas fa-briefcase", description: "Business service" },
+                    { text: "Kids+ Trial", link: "https://amzn.to/45Bjzqe", icon: "fas fa-child", description: "Try kids content" },
+                    { text: "Kids+ 3 Months", link: "https://amzn.to/46f1Y7B", icon: "fas fa-child", description: "3-month kids promotion" },
+                    { text: "Kids+ 1 Year", link: "https://amzn.to/45Fd6uk", icon: "fas fa-child", description: "1-year kids promotion" },
+                    { text: "Member Exclusives", link: "https://amzn.to/3NOQcdN", icon: "fas fa-percent", description: "Member-only offers" },
+                    { text: "Gaming", link: "https://amzn.to/3NM1Aal", icon: "fas fa-gamepad", description: "Gaming content" },
+                    { text: "Pet Supplies", link: "https://amzn.to/4k6rXE9", icon: "fas fa-paw", description: "Pet supplies subscription" }
                 ]
             };
             
-            // Function to update category links
             function updateCategoryLinks(containerId, links) {
                 const container = document.getElementById(containerId);
+                if (!container) return;
                 container.innerHTML = '';
                 
                 links.forEach(link => {
@@ -1944,19 +1897,15 @@ Our goal is to bring you reliable products at affordable prices.</p>
                     container.appendChild(linkItem);
                 });
                 
-                // Re-attach click event listeners
                 attachLinkClickListeners();
             }
             
-            // Function to attach click listeners to links
             function attachLinkClickListeners() {
                 const linkItems = document.querySelectorAll('.link-item');
                 const shareButtons = document.querySelectorAll('.share-btn');
                 
-                // Link click - open in new tab
                 linkItems.forEach(item => {
                     item.addEventListener('click', function(e) {
-                        // Prevent click if share button was clicked
                         if (!e.target.closest('.share-btn')) {
                             const link = this.getAttribute('data-link');
                             window.open(link, '_blank');
@@ -1964,7 +1913,6 @@ Our goal is to bring you reliable products at affordable prices.</p>
                     });
                 });
                 
-                // Share button click - copy to clipboard
                 shareButtons.forEach(button => {
                     button.addEventListener('click', function(e) {
                         e.stopPropagation();
@@ -1972,24 +1920,17 @@ Our goal is to bring you reliable products at affordable prices.</p>
                         const link = linkItem.getAttribute('data-link');
                         const title = linkItem.getAttribute('data-title');
                         
-                        // Copy to clipboard
                         navigator.clipboard.writeText(link).then(() => {
-                            // Update notification text
                             notificationText.innerHTML = `
                                 <div>Link copied successfully!</div>
-                                <div class="notification-subtext">You can now share it with others</div>
+                                <div class="notification-subtext">Ready to share</div>
                             `;
-                            
-                            // Show notification
                             notification.classList.add('show');
-                            
-                            // Hide after 4 seconds
                             setTimeout(() => {
                                 notification.classList.remove('show');
                             }, 4000);
                         }).catch(err => {
-                            console.error('Failed to copy: ', err);
-                            // Fallback for older browsers
+                            console.error('Copy failed: ', err);
                             const textArea = document.createElement('textarea');
                             textArea.value = link;
                             document.body.appendChild(textArea);
@@ -1998,22 +1939,14 @@ Our goal is to bring you reliable products at affordable prices.</p>
                                 document.execCommand('copy');
                                 notificationText.innerHTML = `
                                     <div>Link copied successfully!</div>
-                                    <div class="notification-subtext">You can now share it with others</div>
+                                    <div class="notification-subtext">Ready to share</div>
                                 `;
                                 notification.classList.add('show');
                                 setTimeout(() => {
                                     notification.classList.remove('show');
                                 }, 4000);
                             } catch (err) {
-                                console.error('Fallback copy failed: ', err);
-                                notificationText.innerHTML = `
-                                    <div>Failed to copy link</div>
-                                    <div class="notification-subtext">Please try again or copy manually</div>
-                                `;
-                                notification.classList.add('show');
-                                setTimeout(() => {
-                                    notification.classList.remove('show');
-                                }, 4000);
+                                console.error('Copy failed: ', err);
                             }
                             document.body.removeChild(textArea);
                         });
@@ -2021,23 +1954,19 @@ Our goal is to bring you reliable products at affordable prices.</p>
                 });
             }
             
-            // Category expand/collapse functionality
             const categoryHeaders = document.querySelectorAll('.category-header');
             categoryHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     const category = this.parentElement;
                     const isActive = category.classList.contains('active');
                     
-                    // Close all categories first
                     document.querySelectorAll('.category').forEach(cat => {
                         cat.classList.remove('active');
                     });
                     
-                    // If it wasn't active before, activate it
                     if (!isActive) {
                         category.classList.add('active');
                         
-                        // Scroll the category into view with some offset
                         setTimeout(() => {
                             category.scrollIntoView({
                                 behavior: 'smooth',
@@ -2049,81 +1978,81 @@ Our goal is to bring you reliable products at affordable prices.</p>
                 });
             });
             
-            // Search functionality
             const searchBox = document.getElementById('searchBox');
-            searchBox.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                const categories = document.querySelectorAll('.category');
-                
-                categories.forEach(category => {
-                    const categoryName = category.querySelector('.category-name h2').textContent.toLowerCase();
-                    const categoryDesc = category.querySelector('.category-name p').textContent.toLowerCase();
-                    const links = category.querySelectorAll('.link-text');
+            if (searchBox) {
+                searchBox.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase().trim();
+                    const categories = document.querySelectorAll('.category');
                     
-                    let hasMatch = categoryName.includes(searchTerm) || categoryDesc.includes(searchTerm);
-                    
-                    // Search in links
-                    links.forEach(link => {
-                        const linkText = link.textContent.toLowerCase();
-                        if (linkText.includes(searchTerm)) {
-                            hasMatch = true;
-                            link.parentElement.style.display = 'flex';
+                    categories.forEach(category => {
+                        const categoryName = category.querySelector('.category-name h2')?.textContent.toLowerCase() || '';
+                        const categoryDesc = category.querySelector('.category-name p')?.textContent.toLowerCase() || '';
+                        const links = category.querySelectorAll('.link-text');
+                        
+                        let hasMatch = categoryName.includes(searchTerm) || categoryDesc.includes(searchTerm);
+                        
+                        links.forEach(link => {
+                            const linkText = link.textContent.toLowerCase();
+                            const linkItem = link.closest('.link-item');
+                            if (linkItem) {
+                                if (linkText.includes(searchTerm)) {
+                                    hasMatch = true;
+                                    linkItem.style.display = 'flex';
+                                } else {
+                                    linkItem.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        if (hasMatch || searchTerm === '') {
+                            category.style.display = 'block';
+                            if (searchTerm !== '') {
+                                category.classList.add('active');
+                            }
                         } else {
-                            link.parentElement.style.display = 'none';
+                            category.style.display = 'none';
+                        }
+                        
+                        if (searchTerm === '') {
+                            category.querySelectorAll('.link-item').forEach(link => {
+                                link.style.display = 'flex';
+                            });
                         }
                     });
-                    
-                    // Show/hide category based on search results
-                    if (hasMatch || searchTerm === '') {
-                        category.style.display = 'block';
-                        // Open category if there's a search term
-                        if (searchTerm !== '') {
-                            category.classList.add('active');
-                        }
-                    } else {
-                        category.style.display = 'none';
-                    }
-                    
-                    // Show all links if no search
-                    if (searchTerm === '') {
-                        category.querySelectorAll('.link-item').forEach(link => {
-                            link.style.display = 'flex';
-                        });
+                });
+            }
+            
+            if (modalClose) {
+                modalClose.addEventListener('click', function() {
+                    infoModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            if (infoModal) {
+                infoModal.addEventListener('click', function(e) {
+                    if (e.target === infoModal) {
+                        infoModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
                     }
                 });
-            });
+            }
             
-            // Modal functionality
-            modalClose.addEventListener('click', function() {
-                legalModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
+            if (infoLink) {
+                infoLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    infoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    const modalBody = infoModal.querySelector('.modal-body');
+                    if (modalBody) modalBody.scrollTop = 0;
+                });
+            }
             
-            // Close modal when clicking outside
-            legalModal.addEventListener('click', function(e) {
-                if (e.target === legalModal) {
-                    legalModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Disclosure link functionality
-            disclosureLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                legalModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                
-                // Scroll to top of modal content
-                const modalBody = legalModal.querySelector('.modal-body');
-                modalBody.scrollTop = 0;
-            });
-            
-            // Initialize links
             Object.keys(linksData).forEach(category => {
                 updateCategoryLinks(category, linksData[category]);
             });
             
-            // Animate categories
             const categories = document.querySelectorAll('.category');
             categories.forEach((category, index) => {
                 category.style.animationDelay = `${index * 0.1}s`;
@@ -2133,30 +2062,31 @@ Our goal is to bring you reliable products at affordable prices.</p>
                 }, 100 + index * 100);
             });
             
-            // Animate intro and blog sections
             const introSection = document.querySelector('.blog-intro');
             const blogSection = document.querySelector('.services-blog');
-            const disclosureSection = document.querySelector('.amazon-disclosure');
+            const disclosureSection = document.querySelector('.disclosure-section');
             
-            setTimeout(() => {
-                introSection.style.opacity = '1';
-                introSection.style.transform = 'translateY(0)';
-            }, 300);
+            if (introSection) {
+                setTimeout(() => {
+                    introSection.style.opacity = '1';
+                    introSection.style.transform = 'translateY(0)';
+                }, 300);
+            }
             
-            setTimeout(() => {
-                blogSection.style.opacity = '1';
-                blogSection.style.transform = 'translateY(0)';
-            }, 500);
+            if (blogSection) {
+                setTimeout(() => {
+                    blogSection.style.opacity = '1';
+                    blogSection.style.transform = 'translateY(0)';
+                }, 500);
+            }
             
-            setTimeout(() => {
-                disclosureSection.style.opacity = '1';
-                disclosureSection.style.transform = 'translateY(0)';
-            }, 700);
+            if (disclosureSection) {
+                setTimeout(() => {
+                    disclosureSection.style.opacity = '1';
+                    disclosureSection.style.transform = 'translateY(0)';
+                }, 700);
+            }
             
-            // Keep main category open by default
-            document.querySelector('.category[data-category="main"]').classList.add('active');
-            
-            // Prevent scroll on links container from bubbling to body
             document.querySelectorAll('.links-container').forEach(container => {
                 container.addEventListener('wheel', function(e) {
                     if (this.scrollHeight > this.clientHeight) {

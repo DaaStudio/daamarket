@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0f1115" id="themeColorMeta">
-<title>Amazon Affiliate Marketing - Update</title>
+<title>Resmî Duyuru: Amazon Affiliate Marketing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     * {
@@ -14,7 +14,7 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         -webkit-tap-highlight-color: transparent;
     }
-
+ 
     :root {
         --primary: #FF9900;
         --primary-dark: #e68a00;
@@ -145,7 +145,6 @@
         text-align: center;
     }
 
-    /* Dil butonları için daha kompakt bir grid */
     .lang-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -182,45 +181,101 @@
     }
 
     /* === UPDATE SCREEN === */
-    .app-icon {
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, #FF9900, #FF6B6B);
-        border-radius: 24px;
+    .logo-flow {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 3rem;
-        color: #fff;
-        margin-bottom: 24px;
-        box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4);
+        gap: 14px;
+        margin-bottom: 22px;
+        flex-shrink: 0;
+    }
+
+    .logo-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .logo-box img {
+        width: 78px;
+        height: 78px;
+        border-radius: 20px;
+        object-fit: cover;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+    }
+
+    .logo-box.new img {
+        border: 2px solid var(--primary);
+        box-shadow: 0 10px 30px rgba(255, 153, 0, 0.45);
         animation: pulseIcon 2s infinite alternate;
     }
 
     @keyframes pulseIcon {
-        0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4); }
-        100% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 153, 0, 0.6); }
+        0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 153, 0, 0.45); }
+        100% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 153, 0, 0.65); }
+    }
+
+    .logo-label {
+        font-size: 0.62rem;
+        color: var(--text-muted);
+        text-align: center;
+        max-width: 88px;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    .logo-box.new .logo-label {
+        color: var(--primary);
+    }
+
+    .flow-arrow {
+        font-size: 1.4rem;
+        color: var(--primary);
+        animation: arrowMove 1.5s infinite alternate;
+    }
+
+    @keyframes arrowMove {
+        0% { transform: translateX(-4px); opacity: 0.7; }
+        100% { transform: translateX(4px); opacity: 1; }
     }
 
     .update-title {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
         font-weight: 800;
         text-align: center;
-        margin-bottom: 12px;
-        line-height: 1.3;
+        margin-bottom: 16px;
+        line-height: 1.35;
+        color: var(--text-primary);
     }
 
     .update-text {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         color: var(--text-secondary);
         text-align: center;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        max-width: 380px;
+        line-height: 1.65;
+        margin-bottom: 26px;
+        max-width: 400px;
+    }
+
+    .update-text p {
+        margin-bottom: 10px;
+    }
+
+    .update-text p:last-child {
+        margin-bottom: 0;
     }
 
     .update-text strong {
         color: var(--primary);
+    }
+
+    .update-text .signature {
+        margin-top: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
     }
 
     .download-btn {
@@ -228,8 +283,8 @@
         color: #000;
         border: none;
         border-radius: 16px;
-        padding: 18px 32px;
-        font-size: 1.1rem;
+        padding: 17px 30px;
+        font-size: 1.05rem;
         font-weight: 800;
         cursor: pointer;
         display: flex;
@@ -241,7 +296,8 @@
         text-decoration: none;
         box-shadow: 0 8px 25px rgba(255, 153, 0, 0.3);
         transition: all 0.3s;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+        flex-shrink: 0;
     }
 
     .download-btn:active {
@@ -265,6 +321,7 @@
         align-items: center;
         gap: 6px;
         transition: 0.2s;
+        flex-shrink: 0;
     }
 
     .lang-change-btn:active {
@@ -293,21 +350,32 @@
 
 <!-- YÖNLENDİRME EKRANI -->
 <div id="updateScreen">
-    <div class="app-icon"><i class="fas fa-tags"></i></div>
-    <h1 class="update-title" id="upTitle">Amazon Affiliate Marketing is Moving!</h1>
-    <p class="update-text" id="upText">
-        Our Amazon Affiliate Marketing app has been updated with a new design and new features. 
-        Continue using our services by downloading the new version.
-    </p>
+    <!-- ESKİ LOGO → YENİ LOGO GEÇİŞ ŞEMASI -->
+    <div class="logo-flow">
+        <div class="logo-box old">
+            <img src="https://i.hizliresim.com/opx2rntn.png" alt="Amazon Affiliate Marketing">
+            <span class="logo-label">Amazon Affiliate Marketing</span>
+        </div>
+        <i class="fas fa-arrow-right flow-arrow"></i>
+        <div class="logo-box new">
+            <img src="https://i.hizliresim.com/oaqmb8nw.png" alt="Affiliate Product Showcase">
+            <span class="logo-label">Affiliate Product Showcase</span>
+        </div>
+    </div>
+
+    <h1 class="update-title" id="upTitle">Resmî Duyuru: Amazon Affiliate Marketing</h1>
+    <div class="update-text" id="upText">
+        <!-- JS ile doldurulacak -->
+    </div>
     
     <!-- LİNKİ BURAYA EKLE (href kısmına) -->
     <a href="https://play.google.com/store/apps/details?id=com.DaaStudio.AffiliateProductShowcase" class="download-btn" id="downloadBtn">
         <i class="fas fa-download"></i> 
-        <span id="btnText">Download New App</span>
+        <span id="btnText">Affiliate Product Showcase İndir</span>
     </a>
 
     <button class="lang-change-btn" onclick="showLangScreen()">
-        <i class="fas fa-globe"></i> <span id="changeLangText">Change Language</span>
+        <i class="fas fa-globe"></i> <span id="changeLangText">Dili Değiştir</span>
     </button>
 </div>
 
@@ -337,121 +405,181 @@ const I18N = {
     en: {
         langTitle: "Select Language",
         langSubtitle: "Please choose your preferred language.",
-        upTitle: "Amazon Affiliate Marketing is Moving!",
-        upText: "Our <strong>Amazon Affiliate Marketing</strong> app has been updated with a <strong>new design, new features</strong> and exclusive campaigns. Continue using our services by downloading the new version below.",
-        btnText: "Download New App",
+        upTitle: "Official Announcement: Amazon Affiliate Marketing",
+        upText: `<p>Dear Valued Users,</p>
+                 <p>Our <strong>Amazon Affiliate Marketing</strong> app has been replaced by our new official app, <strong>Affiliate Product Showcase</strong>, with a renewed design and improved features.</p>
+                 <p>To continue benefiting from our services without interruption, we kindly ask you to download our new app via the link below.</p>
+                 <p>Thank you for your interest and support.</p>
+                 <p class="signature">Amazon Affiliate Marketing Team</p>`,
+        btnText: "Download Affiliate Product Showcase",
         changeLang: "Change Language"
     },
     es: {
         langTitle: "Seleccionar Idioma",
         langSubtitle: "Por favor, elige tu idioma preferido.",
-        upTitle: "¡Amazon Affiliate Marketing se está mudando!",
-        upText: "Nuestra aplicación <strong>Amazon Affiliate Marketing</strong> ha sido actualizada con un <strong>nuevo diseño, nuevas funciones</strong> y campañas exclusivas. Continúa usando nuestros servicios descargando la nueva versión a continuación.",
-        btnText: "Descargar Nueva App",
+        upTitle: "Anuncio Oficial: Amazon Affiliate Marketing",
+        upText: `<p>Estimados usuarios,</p>
+                 <p>Nuestra aplicación <strong>Amazon Affiliate Marketing</strong> ha sido reemplazada por nuestra nueva aplicación oficial, <strong>Affiliate Product Showcase</strong>, con un diseño renovado y funciones mejoradas.</p>
+                 <p>Para seguir beneficiándose de nuestros servicios sin interrupciones, le rogamos que descargue nuestra nueva aplicación a través del enlace a continuación.</p>
+                 <p>Gracias por su interés y apoyo.</p>
+                 <p class="signature">Equipo de Amazon Affiliate Marketing</p>`,
+        btnText: "Descargar Affiliate Product Showcase",
         changeLang: "Cambiar Idioma"
     },
     pt: {
         langTitle: "Selecionar Idioma",
         langSubtitle: "Por favor, escolha o seu idioma preferido.",
-        upTitle: "Amazon Affiliate Marketing está Mudando!",
-        upText: "Nosso aplicativo <strong>Amazon Affiliate Marketing</strong> foi atualizado com um <strong>novo design, novos recursos</strong> e campanhas exclusivas. Continue usando nossos serviços baixando a nova versão abaixo.",
-        btnText: "Baixar Novo App",
+        upTitle: "Anúncio Oficial: Amazon Affiliate Marketing",
+        upText: `<p>Prezados Usuários,</p>
+                 <p>Nosso aplicativo <strong>Amazon Affiliate Marketing</strong> foi substituído pelo nosso novo aplicativo oficial, <strong>Affiliate Product Showcase</strong>, com um design renovado e recursos aprimorados.</p>
+                 <p>Para continuar usufruindo dos nossos serviços sem interrupções, solicitamos que baixe nosso novo aplicativo através do link abaixo.</p>
+                 <p>Agradecemos pelo seu interesse e apoio.</p>
+                 <p class="signature">Equipe Amazon Affiliate Marketing</p>`,
+        btnText: "Baixar Affiliate Product Showcase",
         changeLang: "Mudar Idioma"
     },
     ar: {
         langTitle: "اختر اللغة",
         langSubtitle: "يرجى اختيار لغتك المفضلة.",
-        upTitle: "Amazon Affiliate Marketing ينتقل!",
-        upText: "تم تحديث تطبيق <strong>Amazon Affiliate Marketing</strong> الخاص بنا بـ <strong>تصميم جديد وميزات جديدة</strong> وحملات حصرية. استمر في استخدام خدماتنا عن طريق تنزيل الإصدار الجديد أدناه.",
-        btnText: "تحميل التطبيق الجديد",
+        upTitle: "إعلان رسمي: Amazon Affiliate Marketing",
+        upText: `<p>أعزائنا المستخدمين،</p>
+                 <p>تم استبدال تطبيق <strong>Amazon Affiliate Marketing</strong> الخاص بنا بتطبيقنا الرسمي الجديد <strong>Affiliate Product Showcase</strong>، بتصميم متجدد وميزات محسّنة.</p>
+                 <p>لمواصلة الاستفادة من خدماتنا دون انقطاع، نرجو منكم تنزيل تطبيقنا الجديد عبر الرابط أدناه.</p>
+                 <p>نشكركم على اهتمامكم ودعمكم.</p>
+                 <p class="signature">فريق Amazon Affiliate Marketing</p>`,
+        btnText: "تحميل Affiliate Product Showcase",
         changeLang: "تغيير اللغة"
     },
     fr: {
         langTitle: "Choisir la Langue",
         langSubtitle: "Veuillez choisir votre langue préférée.",
-        upTitle: "Amazon Affiliate Marketing Déménage !",
-        upText: "Notre application <strong>Amazon Affiliate Marketing</strong> a été mise à jour avec un <strong>nouveau design, de nouvelles fonctionnalités</strong> et des campagnes exclusives. Continuez à utiliser nos services en téléchargeant la nouvelle version ci-dessous.",
-        btnText: "Télécharger la Nouvelle App",
+        upTitle: "Annonce Officielle : Amazon Affiliate Marketing",
+        upText: `<p>Chers utilisateurs,</p>
+                 <p>Notre application <strong>Amazon Affiliate Marketing</strong> a été remplacée par notre nouvelle application officielle, <strong>Affiliate Product Showcase</strong>, avec un design renouvelé et des fonctionnalités améliorées.</p>
+                 <p>Pour continuer à bénéficier de nos services sans interruption, nous vous invitons à télécharger notre nouvelle application via le lien ci-dessous.</p>
+                 <p>Merci pour votre intérêt et votre soutien.</p>
+                 <p class="signature">L'équipe Amazon Affiliate Marketing</p>`,
+        btnText: "Télécharger Affiliate Product Showcase",
         changeLang: "Changer de Langue"
     },
     hi: {
         langTitle: "भाषा चुनें",
         langSubtitle: "कृपया अपनी पसंदीदा भाषा चुनें।",
-        upTitle: "Amazon Affiliate Marketing स्थानांतरित हो रहा है!",
-        upText: "हमारा <strong>Amazon Affiliate Marketing</strong> ऐप <strong>नए डिज़ाइन, नई सुविधाओं</strong> और विशेष अभियानों के साथ अपडेट किया गया है। नीचे दिए गए नए संस्करण को डाउनलोड करके हमारी सेवाओं का उपयोग जारी रखें।",
-        btnText: "नया ऐप डाउनलोड करें",
+        upTitle: "आधिकारिक घोषणा: Amazon Affiliate Marketing",
+        upText: `<p>प्रिय उपयोगकर्ताओं,</p>
+                 <p>हमारे <strong>Amazon Affiliate Marketing</strong> ऐप को नए डिज़ाइन और बेहतर सुविधाओं के साथ हमारे नए आधिकारिक ऐप <strong>Affiliate Product Showcase</strong> द्वारा प्रतिस्थापित कर दिया गया है।</p>
+                 <p>हमारी सेवाओं का बिना किसी रुकावट के लाभ उठाना जारी रखने के लिए, कृपया नीचे दिए गए लिंक के माध्यम से हमारा नया ऐप डाउनलोड करें।</p>
+                 <p>आपकी रुचि और समर्थन के लिए धन्यवाद।</p>
+                 <p class="signature">Amazon Affiliate Marketing टीम</p>`,
+        btnText: "Affiliate Product Showcase डाउनलोड करें",
         changeLang: "भाषा बदलें"
     },
     tl: {
         langTitle: "Pumili ng Wika",
         langSubtitle: "Mangyaring piliin ang iyong gustong wika.",
-        upTitle: "Lumilipat na ang Amazon Affiliate Marketing!",
-        upText: "Ang aming <strong>Amazon Affiliate Marketing</strong> app ay na-update na may <strong>bagong disenyo, mga bagong feature</strong> at mga eksklusibong kampanya. Magpatuloy sa paggamit ng aming mga serbisyo sa pamamagitan ng pag-download ng bagong bersyon sa ibaba.",
-        btnText: "I-download ang Bagong App",
+        upTitle: "Opisyal na Anunsyo: Amazon Affiliate Marketing",
+        upText: `<p>Minamahal na mga User,</p>
+                 <p>Ang aming <strong>Amazon Affiliate Marketing</strong> app ay pinalitan ng aming bagong opisyal na app, <strong>Affiliate Product Showcase</strong>, na may bagong disenyo at pinahusay na mga feature.</p>
+                 <p>Upang patuloy na makinabang sa aming mga serbisyo nang walang pagkaantala, hinihiling namin na i-download ang aming bagong app sa link sa ibaba.</p>
+                 <p>Salamat sa inyong interes at suporta.</p>
+                 <p class="signature">Amazon Affiliate Marketing Team</p>`,
+        btnText: "I-download ang Affiliate Product Showcase",
         changeLang: "Palitan ang Wika"
     },
     id: {
         langTitle: "Pilih Bahasa",
         langSubtitle: "Silakan pilih bahasa yang Anda inginkan.",
-        upTitle: "Amazon Affiliate Marketing Pindah!",
-        upText: "Aplikasi <strong>Amazon Affiliate Marketing</strong> kami telah diperbarui dengan <strong>desain baru, fitur baru</strong>, dan kampanye eksklusif. Lanjutkan menggunakan layanan kami dengan mengunduh versi baru di bawah ini.",
-        btnText: "Unduh Aplikasi Baru",
+        upTitle: "Pengumuman Resmi: Amazon Affiliate Marketing",
+        upText: `<p>Pengguna yang Terhormat,</p>
+                 <p>Aplikasi <strong>Amazon Affiliate Marketing</strong> kami telah digantikan oleh aplikasi resmi baru kami, <strong>Affiliate Product Showcase</strong>, dengan desain yang diperbarui dan fitur yang ditingkatkan.</p>
+                 <p>Untuk terus menikmati layanan kami tanpa gangguan, kami mohon Anda mengunduh aplikasi baru kami melalui tautan di bawah ini.</p>
+                 <p>Terima kasih atas minat dan dukungan Anda.</p>
+                 <p class="signature">Tim Amazon Affiliate Marketing</p>`,
+        btnText: "Unduh Affiliate Product Showcase",
         changeLang: "Ganti Bahasa"
     },
     bn: {
         langTitle: "ভাষা নির্বাচন করুন",
         langSubtitle: "আপনার পছন্দের ভাষা চয়ন করুন।",
-        upTitle: "Amazon Affiliate Marketing স্থানান্তরিত হচ্ছে!",
-        upText: "আমাদের <strong>Amazon Affiliate Marketing</strong> অ্যাপটি <strong>নতুন ডিজাইন, নতুন বৈশিষ্ট্য</strong> এবং একচেটিয়া ক্যাম্পেইন সহ আপডেট করা হয়েছে। নীচে নতুন সংস্করণ ডাউনলোড করে আমাদের পরিষেবাগুলি ব্যবহার চালিয়ে যান।",
-        btnText: "নতুন অ্যাপ ডাউনলোড করুন",
+        upTitle: "অফিসিয়াল ঘোষণা: Amazon Affiliate Marketing",
+        upText: `<p>প্রিয় ব্যবহারকারীগণ,</p>
+                 <p>আমাদের <strong>Amazon Affiliate Marketing</strong> অ্যাপটি নতুন ডিজাইন এবং উন্নত বৈশিষ্ট্য সহ আমাদের নতুন অফিসিয়াল অ্যাপ <strong>Affiliate Product Showcase</strong> দ্বারা প্রতিস্থাপিত হয়েছে।</p>
+                 <p>আমাদের পরিষেবাগুলি নিরবচ্ছিন্নভাবে উপভোগ চালিয়ে যেতে, অনুগ্রহ করে নীচের লিঙ্কের মাধ্যমে আমাদের নতুন অ্যাপটি ডাউনলোড করুন।</p>
+                 <p>আপনার আগ্রহ ও সমর্থনের জন্য ধন্যবাদ।</p>
+                 <p class="signature">Amazon Affiliate Marketing টিম</p>`,
+        btnText: "Affiliate Product Showcase ডাউনলোড করুন",
         changeLang: "ভাষা পরিবর্তন করুন"
     },
     ja: {
         langTitle: "言語を選択",
         langSubtitle: "ご希望の言語を選択してください。",
-        upTitle: "Amazon Affiliate Marketing 移行のお知らせ！",
-        upText: "当社の <strong>Amazon Affiliate Marketing</strong> アプリは、<strong>新しいデザイン、新機能</strong>、限定キャンペーンでアップデートされました。以下の新しいバージョンをダウンロードして、引き続きサービスをご利用ください。",
-        btnText: "新しいアプリをダウンロード",
+        upTitle: "公式のお知らせ：Amazon Affiliate Marketing",
+        upText: `<p>ユーザーの皆様へ</p>
+                 <p>当社の <strong>Amazon Affiliate Marketing</strong> アプリは、刷新されたデザインと改良された機能を備えた新しい公式アプリ <strong>Affiliate Product Showcase</strong> に置き換えられました。</p>
+                 <p>当社のサービスを中断なくご利用いただくため、以下のリンクから新しいアプリをダウンロードしていただきますようお願いいたします。</p>
+                 <p>ご関心とご支援に感謝申し上げます。</p>
+                 <p class="signature">Amazon Affiliate Marketing チーム</p>`,
+        btnText: "Affiliate Product Showcase をダウンロード",
         changeLang: "言語を変更"
     },
     tr: {
         langTitle: "Dil Seçiniz",
         langSubtitle: "Lütfen tercih ettiğiniz dili seçin.",
-        upTitle: "Amazon Affiliate Marketing Taşınıyor!",
-        upText: "<strong>Amazon Affiliate Marketing</strong> uygulamamız <strong>yeni tasarım, yeni özellikler</strong> ve özel kampanyalarla güncellenmiştir. Hizmetlerimizi kullanmaya devam etmek için aşağıdan yeni sürümü indirin.",
-        btnText: "Yeni Uygulamayı İndir",
+        upTitle: "Resmî Duyuru: Amazon Affiliate Marketing",
+        upText: `<p>Değerli Kullanıcılarımız,</p>
+                 <p><strong>Amazon Affiliate Marketing</strong> uygulamamızın yerini, yenilenen tasarımı ve geliştirilmiş özellikleriyle <strong>Affiliate Product Showcase</strong> adlı yeni resmî uygulamamız almıştır.</p>
+                 <p>Hizmetlerimizden kesintisiz şekilde yararlanmaya devam edebilmeniz için aşağıdaki bağlantı üzerinden yeni uygulamamızı indirmenizi rica ederiz.</p>
+                 <p>Göstermiş olduğunuz ilgi ve destek için teşekkür ederiz.</p>
+                 <p class="signature">Amazon Affiliate Marketing Ekibi</p>`,
+        btnText: "Affiliate Product Showcase İndir",
         changeLang: "Dili Değiştir"
     },
     de: {
         langTitle: "Sprache Auswählen",
         langSubtitle: "Bitte wählen Sie Ihre bevorzugte Sprache.",
-        upTitle: "Amazon Affiliate Marketing zieht um!",
-        upText: "Unsere <strong>Amazon Affiliate Marketing</strong> App wurde mit einem <strong>neuen Design, neuen Funktionen</strong> und exklusiven Aktionen aktualisiert. Laden Sie unten die neue Version herunter, um unsere Dienste weiter zu nutzen.",
-        btnText: "Neue App Herunterladen",
+        upTitle: "Offizielle Ankündigung: Amazon Affiliate Marketing",
+        upText: `<p>Sehr geehrte Nutzer,</p>
+                 <p>Unsere App <strong>Amazon Affiliate Marketing</strong> wurde durch unsere neue offizielle App <strong>Affiliate Product Showcase</strong> mit erneuertem Design und verbesserten Funktionen ersetzt.</p>
+                 <p>Um unsere Dienste ohne Unterbrechung weiter nutzen zu können, bitten wir Sie, unsere neue App über den untenstehenden Link herunterzuladen.</p>
+                 <p>Vielen Dank für Ihr Interesse und Ihre Unterstützung.</p>
+                 <p class="signature">Amazon Affiliate Marketing Team</p>`,
+        btnText: "Affiliate Product Showcase Herunterladen",
         changeLang: "Sprache Ändern"
     },
     it: {
         langTitle: "Seleziona Lingua",
         langSubtitle: "Per favore, scegli la tua lingua preferita.",
-        upTitle: "Amazon Affiliate Marketing si Trasferisce!",
-        upText: "La nostra app <strong>Amazon Affiliate Marketing</strong> è stata aggiornata con un <strong>nuovo design, nuove funzionalità</strong> e campagne esclusive. Continua a utilizzare i nostri servizi scaricando la nuova versione qui sotto.",
-        btnText: "Scarica Nuova App",
+        upTitle: "Annuncio Ufficiale: Amazon Affiliate Marketing",
+        upText: `<p>Gentili Utenti,</p>
+                 <p>La nostra app <strong>Amazon Affiliate Marketing</strong> è stata sostituita dalla nostra nuova app ufficiale, <strong>Affiliate Product Showcase</strong>, con un design rinnovato e funzionalità migliorate.</p>
+                 <p>Per continuare a usufruire dei nostri servizi senza interruzioni, vi invitiamo a scaricare la nostra nuova app tramite il link sottostante.</p>
+                 <p>Grazie per il vostro interesse e supporto.</p>
+                 <p class="signature">Team Amazon Affiliate Marketing</p>`,
+        btnText: "Scarica Affiliate Product Showcase",
         changeLang: "Cambia Lingua"
     },
     ru: {
         langTitle: "Выберите Язык",
         langSubtitle: "Пожалуйста, выберите предпочитаемый язык.",
-        upTitle: "Amazon Affiliate Marketing Переезжает!",
-        upText: "Наше приложение <strong>Amazon Affiliate Marketing</strong> было обновлено с <strong>новым дизайном, новыми функциями</strong> и эксклюзивными акциями. Продолжайте пользоваться нашими услугами, загрузив новую версию ниже.",
-        btnText: "Скачать Новое Приложение",
+        upTitle: "Официальное объявление: Amazon Affiliate Marketing",
+        upText: `<p>Уважаемые пользователи,</p>
+                 <p>Наше приложение <strong>Amazon Affiliate Marketing</strong> было заменено нашим новым официальным приложением <strong>Affiliate Product Showcase</strong> с обновлённым дизайном и улучшенными функциями.</p>
+                 <p>Чтобы продолжить пользоваться нашими услугами без перебоев, просим вас загрузить наше новое приложение по ссылке ниже.</p>
+                 <p>Благодарим вас за интерес и поддержку.</p>
+                 <p class="signature">Команда Amazon Affiliate Marketing</p>`,
+        btnText: "Скачать Affiliate Product Showcase",
         changeLang: "Изменить Язык"
     },
     zh: {
         langTitle: "选择语言",
         langSubtitle: "请选择您偏好的语言。",
-        upTitle: "Amazon Affiliate Marketing 即将迁移！",
-        upText: "我们的 <strong>Amazon Affiliate Marketing</strong> 应用已更新，包含<strong>全新设计、新功能</strong>和独家活动。请通过下方下载新版本，继续使用我们的服务。",
-        btnText: "下载新应用",
+        upTitle: "官方公告：Amazon Affiliate Marketing",
+        upText: `<p>尊敬的用户：</p>
+                 <p>我们的 <strong>Amazon Affiliate Marketing</strong> 应用已被我们全新的官方应用 <strong>Affiliate Product Showcase</strong> 取代，该应用拥有全新的设计和改进的功能。</p>
+                 <p>为了继续不间断地享受我们的服务，请您通过下方链接下载我们的新应用。</p>
+                 <p>感谢您的关注与支持。</p>
+                 <p class="signature">Amazon Affiliate Marketing 团队</p>`,
+        btnText: "下载 Affiliate Product Showcase",
         changeLang: "更改语言"
     }
 };
@@ -463,7 +591,7 @@ const langScreen = document.getElementById('langScreen');
 const updateScreen = document.getElementById('updateScreen');
 const langGrid = document.getElementById('langGrid');
 
-let currentLang = 'en';
+let currentLang = 'tr'; // Varsayılan Türkçe
 
 // Dil butonlarını oluştur
 function buildLangGrid() {
@@ -522,7 +650,7 @@ function showLangScreen() {
 // Başlangıç
 document.addEventListener('DOMContentLoaded', () => {
     buildLangGrid();
-    applyLanguage(); // Varsayılan İngilizce metinleri yükle
+    applyLanguage(); // Varsayılan dil metinlerini yükle
 });
 </script>
 </body>
